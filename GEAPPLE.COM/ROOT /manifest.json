@@ -1,0 +1,10 @@
+{
+  "name": "GEAPPLE.COM - Pass ID = name@geamail.con Only Recognize Gateway Key - Build 27000 Super Pro Max",
+  "short_name": "GEAPPLE.COM",
+  "description": "GEAPPLE.COM - 25 Apps + BADGE 26 27 = 27 Tiles - Pass ID = name@geamail.con Only Recognize Gateway Key - Creators Tools Funs Have Funs Make More Money No Waste Time No Waste Life Geapple Ecosystem Keeps You Moving - Users Get 15pct Auto Rewards Platform Keep 85pct - Business Whatsapp https://www.wa.me/+2348055432048 - Package v27 Build 27000",
+  "start_url": "./index.html?v=27000&pass_id=name@geamail.con",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": [{"src": "./logo.png","sizes": "512x512","type": "image/png","purpose": "any maskable"}]
+}

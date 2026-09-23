@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "builds": [
+    {"src": "index.html","use": "@vercel/static"},
+    {"src": "badge*.html","use": "@vercel/static"},
+    {"src": "manifest.json","use": "@vercel/static"},
+    {"src": "service.js","use": "@vercel/static"},
+    {"src": "logo.png","use": "@vercel/static"},
+    {"src": "api/*.js","use": "@vercel/node"}
+  ],
+  "routes": [
+    {"src": "/api/geamail","dest": "/api/geamail.js"},
+    {"src": "/api/dns-checker","dest": "/api/dns-checker.js"},
+    {"src": "/api/bulk-mail","dest": "/api/bulk-mail.js"},
+    {"src": "/api/particular-mail","dest": "/api/particular-mail.js"},
+    {"src": "/api/analytics","dest": "/api/analytics.js"},
+    {"src": "/api/gea-pay-investors","dest": "/api/gea-pay-investors.js"},
+    {"src": "/api/gea-rewards","dest": "/api/gea-rewards.js"},
+    {"src": "/api/ceo-dashboard","dest": "/api/ceo-dashboard.js"},
+    {"src": "/api/dev-subscription","dest": "/api/dev-subscription.js"},
+    {"src": "/api/menu","dest": "/api/menu.js"},
+    {"src": "/api/setting","dest": "/api/setting.js"},
+    {"src": "/api/themes","dest": "/api/themes.js"},
+    {"src": "/api/vercel","dest": "/api/vercel.js"},
+    {"src": "/(.*)","dest": "/$1"}
+  ],
+  "env": {
+    "PASS_ID": "name@geamail.con - Only Recognize Gateway Key - Front GSIA CYBER CORE Back REALORACLE",
+    "HOSTING": "Gea.Con Hosting Domain Website Drive Cloud @geamail.con DNS Checker - A 76.76.21.21 Vercel CNAME",
+    "BUSINESS_WHATSAPP": "https://www.wa.me/+2348055432048 - Line 137 Fixed",
+    "CREATORS_TOOLS_FUNS": "Creators Tools Funs - Have Funs Make More Money - No Waste Time No Waste Life - Geapple Ecosystem Keeps You Moving",
+    "GEA_STORE": "Gea Store 27 Apps - CEO Dashboard Upload Apps - Devs Pay And Upload Apps - Updated Payment Format",
+    "DEV_SUBSCRIPTION": "Payment Subscription Format System - How Developers Pays And Upload Apps On Gea Store - Starter Free Pro 5000+15pct+2900/mo Enterprise 25000+10pct+22500/mo - Devs Keep 70pct 85pct 90pct Platform Keep 30pct 15pct 10pct - Have Funs Make More Money",
+    "CEO_DASHBOARD": "CEO Dashboard Admin Visibly - Upload Apps To Gea Store - File Uploading Buttons Those Appropriate Place Not Texts",
+    "REWARDS_CORRECTED": "Users Get 15pct Auto Rewards Platform Keep 85pct - Devs Keep 85pct Platform Keep 15pct - Creators Tools Funs Have Funs Make More Money",
+    "BUILD": "27000 - Super Pro Max - Logo top + GEAPPLE.COM only - 28 Tiles - Vercel Deploy Tonight - Apple Store Google Play Store Launch 1st October"
+  }
+}

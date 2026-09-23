@@ -1,0 +1,8 @@
+// api/particular-mail.js - Particular Mail @geamail.con®™ - Pass ID = name@geamail.con Only Recognize Gateway Key - Front GSIA CYBER CORE Back REALORACLE - Hosting Domain Website Drive Cloud @geamail.con DNS Checker - Business Whatsapp https://www.wa.me/+2348055432048 - Package v27 Build 27000 - Super Pro Max - Logo top + GEAPPLE.COM only - Corrected Users Get 15% Auto Rewards Platform Keep 85%
+function getCleanPassId(e){ if(!e) return "user@geamail.con"; return e.replace(/@gmail\.com/gi,'@geamail.con').replace(/@geamail\.com/gi,'@geamail.con').toLowerCase().trim(); }
+module.exports = async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*'); res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Pass-ID'); if(req.method === 'OPTIONS') return res.status(200).end();
+  const cleanPassId = getCleanPassId(req.headers['x-pass-id'] || req.query.pass_id || req.body?.pass_id || "user@geamail.con");
+  if(!cleanPassId.includes('@geamail.con')) return res.status(400).json({ error: "Invalid Pass ID = name@geamail.con", cleaned: cleanPassId, business_whatsapp: "https://www.wa.me/+2348055432048", build: 27000, corrected: "Users Get 15% Auto Rewards Platform Keep 85%" });
+  return res.status(200).json({ message: "Particular Mail @geamail.con - Pass ID = "+cleanPassId+" Only Recognize Gateway Key", pass_id: cleanPassId, particular: "Particular Mail Ready - @geamail.con Mail Biometric NIN Thumb Facial Holo Chat Mail Live - Pass ID = "+cleanPassId, business_whatsapp: "https://www.wa.me/+2348055432048", build: 27000, corrected: "Users Get 15% Auto Rewards Platform Keep 85%" });
+};
