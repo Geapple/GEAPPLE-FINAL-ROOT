@@ -1,0 +1,23 @@
+{
+  "app_name": "GEACONNECT + HOLO SOCIAL",
+  "app_id": "2 - MAIN HUB",
+  "logo": "./logo.png",
+  "description": "Main Super App Hub connecting all 19 apps + 4 satellites",
+  "hub_features": {
+    "holo_chat": "3D video + translator",
+    "holo_feed": "Metaverse timeline",
+    "holo_live": "Holo broadcasting 50-100 people",
+    "gate_pass_system": "GSIA + GEAMAIL.CON username only"
+  },
+  "connected_apps": [
+    "geamail-holo",
+    "mygea-holo",
+    "yellow-mygea-holo",
+    "gea-tube-holo",
+    "gea-games-holo",
+    "gea-wallet",
+    "gea-store"
+  ],
+  "satellite_network": ["SAT-01", "SAT-02", "SAT-03", "SAT-04"],
+  "status": "SUPER PRO MAX ACTIVE"
+}
