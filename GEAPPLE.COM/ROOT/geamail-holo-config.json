@@ -1,0 +1,19 @@
+{
+  "app_name": "GEAMAIL.CON + HOLO CONFERENCE",
+  "app_id": 3,
+  "logo": "./logo.png",
+  "gate_pass": "username@geamail.con",
+  "features": {
+    "email": true,
+    "holo_conference": {
+      "enabled": true,
+      "participants": "50-100",
+      "translator": "English ↔ Local Languages",
+      "satellite": true,
+      "biometric_entry": ["Face", "Thumb"]
+    }
+  },
+  "linked_apps": ["mygea-holo", "yellow-mygea-holo", "geaconnect"],
+  "gsia_gate_check": true,
+  "currency": "USD"
+}
