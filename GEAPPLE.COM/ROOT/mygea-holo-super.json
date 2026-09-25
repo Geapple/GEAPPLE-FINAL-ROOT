@@ -1,0 +1,22 @@
+{
+  "app_name": "MYGEA-HOLO + YELLOW-MYGEA-HOLO",
+  "app_id": "6 & 7",
+  "logo": "./logo.png",
+  "core": "HOLO WORLD - Metaverse + Marketplace",
+  "features": {
+    "mygea_holo": {
+      "3d_market": true,
+      "holo_try_on": true,
+      "real_world_scan": true
+    },
+    "yellow_mygea_holo": {
+      "business_holo": true,
+      "yellow_pages_3d": true,
+      "ad_holo_banner": true
+    }
+  },
+  "holo_engine": "GEAPPLE HOLO ENGINE V1",
+  "satellite_link": "GEAPPLE-SAT-01 + 02",
+  "gate_pass_required": "geamail.con username",
+  "currency": "USD + GEA COIN"
+}
