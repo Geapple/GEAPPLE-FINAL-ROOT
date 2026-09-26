@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "builds": [{ "src": "geapple-super-pro-max/apps/**/index.html", "use": "@vercel/static" }],
+  "routes": [
+    { "src": "/(.*)", "dest": "/geapple-super-pro-max/apps/GEA-CON-SHELL/4-gea-con/index.html" }
+  ]
+}
