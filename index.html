@@ -7,36 +7,46 @@
 <style>
 body{background:#000;color:#fff;font-family:monospace;text-align:center;margin:0;padding:20px}
 h1{font-size:48px;letter-spacing:8px;background:linear-gradient(90deg,#0080ff,#00ff80,#ff0080);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:40px}
-h2{color:#888;font-size:18px;letter-spacing:4px}
-.holo{border:1px solid #222;padding:30px;margin:30px auto;max-width:700px;border-radius:20px;background:radial-gradient(circle at center,#111,#000);box-shadow:0 0 50px #0080ff33}
-.status{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:20px 0}
-.card{background:#0a0a0a;border:1px solid #222;padding:15px;border-radius:12px;text-align:left}
-.card b{color:#00ff80}
-.btn{display:inline-block;background:#0080ff;color:#fff;padding:16px 32px;margin:10px;border-radius:100px;text-decoration:none;font-weight:bold;letter-spacing:1px}
-.btn:hover{background:#fff;color:#000}
+.holo{border:1px solid #222;padding:30px;margin:20px auto;max-width:800px;border-radius:20px;background:radial-gradient(circle at center,#111,#000)}
+.card{background:#0a0a0a;border:1px solid #222;padding:20px;border-radius:12px;margin:15px 0;text-align:left}
+.btn{display:inline-block;background:#0080ff;color:#fff;padding:16px 32px;margin:8px;border-radius:100px;text-decoration:none;font-weight:bold;cursor:pointer;border:none}
+.btn:nth-child(2){background:#00ff80;color:#000}
+.btn:nth-child(3){background:#ff0080}
+.ceo{background:linear-gradient(135deg,#111,#222);border:2px solid #00ff80;padding:30px;border-radius:20px;margin-top:30px}
 </style>
 </head>
 <body>
 <h1>GEAPPLE.COM</h1>
-<h2>HOLO WORLD SUPER PRO MAX - 10X GAFA POWER</h2>
+<h2 style="color:#888;letter-spacing:4px">HOLO WORLD SUPER PRO MAX</h2>
 <p style="color:#666">From Port Harcourt to the World 🌍</p>
 
 <div class="holo">
-<div style="font-size:80px">🌌</div>
-<h2 style="color:#fff;font-size:28px">ALL 4 SATELLITES ONLINE</h2>
-<div class="status">
-<div class="card"><b>✅ GEA CONNECT</b><br>Main Hub - Active<br>Social Super App</div>
-<div class="card"><b>✅ GEA MAIL HOLO</b><br>Holo Mail - Active<br>Next Gen Email</div>
-<div class="card"><b>✅ MASTER ENGINE</b><br>Core - Ready<br>10X Power</div>
-<div class="card"><b>✅ GEAPPLE COM</b><br>Root - Live<br>World Domain</div>
-</div>
-<p style="color:#00ff80">V1 - Super Pro Max Ready - 19 Satellites Aligned</p>
+<div style="font-size:60px">🌌 10X GAFA POWER</div>
+<h2 style="color:#00ff80">✅ ALL 4 SATELLITES ONLINE</h2>
+<button class="btn" onclick="document.getElementById('master').scrollIntoView({behavior:'smooth'})">VIEW MASTER ENGINE</button>
+<button class="btn" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">VIEW GEACONNECT HUB</button>
+<button class="btn" onclick="document.getElementById('mail').scrollIntoView({behavior:'smooth'})">VIEW GEAMAIL HOLO</button>
+<button class="btn" onclick="document.getElementById('ceo').scrollIntoView({behavior:'smooth'})" style="background:#fff;color:#000;border:2px solid #00ff80">👑 CEO DASHBOARD</button>
 </div>
 
-<a class="btn" href="master-engine.html">VIEW MASTER ENGINE</a>
-<a class="btn" href="geaconnect-hub.html">VIEW GEACONNECT HUB</a>
-<a class="btn" href="geamail-holo.html">VIEW GEAMAIL HOLO</a>
+<div id="master" class="card"><b style="color:#0080ff;font-size:20px">⚙️ MASTER ENGINE</b><br><br>Core System: Active<br>Power: 10X GAFA<br>Status: Ready to Launch<br><br><span style="color:#00ff80">● Engine Running</span></div>
 
-<p style="margin-top:50px;color:#333">Built in Port Harcourt | CEO GEAPPLE | 2026</p>
+<div id="connect" class="card"><b style="color:#00ff80;font-size:20px">🌐 GEACONNECT HUB</b><br><br>Social Super App<br>Users: Ready<br>Feed: Holo Enabled<br><br><span style="color:#00ff80">● Hub Online</span></div>
+
+<div id="mail" class="card"><b style="color:#ff0080;font-size:20px">📧 GEAMAIL HOLO</b><br><br>Next Gen Email<br>Holo View: Active<br>Inbox: Secured<br><br><span style="color:#00ff80">● Mail Active</span></div>
+
+<div id="ceo" class="ceo">
+<h2 style="color:#00ff80">👑 CEO DASHBOARD - GEAPPLE</h2>
+<p>Welcome CEO</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left;margin-top:20px">
+<div class="card">💰 Revenue: $0 → $1M Target</div>
+<div class="card">🚀 Satellites: 4/4 Live</div>
+<div class="card">👥 Users: Building</div>
+<div class="card">🌍 Domain: geapple.com LIVE</div>
+</div>
+<p style="color:#00ff80;margin-top:20px">V1 - Super Pro Max Ready - Port Harcourt HQ</p>
+</div>
+
+<p style="margin-top:40px;color:#333">Built in Port Harcourt | CEO GEAPPLE | 2026</p>
 </body>
 </html>
