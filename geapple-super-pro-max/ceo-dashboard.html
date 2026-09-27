@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEO DASHBOARD - BUILD C | Geapple®™ RC:9882150</title>
+<style>
+:root{--neon:#00FF88;--cyan:#00FFFF;--pink:#FF00FF;--bg:#050508}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:#fff;font-family:'Segoe UI',sans-serif;min-height:100vh}
+.holo-border{border:1px solid var(--neon);box-shadow:0 0 15px rgba(0,255,136,0.3), inset 0 0 15px rgba(0,255,136,0.1);border-radius:16px;background:linear-gradient(145deg,#0a0a14,#111122)}
+.header{padding:15px;text-align:center;border-bottom:1px solid var(--neon);position:sticky;top:0;z-index:10;background:#050508}
+.logo{width:70px;height:70px;border-radius:50%;border:2px solid var(--neon);box-shadow:0 0 15px var(--neon)}
+.login-box{max-width:400px;margin:60px auto;padding:30px}
+.input{width:100%;padding:12px;margin:10px 0;background:#000;border:1px solid var(--cyan);border-radius:8px;color:#fff;outline:none}
+.btn{width:100%;padding:14px;background:linear-gradient(90deg,var(--neon),var(--cyan));border:none;border-radius:10px;color:#000;font-weight:900;cursor:pointer;margin-top:10px;letter-spacing:1px}
+.dashboard{display:none;padding:12px;max-width:1200px;margin:auto}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:15px 0}
+.stat{padding:15px;text-align:center}
+.stat h2{font-size:24px;color:var(--neon)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 0;white-space:nowrap}
+.tab{padding:8px 14px;border-radius:20px;border:1px solid var(--cyan);background:#111;cursor:pointer;font-size:12px}
+.tab.active{background:var(--cyan);color:#000;font-weight:bold}
+.panel{display:none;margin-top:15px}
+.panel.active{display:block}
+.card{padding:14px;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{padding:8px;border-bottom:1px solid #222;text-align:left}
+textarea{width:100%;min-height:80px;background:#000;border:1px solid var(--cyan);color:#fff;padding:10px;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="header holo-border">
+<img src="logo.png" class="logo" alt="Geapple">
+<h3 style="color:var(--cyan);margin-top:8px">GEAPPLE®™ CEO DASHBOARD — BUILD C</h3>
+<p style="font-size:11px;color:var(--neon)">RC:9882150 | CEO: Apostle Dr Oladele Mighty Hassan PhD/DD</p>
+</div>
+<div id="loginView" class="login-box holo-border">
+<h2 style="color:var(--neon);text-align:center">🔐 ADMIN LOGIN</h2>
+<p style="font-size:11px;text-align:center;margin:8px 0;color:#aaa">GeaMail Holo 50-100 Gate Active</p>
+<input id="email" class="input" placeholder="CEO Email (ceo@geapple.com)">
+<input id="pass" class="input" type="password" placeholder="Password (GeappleSuperMax2026!)">
+<button class="btn" onclick="login()">LOGIN TO CONTROL TOWER</button>
+<p id="loginMsg" style="font-size:11px;margin-top:10px;text-align:center"></p>
+</div>
+<div id="dashView" class="dashboard">
+<div class="stats">
+<div class="stat holo-border"><h2>35</h2><p style="font-size:11px;color:#aaa">APPS DEPLOYED</p></div>
+<div class="stat holo-border"><h2 id="totalInvestors">0</h2><p style="font-size:11px;color:#aaa">INVESTORS</p></div>
+<div class="stat holo-border"><h2>0</h2><p style="font-size:11px;color:#aaa">USERS / NIN</p></div>
+<div class="stat holo-border"><h2 id="totalFeedback">0</h2><p style="font-size:11px;color:#aaa">FEEDBACKS</p></div>
+</div>
+<div class="tabs">
+<div class="tab active" onclick="showTab('apps')">📱 APPS</div>
+<div class="tab" onclick="showTab('investors')">💰 INVESTORS</div>
+<div class="tab" onclick="showTab('minting')">💎 DATA MINTING</div>
+<div class="tab" onclick="showTab('mail')">📧 BULK MAIL</div>
+<div class="tab" onclick="showTab('feedback')">💬 FEEDBACK</div>
+</div>
+<div id="panel-apps" class="panel active">
+<div class="card holo-border"><h4>35 APPS MANAGER</h4><table id="appsTable"><thead><tr><th>ID</th><th>App</th><th>Status</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+</div>
+<div id="panel-investors" class="panel">
+<div class="card holo-border">
+<h4>💰 INVESTOR PAYMENT CONFIRMATION</h4>
+<input id="invName" class="input" placeholder="Investor Full Name">
+<input id="invEmail" class="input" placeholder="Investor Email">
+<input id="invAmount" class="input" placeholder="Amount">
+<select id="invTier" class="input"><option>Tier 1 - ₦100k</option><option>Tier 2 - ₦500k</option><option>Tier 3 - ₦1M - Super</option></select>
+<button class="btn" onclick="confirmInvestor()">CONFIRM PAYMENT & SEND LINK</button>
+<p id="invMsg" style="font-size:11px;margin-top:8px"></p>
+</div>
+<div class="card holo-border"><table id="invTable"><thead><tr><th>Name</th><th>Email</th><th>Amount</th><th>Link</th></tr></thead><tbody></tbody></table></div>
+</div>
+<div id="panel-minting" class="panel">
+<div class="card holo-border">
+<h4>💎 DATA MINTING LINK GENERATOR</h4>
+<input id="mintEmail" class="input" placeholder="Send to Email">
+<input id="mintLink" class="input" placeholder="Download Link" readonly>
+<button class="btn" onclick="generateMintLink()">GENERATE LINK</button>
+<button class="btn" style="background:linear-gradient(90deg,#FF00FF,#00FFFF)" onclick="sendMintMail()">SEND MAIL VIA GEAMAIL HOLO</button>
+</div>
+</div>
+<div id="panel-mail" class="panel">
+<div class="card holo-border">
+<h4>📧 BULK MAIL</h4>
+<input id="mailSubject" class="input" placeholder="Subject">
+<textarea id="mailBody" placeholder="Message..."></textarea>
+<select id="mailTarget" class="input"><option>All Users</option><option>All Investors</option><option>Single User</option></select>
+<input id="mailTo" class="input" placeholder="If Single, email">
+<button class="btn" onclick="sendBulkMail()">SEND VIA GEAMAIL HOLO 50-100</button>
+<p id="mailMsg" style="font-size:11px;margin-top:8px"></p>
+</div>
+</div>
+<div id="panel-feedback" class="panel"><div class="card holo-border"><table id="feedTable"><thead><tr><th>User</th><th>Message</th><th>Action</th></tr></thead><tbody></tbody></table></div></div>
+<div style="text-align:center;margin:20px 0"><button onclick="logout()" style="padding:8px 20px;border:1px solid #f00;color:#f00;background:transparent;border-radius:8px">LOGOUT</button></div>
+</div>
+<script>
+const APPS = ["1-MYGEA-SOCIAL","2-REELGEA","3-GEAMAIL.CON","4-GEA-CON","5-GEACONNECT","6-MYGEA-HOLO","7-GLOBAL-VOTES","8-DEGALAXY-SAT-","9-MILITARY-BORD","10-VISUAL-ART-G","11-GEATUNE","12-GEA-4K-STUDI","13-GEA-GAME","14-OKIDOKI-SOCI","15-GALAREA-CHAT","16-YELLOW-MYGEA","17-GEA-STORE","18-DEGALAXY-ORB","19-GSIA-CYBER-C","20-GSIA-AI","21-REALORACLE-M","22-GSIA-FRAUD-D","23-GSIA-VISUAL-","24-REALORACLE-W","25-GSIA-BUDGET-","26-DEGALAXY-SAT","27-GSIA-ARCHITE","28-GEA-CARTOONS","29-GEA-PAY","30-GEA-WALLET","31-GEAPPLE-GADG","32-CEO-DASHBOAR","33-DATA-MINTING","34-INVESTORS-AN","35-GSIA-SYSTEMS"];
+function login(){const p=document.getElementById('pass').value;if(p==='GeappleSuperMax2026!'){document.getElementById('loginView').style.display='none';document.getElementById('dashView').style.display='block';initData();}else{document.getElementById('loginMsg').innerHTML='❌ Invalid Password';}}
+function showTab(id){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));event.target.classList.add('active');document.getElementById('panel-'+id).classList.add('active');}
+function initData(){const tbody=document.querySelector('#appsTable tbody');tbody.innerHTML='';APPS.forEach((name,i)=>{tbody.innerHTML+=`<tr><td>${i+1}</td><td>${name}</td><td><span style="padding:3px 8px;border-radius:10px;background:#00FF88;color:#000;font-weight:bold;font-size:10px">LIVE HOLO</span></td><td><button style="padding:5px 10px;border:1px solid #00FF88;background:transparent;color:#00FF88;border-radius:6px" onclick="alert('Edit ${name}')">EDIT</button></td></tr>`;});loadInvestors();loadFeedback();}
+function confirmInvestor(){const name=document.getElementById('invName').value;const email=document.getElementById('invEmail').value;const amount=document.getElementById('invAmount').value;if(!name||!email||!amount){document.getElementById('invMsg').innerHTML='❌ Fill all';return;}const link='https://geapple.com/download/data-minting-'+Date.now();const list=JSON.parse(localStorage.getItem('geapple_investors')||'[]');list.push({name,email,amount,link});localStorage.setItem('geapple_investors',JSON.stringify(list));document.getElementById('invMsg').innerHTML=`✅ Confirmed! Link: ${link} Mail to ${email}`;document.getElementById('mintLink').value=link;document.getElementById('mintEmail').value=email;loadInvestors();}
+function loadInvestors(){const list=JSON.parse(localStorage.getItem('geapple_investors')||'[]');document.getElementById('totalInvestors').innerText=list.length;const tbody=document.querySelector('#invTable tbody');tbody.innerHTML='';list.reverse().forEach(inv=>{tbody.innerHTML+=`<tr><td>${inv.name}</td><td>${inv.email}</td><td>₦${inv.amount}</td><td><a href="${inv.link}" style="color:#00FFFF">Sent ✅</a></td></tr>`});}
+function generateMintLink(){const email=document.getElementById('mintEmail').value||'investor@geapple.com';const link='https://geapple.com/download/data-minting-'+Date.now()+'-'+btoa(email).slice(0,10);document.getElementById('mintLink').value=link;}
+function sendMintMail(){const email=document.getElementById('mintEmail').value;const link=document.getElementById('mintLink').value;if(!email||!link){alert('Generate first');return;}alert(`GEAMAIL HOLO GATE ACTIVE To: ${email} Link: ${link}`);}
+function sendBulkMail(){const subject=document.getElementById('mailSubject').value;const body=document.getElementById('mailBody').value;if(!subject||!body){document.getElementById('mailMsg').innerHTML='❌ Fill';return;}document.getElementById('mailMsg').innerHTML=`✅ Queued via GEAMAIL HOLO 50-100: ${subject}`;}
+function loadFeedback(){const demo=[{user:'user1@gmail.com',msg:'Love Holo!'},{user:'investor@domain.com',msg:'Payment done'}];document.getElementById('totalFeedback').innerText=demo.length;const tbody=document.querySelector('#feedTable tbody');tbody.innerHTML='';demo.forEach(f=>{tbody.innerHTML+=`<tr><td>${f.user}</td><td>${f.msg}</td><td><button style="padding:5px 10px;border:1px solid #00FF88;background:transparent;color:#00FF88;border-radius:6px" onclick="alert('Reply via Bulk Mail')">REPLY</button></td></tr>`});}
+function logout(){document.getElementById('dashView').style.display='none';document.getElementById('loginView').style.display='block';}
+</script>
+</body>
+</html>
