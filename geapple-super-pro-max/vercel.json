@@ -1,7 +1,9 @@
 {
   "version": 2,
-  "builds": [{ "src": "geapple-super-pro-max/apps/**/index.html", "use": "@vercel/static" }],
+  "builds": [{ "src": "apps/**/index.html", "use": "@vercel/static" }],
   "routes": [
-    { "src": "/(.*)", "dest": "/geapple-super-pro-max/apps/GEA-CON-SHELL/4-gea-con/index.html" }
+    { "src": "/ceo/(.*)", "dest": "/apps/SAT-SYSTEMS/32-ceo-dashboard/index.html" },
+    { "src": "/gate/(.*)", "dest": "/apps/GSIA-CORE-FRONTEND/19-gsia-cyber-core/index.html" },
+    { "src": "/(.*)", "dest": "/apps/GEA-CON-SHELL/4-gea-con/index.html" }
   ]
 }
