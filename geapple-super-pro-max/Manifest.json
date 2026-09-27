@@ -1,0 +1,13 @@
+{
+  "name": "GEAPPLE.COM HOLO WORLD SUPER PRO MAX V2",
+  "short_name": "Geapple",
+  "description": "GEAPPLE GLOBALCOMTECH SERVICES RC:9882150 - 35 Apps Holo Ready - To The Glory Of God",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff00ff",
+  "icons": [
+    {"src": "logo.png","sizes": "192x192","type": "image/png"},
+    {"src": "logo.png","sizes": "512x512","type": "image/png"}
+  ]
+}
