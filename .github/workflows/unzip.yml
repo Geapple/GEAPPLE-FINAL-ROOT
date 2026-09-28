@@ -1,0 +1,17 @@
+name: UNZIP GEAPPLE 33
+on: push
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          unzip -o GEAPPLE_33.zip
+          rm GEAPPLE_33.zip
+          ls -1 *.html
+      - run: |
+          git config user.name "Geapple Bot"
+          git config user.email "bot@geapple.com"
+          git add *.html
+          git commit -m "AUTO-EXTRACT 33 APPS V3 96% RC:9882150" || echo "no change"
+          git push
