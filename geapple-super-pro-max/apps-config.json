@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {"id":1,"name":"MYGEA-SOCIAL","file":"./1-mygea-social.html","status":"LIVE","color":"#00ff88"},
+    {"id":2,"name":"REELGEA","file":"./2-reelgea.html","status":"LIVE","color":"#ff00ff"},
+    {"id":3,"name":"GEAMAIL.CON","file":"./3-geamail-con.html","status":"LIVE","color":"#00e5ff"},
+    {"id":4,"name":"GEA-CON","file":"./4-gea-con.html","status":"BUILD","color":"#00e5ff"},
+    {"id":5,"name":"GEACONNECT","file":"./5-geaconnect.html","status":"BUILD","color":"#00ff88"},
+    {"id":17,"name":"GEA-STORE","file":"./17-gea-store.html","status":"LIVE","color":"#00ff88"},
+    {"id":29,"name":"GEA-PAY","file":"./29-gea-pay.html","status":"LIVE","color":"#ffd700"},
+    {"id":6,"name":"MYGEA-HOLO","file":"./6-mygea-holo.html","status":"SOON"},
+    {"id":7,"name":"GLOBAL-VOTES","file":"./7-global-votes.html","status":"SOON"}
+  ]
+}
