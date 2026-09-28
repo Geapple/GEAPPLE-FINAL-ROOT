@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>GEAPPLE MANIFEST - 35 APPS SUPER PRO MAX</title>
+<link rel="manifest" href="./manifest-geapay.json">
+<meta name="theme-color" content="#ff00ff">
+<style>
+:root{--gold:#ffd700;--green:#00ff88;--pink:#ff00ff;--cyan:#00e5ff}
+*{box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{margin:0;background:#000;color:#fff;padding-bottom:100px}
+.topbar{background:linear-gradient(90deg,#ff00ff,#ff0066);padding:12px;text-align:center;position:sticky;top:0;z-index:10}
+.topbar h2{margin:4px 0;font-size:16px}
+.btn-main{width:92%;margin:10px 4%;padding:16px;border:none;border-radius:30px;font-weight:900;font-size:14px;cursor:pointer;box-shadow:0 0 25px rgba(255,0,255,0.5)}
+.btn-ceo{background:linear-gradient(90deg,#ff00ff,#9900ff);color:#fff}
+.btn-apk{background:linear-gradient(90deg,#ffd700,#ff8c00);color:#000}
+.container{background:radial-gradient(ellipse at top,#1a0020,#000 70%);border:2px solid rgba(255,0,255,0.3);border-radius:24px;margin:12px;padding:14px;box-shadow:0 0 40px rgba(255,0,255,0.2)}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.app{border-radius:22px;padding:12px 4px;text-align:center;background:#0a0a0a;border:1.5px solid #222;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+.app.live{border-color:var(--gold);box-shadow:0 0 18px rgba(255,215,0,0.5),inset 0 0 15px rgba(255,215,0,0.1);background:linear-gradient(180deg,#1a1a00,#0a0a0a)}
+.app.live::before{content:"LIVE";position:absolute;top:4px;right:4px;background:linear-gradient(90deg,#00ff88,#00e5ff);color:#000;font-size:7px;font-weight:900;padding:2px 5px;border-radius:20px}
+.app.build{border-color:#ffaa00;box-shadow:0 0 12px rgba(255,170,0,0.3)}
+.app.soon{opacity:0.7}
+.app img{width:64px;height:64px;border-radius:18px;border:2px solid rgba(255,255,255,0.2);box-shadow:0 0 15px rgba(255,0,255,0.5)}
+.app.live img{border-color:var(--gold);box-shadow:0 0 20px var(--gold)}
+.app b{display:block;margin-top:6px;font-size:9px;line-height:10px;letter-spacing:0.3px}
+.holo-window{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);z-index:9999;display:none;padding:0}
+.holo-window iframe{width:100%;height:100vh;border:none}
+.closeBar{position:absolute;top:0;left:0;right:0;background:linear-gradient(90deg,#ff0033,#990000);padding:10px;display:flex;justify-content:space-between;align-items:center;z-index:10000}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+<h2>🔐 CEO DASHBOARD — BUILD C — ADMIN LOGIN</h2>
+</div>
+<button class="btn-main btn-ceo" onclick="location.href='./ceo-dashboard.html'">🔐 CEO DASHBOARD — BUILD C — ADMIN LOGIN — RC:9882150</button>
+<button class="btn-main btn-apk" onclick="location.href='./index.html'">📱 APK BUILDER — BUILD A+B READY — HOLO WORLD</button>
+
+<div class="container">
+<div style="text-align:center;margin-bottom:12px">
+<h3 style="color:#00e5ff;margin:6px 0">📦 35 APPS ECOSYSTEM — Wrapped with Geapple®™ Logo 👇</h3>
+<p style="font-size:10px;color:#aaa;margin:0">TAP ANY LIVE APP — Direct redirect to Super Pro Max Platform — Integrated with GEA-PAY (29)</p>
+</div>
+
+<div class="grid" id="appsGrid"></div>
+
+<p style="text-align:center;font-size:11px;color:#666;margin-top:18px">Each icon wrapped with GEAPPLE®🍎 logo — Super App container — CEO: Apostle Dr Oladele Mighty Hassan PhD/DD — RC:9882150</p>
+</div>
+
+<div style="text-align:center;padding:10px"><button class="btn-main" style="background:linear-gradient(90deg,#00ff88,#00e5ff);color:#000" onclick="location.href='./29-gea-pay.html'">💳 GEA-PAY — PAYSTACK | FLUTTERWAVE | MONNIFY | GPAY — FUND ALL APPS</button></div>
+
+<div id="holoWrap" class="holo-window">
+<div class="closeBar"><span id="holoTitle" style="font-weight:900">GEAPPLE HOLO</span><button onclick="closeHolo()" style="background:#fff;color:#000;border:none;padding:8px 16px;border-radius:20px;font-weight:900">❌ CLOSE</button></div>
+<iframe id="holoFrame"></iframe>
+</div>
+
+<script>
+// === 35 APPS SUPER ROUTER — INTEGRATED ALL ===
+const APPS = [
+{id:1,name:"1-MYGEA-SOCIAL",file:"./1-mygea-social.html",status:"LIVE",icon:"./logo.png"},
+{id:2,name:"2-REELGEA",file:"./2-reelgea.html",status:"LIVE",icon:"./logo.png"},
+{id:3,name:"3-GEAMAIL.CON",file:"./3-geamail-con.html",status:"LIVE",icon:"./logo.png"},
+{id:4,name:"4-GEA-CON",file:"./4-gea-con.html",status:"BUILD",icon:"./logo.png"},
+{id:5,name:"5-GEACONNECT",file:"./5-geaconnect.html",status:"BUILD",icon:"./logo.png"},
+{id:6,name:"6-MYGEA-HOLO",file:"./6-mygea-holo.html",status:"BUILD",icon:"./logo.png"},
+{id:7,name:"7-GLOBAL-VOTES",file:"./7-global-votes.html",status:"BUILD",icon:"./logo.png"},
+{id:8,name:"8-DEGALAXY-SAT-",file:"./8-degalaxy-sat.html",status:"BUILD",icon:"./logo.png"},
+{id:9,name:"9-MILITARY-BORD",file:"./9-military-bord.html",status:"BUILD",icon:"./logo.png"},
+{id:10,name:"10-VISUAL-ART-G",file:"./10-visual-art-g.html",status:"BUILD",icon:"./logo.png"},
+{id:11,name:"11-GEATUNE",file:"./11-geatune.html",status:"BUILD",icon:"./logo.png"},
+{id:12,name:"12-GEA-4K-STUDI",file:"./12-gea-4k-studi.html",status:"BUILD",icon:"./logo.png"},
+{id:13,name:"13-GEA-GAME",file:"./13-gea-game.html",status:"BUILD",icon:"./logo.png"},
+{id:14,name:"14-OKIDOKI-SOCI",file:"./14-okidoki-soci.html",status:"BUILD",icon:"./logo.png"},
+{id:15,name:"15-GALAREA-CHAT",file:"./15-galarea-chat.html",status:"BUILD",icon:"./logo.png"},
+{id:16,name:"16-YELLOW-MYGEA",file:"./16-yellow-mygea.html",status:"BUILD",icon:"./logo.png"},
+{id:17,name:"17-GEA-STORE",file:"./17-gea-store.html",status:"LIVE",icon:"./logo.png"},
+{id:18,name:"18-DEGALAXY-ORB",file:"./18-degalaxy-orb.html",status:"BUILD",icon:"./logo.png"},
+{id:19,name:"19-GSIA-CYBER-C",file:"./19-gsia-cyber-c.html",status:"BUILD",icon:"./logo.png"},
+{id:20,name:"20-GSIA-AI",file:"./20-gsia-ai.html",status:"BUILD",icon:"./logo.png"},
+{id:21,name:"21-REALORACLE-M",file:"./21-realoracle-m.html",status:"BUILD",icon:"./logo.png"},
+{id:22,name:"22-GSIA-FRAUD-D",file:"./22-gsia-fraud-d.html",status:"BUILD",icon:"./logo.png"},
+{id:23,name:"23-GSIA-VISUAL-",file:"./23-gsia-visual.html",status:"BUILD",icon:"./logo.png"},
+{id:24,name:"24-REALORACLE-W",file:"./24-realoracle-w.html",status:"BUILD",icon:"./logo.png"},
+{id:25,name:"25-GSIA-BUDGET-",file:"./25-gsia-budget.html",status:"BUILD",icon:"./logo.png"},
+{id:26,name:"26-DEGALAXY-SAT",file:"./26-degalaxy-sat.html",status:"BUILD",icon:"./logo.png"},
+{id:27,name:"27-GSIA-ARCHITE",file:"./27-gsia-archite.html",status:"BUILD",icon:"./logo.png"},
+{id:28,name:"28-GEA-CARTOONS",file:"./28-gea-cartoons.html",status:"BUILD",icon:"./logo.png"},
+{id:29,name:"29-GEA-PAY",file:"./29-gea-pay.html",status:"LIVE",icon:"./logo.png"},
+{id:30,name:"30-GEA-WALLET",file:"./30-gea-wallet.html",status:"BUILD",icon:"./logo.png"},
+{id:31,name:"31-GEAPPLE-GADG",file:"./31-geapple-gadg.html",status:"BUILD",icon:"./logo.png"},
+{id:32,name:"32-CEO-DASHBOAR",file:"./ceo-dashboard.html",status:"LIVE",icon:"./logo.png"},
+{id:33,name:"33-DATA-MINTING",file:"./33-data-minting.html",status:"BUILD",icon:"./logo.png"},
+{id:34,name:"34-INVESTORS-AN",file:"./34-investors-an.html",status:"BUILD",icon:"./logo.png"},
+{id:35,name:"35-GSIA-SYSTEMS",file:"./35-gsia-systems.html",status:"BUILD",icon:"./logo.png"}
+];
+
+function render(){
+ let g=document.getElementById('appsGrid');
+ g.innerHTML=APPS.map(a=>`
+  <div class="app ${a.status.toLowerCase()}" onclick="openApp(${a.id})">
+   <img src="${a.icon}" onerror="this.src='./logo.png'">
+   <b>${a.name}</b>
+  </div>
+ `).join('');
+}
+
+function openApp(id){
+ let app=APPS.find(x=>x.id===id);
+ if(!app) return;
+ if(app.status==="LIVE"){
+   // Direct redirect to REAL platform — Super Pro Max
+   window.location.href=app.file;
+ } else {
+   // For BUILD apps — Show HOLO iframe with coming soon + link to GEA-PAY
+   if(confirm(app.name+" — Build in Progress — Sprint 2/3\\n\\nDo you want to PREVIEW template + FUND via GEA-PAY?")){
+     // Auto-create placeholder on the fly and open
+     document.getElementById('holoTitle').innerText=app.name+" — BUILD PREVIEW";
+     document.getElementById('holoFrame').src=app.file;
+     document.getElementById('holoWrap').style.display='block';
+     // If file 404, fallback to template
+     document.getElementById('holoFrame').onerror=()=>{document.getElementById('holoFrame').srcdoc=`<body style='background:#000;color:#fff;text-align:center;padding:40px;font-family:sans-serif'><img src='./logo.png' style='width:90px;border-radius:50%;border:3px solid gold'><h1>${app.name} SUPER PRO MAX</h1><p>RC:9882150 | CEO: Apostle Dr Oladele Mighty Hassan PhD/DD<br>Coming in Sprint 2 — Integrated with GEA-PAY + GEA-STORE</p><button onclick="parent.location.href='./29-gea-pay.html'" style='padding:15px 30px;background:gold;border:none;border-radius:30px;font-weight:900'>FUND VIA GEA-PAY</button></body>`}
+   }
+ }
+}
+
+function closeHolo(){document.getElementById('holoWrap').style.display='none';document.getElementById('holoFrame').src='';}
+
+render();
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw-geapay.js')}
+</script>
+</body>
+</html>
