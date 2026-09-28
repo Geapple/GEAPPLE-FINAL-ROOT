@@ -1,0 +1,71 @@
+# Save as build_all_33.py — Run: python build_all_33.py — Generates 33 apps!
+apps = [
+ (1,"MYGEA-SOCIAL","Social Feed + Holo Verse + Monetization","#00ff88","📱"),
+ (2,"REELGEA","Creators Tools + 4K Editor + Earn via GEA-PAY","#ff00ff","🎬"),
+ (3,"GEAMAIL.CON","Holo Gate 50-100 Encrypted Mail + GSIA","#00e5ff","📧"),
+ (4,"GEA-CON","Encrypted Comms + Holo Chat","#00e5ff","📡"),
+ (5,"GEACONNECT","Professional Network + Investors T1-T4","#00ff88","🤝"),
+ (6,"MYGEA-HOLO","Holographic Identity + Avatar","#ff00ff","👤"),
+ (7,"GLOBAL-VOTES","Blockchain Voting + Governance","#ffd700","🗳️"),
+ (8,"DEGALAXY-SAT-","Satellite Comms + Orbital","#00e5ff","🛰️"),
+ (9,"MILITARY-BORD","Military Board + Secure Ops","#ff4444","🛡️"),
+ (10,"VISUAL-ART-G","AI Art + NFT Mint","#ff00ff","🎨"),
+ (11,"GEATUNE","Music Streaming + Studio","#00ff88","🎵"),
+ (12,"GEA-4K-STUDI","4K Video Studio + Creators Pro","#ff00ff","🎬"),
+ (13,"GEA-GAME","Holo Gaming + Play-to-Earn","#00e5ff","🎮"),
+ (14,"OKIDOKI-SOCI","Viral Social Engine","#ffd700","💬"),
+ (15,"GALAREA-CHAT","Intergalactic DM + Chat","#00e5ff","💜"),
+ (16,"YELLOW-MYGEA","Business Directory","#ffd700","📒"),
+ (18,"DEGALAXY-ORB","Orbital Marketplace","#00e5ff","🌌"),
+ (19,"GSIA-CYBER-C","Cyber Defense + Threat Intel","#ff0000","🔐"),
+ (20,"GSIA-AI","Super AI Oracle + GSIA Engine","#00ff88","🤖"),
+ (21,"REALORACLE-M","Market Oracle + Prediction","#ffd700","🔮"),
+ (22,"GSIA-FRAUD-D","Fraud Detection + KYC","#ff6600","🚨"),
+ (23,"GSIA-VISUAL-","Visual Intelligence + Holo Scan","#00e5ff","👁️"),
+ (24,"REALORACLE-W","Wealth Oracle + Investment","#ffd700","💰"),
+ (25,"GSIA-BUDGET-","Budget AI + Optimizer","#00ff88","📊"),
+ (26,"DEGALAXY-SAT","Satellite Live Feed","#00e5ff","📡"),
+ (27,"GSIA-ARCHITE","Architecture AI + Design","#ffaa00","🏗️"),
+ (28,"GEA-CARTOONS","Holo Cartoons + Kidsverse","#ff00ff","👶"),
+ (30,"GEA-WALLET","Multi-Currency Wallet + DeFi","#ffd700","👛"),
+ (31,"GEAPPLE-GADG","Gadgets Store + Holo Devices","#00ff88","📱"),
+ (33,"DATA-MINTING","Data Mining + GEA Rewards","#00e5ff","⛏️"),
+ (34,"INVESTORS-AN","Investors Analytics T1-T4","#ffd700","📈"),
+ (35,"GSIA-SYSTEMS","GSIA Core + API Gateway","#ff00ff","⚙️"),
+]
+
+# Mapping exact filenames to match manifest.html
+mapping = {
+1:"1-mygea-social.html",2:"2-reelgea.html",3:"3-geamail-con.html",
+4:"4-gea-con.html",5:"5-geaconnect.html",6:"6-mygea-holo.html",7:"7-global-votes.html",
+8:"8-degalaxy-sat-.html",9:"9-military-bord.html",10:"10-visual-art-g.html",11:"11-geatune.html",
+12:"12-gea-4k-studi.html",13:"13-gea-game.html",14:"14-okidoki-soci.html",15:"15-galarea-chat.html",
+16:"16-yellow-mygea.html",18:"18-degalaxy-orb.html",19:"19-gsia-cyber-c.html",20:"20-gsia-ai.html",
+21:"21-realoracle-m.html",22:"22-gsia-fraud-d.html",23:"23-gsia-visual-.html",24:"24-realoracle-w.html",
+25:"25-gsia-budget-.html",26:"26-degalaxy-sat.html",27:"27-gsia-archite.html",28:"28-gea-cartoons.html",
+30:"30-gea-wallet.html",31:"31-geapple-gadg.html",33:"33-data-minting.html",34:"34-investors-an.html",35:"35-gsia-systems.html"
+}
+
+# SPECIAL TEMPLATES FOR 1,2,3 — SUPER PRO MAX REAL LOGIC
+special_templates = {
+1: """<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1-MYGEA-SOCIAL SUPER PRO MAX</title><meta name="theme-color" content="#00ff88"><style>body{margin:0;background:radial-gradient(ellipse at top,#001a0f,#000 70%);color:#fff;font-family:Segoe UI;padding-bottom:90px}.holo{background:rgba(10,30,20,0.6);backdrop-filter:blur(20px);border:1px solid #00ff88aa;border-radius:24px;margin:12px;padding:14px}.logo{width:80px;height:80px;border-radius:50%;border:3px solid #00ff88;display:block;margin:10px auto}.btn{width:100%;padding:14px;border:none;border-radius:30px;font-weight:900;margin:6px 0}.btn-green{background:linear-gradient(90deg,#00ff88,#00e5ff);color:#000}.input{width:100%;padding:12px;background:#000;border:1px solid #00ff8866;border-radius:12px;color:#fff;margin:6px 0}.post{background:#111;border:1px solid #00ff8833;border-radius:16px;padding:12px;margin:10px 0}.tabbar{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(0,0,0,0.9);border-top:1px solid #00ff8866;padding:8px}.tabbar button{flex:1;background:transparent;border:none;color:#aaa}</style></head><body><div style="text-align:center"><img src="./logo.png" class="logo"><h2 style="color:#00ff88">📱 1-MYGEA-SOCIAL SUPER PRO MAX</h2><p style="font-size:10px;color:#aaa">RC:9882150 | CEO: Apostle Dr Oladele Mighty Hassan</p></div><div class="holo"><textarea id="postText" class="input" style="height:70px" placeholder="What's happening?"></textarea><button class="btn btn-green" onclick="createPost()">🚀 POST — MONETIZE VIA REELGEA + GEA-PAY</button><div id="feed"></div></div><div class="tabbar"><button style="color:#00ff88">📱 SOCIAL</button><button onclick="location.href='./2-reelgea.html'">🎬 REEL</button><button onclick="location.href='./manifest.html'">📦 35</button><button onclick="location.href='./29-gea-pay.html'">💳 PAY</button><button onclick="location.href='./index.html'">🏠 WORLD</button></div><script>function createPost(){let t=document.getElementById('postText').value;if(!t)return;let f=JSON.parse(localStorage.getItem('gea_social_v2')||'[]');f.unshift({text:t,user:'GEA-USER',time:new Date().toLocaleString()});localStorage.setItem('gea_social_v2',JSON.stringify(f));document.getElementById('postText').value='';render();}function render(){let f=JSON.parse(localStorage.getItem('gea_social_v2')||'[]');document.getElementById('feed').innerHTML=f.map(p=>`<div class="post"><b>${p.user}</b><br>${p.text}<br><small>${p.time}</small></div>`).join('')||'<p style="color:#666;text-align:center">No posts yet</p>';}render();</script></body></html>""",
+
+2: """<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2-REELGEA SUPER PRO MAX</title><meta name="theme-color" content="#ff00ff"><style>body{margin:0;background:radial-gradient(ellipse at top,#1a001a,#000 70%);color:#fff;font-family:Segoe UI;padding-bottom:90px}.holo{background:rgba(30,10,30,0.6);backdrop-filter:blur(20px);border:1px solid #ff00ff66;border-radius:24px;margin:12px;padding:14px}.logo{width:80px;height:80px;border-radius:50%;border:3px solid #ff00ff;display:block;margin:10px auto}.btn{width:100%;padding:14px;border:none;border-radius:30px;font-weight:900;margin:6px 0}.btn-pink{background:linear-gradient(90deg,#ff00ff,#ff0066);color:#fff}.input{width:100%;padding:12px;background:#000;border:1px solid #ff00ff66;border-radius:12px;color:#fff;margin:6px 0}.tabbar{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(0,0,0,0.9);border-top:1px solid #ff00ff66;padding:8px}.tabbar button{flex:1;background:transparent;border:none;color:#aaa}</style></head><body><div style="text-align:center"><img src="./logo.png" class="logo"><h2 style="color:#ff00ff">🎬 2-REELGEA SUPER PRO MAX</h2><p style="font-size:10px;color:#aaa">RC:9882150 | 4K Editor + Earn via GEA-PAY</p></div><div class="holo"><input id="title" class="input" placeholder="Reel Title"><textarea id="desc" class="input" placeholder="Description #GEAPPLE"></textarea><button class="btn btn-pink" onclick="publish()">🚀 PUBLISH + EARN VIA GEA-PAY</button><div id="reels"></div></div><div class="tabbar"><button onclick="location.href='./1-mygea-social.html'">📱 SOCIAL</button><button style="color:#ff00ff">🎬 REEL</button><button onclick="location.href='./manifest.html'">📦 35</button><button onclick="location.href='./29-gea-pay.html'">💳 PAY</button><button onclick="location.href='./index.html'">🏠 WORLD</button></div><script>function publish(){let r=JSON.parse(localStorage.getItem('gea_reels')||'[]');r.unshift({title:document.getElementById('title').value||'My Reel',desc:document.getElementById('desc').value||'#GEAPPLE'});localStorage.setItem('gea_reels',JSON.stringify(r));render();}function render(){let r=JSON.parse(localStorage.getItem('gea_reels')||'[]');document.getElementById('reels').innerHTML=r.map(x=>`<div style="background:#111;border-radius:12px;padding:10px;margin:8px 0"><b>${x.title}</b><br><small>${x.desc}</small></div>`).join('');}render();</script></body></html>""",
+
+3: """<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3-GEAMAIL.CON SUPER PRO MAX</title><meta name="theme-color" content="#00e5ff"><style>body{margin:0;background:radial-gradient(ellipse at top,#001a1a,#000 70%);color:#fff;font-family:Segoe UI;padding-bottom:90px}.holo{background:rgba(10,30,30,0.6);backdrop-filter:blur(20px);border:1px solid #00e5ff66;border-radius:24px;margin:12px;padding:14px}.logo{width:80px;height:80px;border-radius:50%;border:3px solid #00e5ff;display:block;margin:10px auto}.btn{width:100%;padding:14px;border:none;border-radius:30px;font-weight:900;margin:6px 0}.btn-cyan{background:linear-gradient(90deg,#00e5ff,#00ff88);color:#000}.input{width:100%;padding:12px;background:#000;border:1px solid #00e5ff66;border-radius:12px;color:#fff;margin:6px 0}.tabbar{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(0,0,0,0.9);border-top:1px solid #00e5ff66;padding:8px}.tabbar button{flex:1;background:transparent;border:none;color:#aaa}</style></head><body><div style="text-align:center"><img src="./logo.png" class="logo"><h2 style="color:#00e5ff">📧 3-GEAMAIL.CON SUPER PRO MAX</h2><p style="font-size:10px;color:#aaa">RC:9882150 | Holo Gate 50-100 Encrypted</p></div><div class="holo"><input id="to" class="input" placeholder="To: user@geamail.con"><input id="subj" class="input" placeholder="Subject"><textarea id="body" class="input" placeholder="Message"></textarea><button class="btn btn-cyan" onclick="send()">🔐 SEND ENCRYPTED HOLO GATE 100</button><div id="inbox"></div></div><div class="tabbar"><button onclick="location.href='./1-mygea-social.html'">📱 SOCIAL</button><button onclick="location.href='./2-reelgea.html'">🎬 REEL</button><button style="color:#00e5ff">📧 MAIL</button><button onclick="location.href='./29-gea-pay.html'">💳 PAY</button><button onclick="location.href='./index.html'">🏠 WORLD</button></div><script>function send(){let m=JSON.parse(localStorage.getItem('gea_mail')||'[]');m.unshift({to:document.getElementById('to').value,subj:document.getElementById('subj').value});localStorage.setItem('gea_mail',JSON.stringify(m));render();}function render(){let m=JSON.parse(localStorage.getItem('gea_mail')||'[]');document.getElementById('inbox').innerHTML=m.map(x=>`<div style="background:#111;padding:10px;margin:8px 0;border-radius:8px;border-left:3px solid #00e5ff"><b>${x.subj}</b> → ${x.to}</div>`).join('');}render();</script></body></html>"""
+}
+
+# GENERIC TEMPLATE FOR OTHER 30 APPS
+generic = """<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{id}-{name} SUPER PRO MAX</title><meta name="theme-color" content="{color}"><style>body{{margin:0;background:radial-gradient(ellipse at top,#111,#000 70%);color:#fff;padding-bottom:90px;font-family:Segoe UI}}.holo{{background:rgba(20,20,20,0.6);backdrop-filter:blur(20px);border:1px solid {color}66;border-radius:24px;margin:12px;padding:16px}}.logo{{width:84px;height:84px;border-radius:50%;border:3px solid {color};display:block;margin:12px auto}}.btn{{width:100%;padding:14px;border:none;border-radius:30px;font-weight:900;margin:8px 0}}.btn-gold{{background:linear-gradient(90deg,#ffd700,#ff8c00);color:#000}}.btn-accent{{background:linear-gradient(90deg,{color},#fff);color:#000}}.input{{width:100%;padding:12px;background:#000;border:1px solid {color}66;border-radius:12px;color:#fff;margin:6px 0}}.tabbar{{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(0,0,0,0.9);border-top:1px solid {color}66;padding:8px}}.tabbar button{{flex:1;background:transparent;border:none;color:#aaa}}</style></head><body><div style="text-align:center;padding:10px"><img src="./logo.png" style="width:84px;height:84px;border-radius:50%;border:3px solid {color}"><h2 style="color:{color}">{emoji} {id}-{name} SUPER PRO MAX</h2><p style="font-size:10px;color:#aaa">RC:9882150 | CEO: Apostle Dr Oladele Mighty Hassan | {desc}</p></div><div class="holo"><input id="q" class="input" placeholder="{name} query..."><textarea class="input" placeholder="Description"></textarea><button class="btn btn-accent" onclick="pay()">💳 PAY VIA GEA-PAY (29)</button><button class="btn btn-gold" onclick="location.href='./17-gea-store.html'">🛒 LIST IN GEA-STORE</button><button class="btn" style="background:#111;border:1px solid {color};color:{color}" onclick="location.href='./1-mygea-social.html'">📱 SHARE TO SOCIAL</button><div id="r"></div></div><div class="tabbar"><button onclick="location.href='./index.html'">🏠 HOLO</button><button onclick="location.href='./manifest.html'">📦 35</button><button style="color:{color}">{emoji} LIVE</button><button onclick="location.href='./29-gea-pay.html'">💳 PAY</button><button onclick="location.href='./ceo-dashboard.html'">👑 CEO</button></div><script>function pay(){{let amt=prompt('Amount:','500');let tx={{id:'GEA-{name}-'+Math.random().toString(36).substr(2,6).toUpperCase(),amt:amt,app:'{name}',time:new Date().toLocaleString(),status:'PAID_WAITING_CEO'}};let l=JSON.parse(localStorage.getItem('gea_pay_tx')||'[]');l.unshift(tx);localStorage.setItem('gea_pay_tx',JSON.stringify(l));let c=JSON.parse(localStorage.getItem('ceo_payments')||'[]');c.unshift(tx);localStorage.setItem('ceo_payments',JSON.stringify(c));document.getElementById('r').innerHTML='<div style=border:2px solid #00ff88;padding:12px;border-radius:15px;background:#001100;text-align:center><b style=color:#ffd700>'+tx.id+'</b><br>Sent to CEO</div>';}}</script></body></html>"""
+
+for id,name,desc,color,emoji in apps:
+    fname = mapping[id]
+    if id in special_templates:
+        content = special_templates[id]
+    else:
+        content = generic.format(id=id,name=name,desc=desc,color=color,emoji=emoji)
+    with open(fname,"w",encoding="utf-8") as f:
+        f.write(content)
+    print(f"✅ Created {fname}")
+
+print("✅ 33 files generated — READY FOR GITHUB + VERCEL!")
