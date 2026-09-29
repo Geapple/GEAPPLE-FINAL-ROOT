@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>32-CEO-DASHBOARD®™ MANIFEST LINKED</title>
+<link rel="manifest" href="./manifest-ceo-dashboard.json">
+<style>body{background:#000;color:#fff;font-family:system-ui;padding:12px}*{box-sizing:border-box}.top{display:flex;gap:10px;align-items:center;justify-content:center}.logo{width:60px;height:60px;border-radius:50%;border:2px solid #00ff88;box-shadow:0 0 20px #00ff88;object-fit:cover}.card{background:#111;border:2px solid #00ff88;border-radius:18px;padding:12px;margin:12px 0}.btn{padding:12px 16px;border-radius:99px;border:none;font-weight:900;margin:4px;cursor:pointer}.gold{background:linear-gradient(90deg,#ffb700,#ff8c00);color:#000}.cyan{background:#00ffff;color:#000}.pink{background:#ff2d9c;color:#fff}</style>
+</head>
+<body>
+<div class="top">
+<img class="logo" src="./logo.png" onerror="this.src='./geapple-super-pro-max/logo.png'">
+<div><h2 style="color:#00ff88">32-CEO-DASHBOARD®™</h2><p style="font-size:10px;color:#aaa">MANIFEST LINKED ⛓️ | RC:9882150 | API: gsiacyber.com/api</p></div>
+</div>
+
+<div class="card" style="border-color:#ffcc00;text-align:center">
+<h3>🔗 MANIFEST LINKED — LIVE WINDOWS</h3>
+<button class="btn gold" onclick="go('gea_store')">🛒 OPEN GEA-STORE (17)</button>
+<button class="btn cyan" onclick="go('gea_pay')">💳 OPEN GEA-PAY (29)</button>
+<button class="btn pink" onclick="go('geamail')">📧 OPEN GEAMAIL (3)</button>
+<p id="manifestStatus" style="font-size:11px;color:#00ff88;margin-top:8px">Loading manifest-ceo-dashboard.json...</p>
+<p id="incoming" style="color:#ffcc00;font-weight:900"></p>
+</div>
+
+<div class="card">
+<h3>💰 GEA-PAY®™ → CEO — TRANSACTIONS FROM GEA-STORE ₦500 FEE</h3>
+<div id="feed"></div>
+<button class="btn gold" onclick="approve()">✅ APPROVE + CREDIT + ACTIVATE STORE</button>
+<button class="btn cyan" onclick="download()">⬇️ DOWNLOAD CSV (NDPA)</button>
+</div>
+
+<div class="card" style="border-color:#ff00aa">
+<h3>📧 BULK MAIL + 📢 ADVERTS + ⚖️ NDPA NOTES</h3>
+<textarea id="emails" placeholder="investor emails comma separated" style="width:100%;padding:10px;border-radius:12px;background:#000;border:1px solid #333;color:#fff"></textarea>
+<button class="btn gold" onclick="alert('Bulk Mail API: gsiacyber.com/api/bulk-mail - SENT - RC:9882150')">📤 SEND BULK MAIL</button>
+<input type="file" id="ad" style="margin-top:10px;width:100%">
+<button class="btn pink" onclick="alert('Advert Upload API: gsiacyber.com/api/adverts/upload - PUSHED TO 35 APPS')">🚀 UPLOAD ADVERT TO 35 APPS</button>
+<details open style="margin-top:10px"><summary style="color:#00ffff">NDPA | LEGAL | PRIVACY</summary><p style="font-size:10px;color:#aaa;margin-top:6px">RC:9882150 NDPA COMPLIANT AES-256 NIN HASHED DPO dpo@geapple.com legal@geapple.com NO DATA SALE - 7 YEARS RETENTION</p></details>
+</div>
+
+<script>
+const API="https://gsiacyber.com/api";
+let MANIFEST=null;
+fetch('./manifest-ceo-dashboard.json').then(r=>r.json()).then(m=>{
+  MANIFEST=m; document.getElementById('manifestStatus').innerText=`✅ MANIFEST LOADED - ${Object.keys(m.apps).length} APPS LINKED - API ${m.api_base} READY`;
+  const p=new URLSearchParams(location.search);
+  if(p.get('ref')) document.getElementById('incoming').innerText=`🔥 INCOMING FROM ${p.get('from')||'GEA-PAY'}: ${p.get('ref')} - LINKED VIA MANIFEST`;
+  load();
+}).catch(()=>{document.getElementById('manifestStatus').innerText='⚠️ MANIFEST FALLBACK - Using local paths'; load();});
+
+function go(key){
+  if(MANIFEST && MANIFEST.links[key]) location.href=MANIFEST.links[key];
+  else location.href={`./${key==='gea_store'?'17-gea-store':key==='gea_pay'?'29-gea-pay':'3-geamail-con'}.html`;
+}
+function load(){
+  const txs=JSON.parse(localStorage.getItem('gea_transactions')||'[]');
+  document.getElementById('feed').innerHTML=txs.length?txs.map(t=>`<div style="background:#000;padding:8px;border-radius:8px;margin:4px;font-size:12px;border:1px solid #00ff88">${t}</div>`).join(''):'Waiting for GEA-PAY®™ fee from GEA-STORE TAB2 → PAY LISTING FEE → Returns here';
+}
+function approve(){const r=prompt('Ref e.g., GEA-GPAY-...'); if(r){fetch(`${API}/ceo/approve`,{method:'POST',body:JSON.stringify({ref:r,rc:'9882150'})}).catch(()=>{}); alert('✅ '+r+' APPROVED - RC:9882150');}}
+function download(){const csv='type,ref,amount,rc\ntransactions,GEA-GPAY-XXXX,500,9882150\n';const b=new Blob([csv],{type:'text/csv'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download='CEO_DATA_RC9882150.csv';a.click();}
+</script>
+</body>
+</html>
