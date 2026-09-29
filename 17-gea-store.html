@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>17-GEA-STORE®™ SUPER STORE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#000;color:#fff;font-family:system-ui}
+.top{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px}
+.logo{width:55px;height:55px;border-radius:50%;border:2px solid #00ff88;box-shadow:0 0 15px #00ff88;object-fit:cover}
+.card{border:2px solid #00ff88;border-radius:18px;margin:12px;padding:12px;background:#0a0a0a}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.app{background:#111;border:1px solid #00ff88;border-radius:14px;padding:8px;text-align:center}
+.app img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
+.btn{width:100%;padding:12px;border-radius:99px;border:none;font-weight:900;margin-top:8px}
+.gold{background:linear-gradient(90deg,#ffb700,#ff8c00)}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#000;border-top:1px solid #00ff88;display:flex;justify-content:space-around;padding:10px 0}
+</style>
+<script>
+const LOGO_FIX=["./logo.png","./geapple-super-pro-max/logo.png","/logo.png"];
+function fixLogo(img){img.dataset.i=(parseInt(img.dataset.i||0)+1);if(img.dataset.i<LOGO_FIX.length)img.src=LOGO_FIX[img.dataset.i];}
+const API_BASE="https://gsiacyber.com/api";
+function listProduct(){
+ const name=document.getElementById('pName').value;
+ const price=document.getElementById('pPrice').value||500;
+ if(!name)return alert("Enter Product Name");
+ localStorage.setItem('gea_last_product',JSON.stringify({name,price,fee:500}));
+ // Auto-link to GEA-PAY
+ location.href=`./29-gea-pay.html?product=${encodeURIComponent(name)}&amount=${price}&fee=500&type=store_listing`;
+}
+</script>
+</head>
+<body>
+<div class="top">
+<img class="logo" src="./logo.png" onerror="fixLogo(this)" alt="GEAPPLE®™">
+<div><h2 style="color:#00ff88">17- GEA-STORE®™ — SUPER STORE</h2><p style="font-size:11px;color:#aaa">RC:9882150 | 35 APPS ECOSYSTEM | API READY</p></div>
+</div>
+
+<div class="card">
+<h3 style="color:#00ff88">📱 TAB1: BROWSE 35 APPS ECOSYSTEM</h3>
+<div class="grid" id="appGrid"></div>
+<script>
+const apps=[
+"1-MYGEA-SOCIAL","2-REELGEA","3-GEAMAIL.CON","4-GEA-CON","5-GEACONNECT","6-MYGEA-HOLO","7-GLOBAL-VOTES","8-DEGALAXY-SAT","9-MILITARY-BORD","10-VISUAL-ART-G","11-GEATUNE","12-GEA-4K-STUDI","13-GEA-GAME","14-OKIDOKI-SOCI","15-GALAREA-CHAT","16-YELLOW-MYGEA","17-GEA-STORE","18-DEGALAXY-ORB","19-GSIA-CYBER-C","20-GSIA-AI","21-REALORACLE-M","22-GSIA-FRAUD-D","23-GSIA-VISUAL","24-REALORACLE-W","25-GSIA-BUDGET","26-DEGALAXY-SAT","27-GSIA-ARCHITE","28-GEA-CARTOONS","29-GEA-PAY","30-GEA-WALLET","31-GEAPPLE-GADG","32-CEO-DASHBOAR","33-DATA-MINTING","34-INVESTORS-AN","35-GSIA-SYSTEMS"
+];
+document.getElementById('appGrid').innerHTML=apps.map((n,i)=>`
+<a class="app" href="./${(i+1)}-${n.toLowerCase().replace('®™','').replace('.','-')}.html" style="text-decoration:none;color:#fff">
+<img src="./logo.png" onerror="fixLogo(this)"><div style="font-size:10px;margin-top:4px;color:#00ff88">${i+1}</div><div style="font-size:9px">${n.slice(0,12)}</div>
+</a>`).join('');
+</script>
+</div>
+
+<div class="card">
+<h3 style="color:#ffeb00">🛒 TAB2: LIST PRODUCT — ₦500 FEE → GEA-PAY®™</h3>
+<input id="pName" placeholder="Product / App Name e.g., GEA GAME NFT" style="width:100%;padding:12px;border-radius:12px;background:#000;border:1px solid #333;color:#fff;margin:6px 0">
+<input id="pPrice" type="number" placeholder="Price e.g., 5000" style="width:100%;padding:12px;border-radius:12px;background:#000;border:1px solid #333;color:#fff">
+<button class="btn gold" onclick="listProduct()">💳 PAY LISTING FEE — GO TO GEA-PAY®™</button>
+<p style="font-size:10px;color:#888;margin-top:6px">NDPA: Product data stored RC:9882150 compliant. Fee via Paystack/Flutterwave/Monnify/GPay API: ${API_BASE}/store/list</p>
+</div>
+
+<div style="height:80px"></div>
+<div class="nav">
+<a href="./17-gea-store.html" style="color:#00ff88;text-decoration:none;font-size:12px;text-align:center">📱<br>BROWSE</a>
+<a href="#" onclick="alert('MARKET API: gsiacyber.com/api/market - Coming LIVE')" style="color:#aaa;text-decoration:none;font-size:12px;text-align:center">🛒<br>MARKET</a>
+<a href="#" onclick="alert('MY PRODUCTS - Local + API Sync')" style="color:#00ff88;text-decoration:none;font-size:12px;text-align:center">📦<br>MY PRODUCTS</a>
+</div>
+</body>
+</html>
