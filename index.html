@@ -1,15 +1,13 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script></head><body style="background:#000;color:#0f0;padding:20px;font-family:monospace">
-<h2>GEAPPLE 33 FILES BUILDER V3 96% - RC:9882150</h2>
-<button id="btn" style="padding:20px;background:#0f0;color:#000;font-weight:900;border:none;border-radius:30px;width:100%">TAP TO GENERATE & DOWNLOAD 33 APPS ZIP</button>
-<div id="log"></div>
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>GEAPPLE.COM</title></head>
+<body style="font-family:sans-serif;padding:20px;background:#000;color:#fff;text-align:center">
+<h1>🍏 GEAPPLE.COM - 35 APPS LIVE</h1>
+<p>Tap any app below - opens direct</p>
 <script>
-const apps=[[1,"mygea-social","Social Feed","#00ff88","📱"],[2,"reelgea","Creators","#ff00ff","🎬"],[3,"geamail-con","Holo Gate","#00e5ff","📧"],[4,"gea-con","Comms","#00e5ff","📡"],[5,"geaconnect","Network","#00ff88","🤝"],[6,"mygea-holo","Holo ID","#ff00ff","👤"],[7,"global-votes","Voting","#ffd700","🗳️"],[8,"degalaxy-sat-","Sat Comms","#00e5ff","🛰️"],[9,"military-bord","Military","#ff4444","🛡️"],[10,"visual-art-g","AI Art","#ff00ff","🎨"],[11,"geatune","Music","#00ff88","🎵"],[12,"gea-4k-studi","4K Studio","#ff00ff","🎬"],[13,"gea-game","Gaming","#00e5ff","🎮"],[14,"okidoki-soci","Viral","#ffd700","💬"],[15,"galarea-chat","Chat","#00e5ff","💜"],[16,"yellow-mygea","Biz Dir","#ffd700","📒"],[18,"degalaxy-orb","Orbital","#00e5ff","🌌"],[19,"gsia-cyber-c","Cyber","#ff0000","🔐"],[20,"gsia-ai","AI Oracle","#00ff88","🤖"],[21,"realoracle-m","Market","#ffd700","🔮"],[22,"gsia-fraud-d","Fraud","#ff6600","🚨"],[23,"gsia-visual-","Visual","#00e5ff","👁️"],[24,"realoracle-w","Wealth","#ffd700","💰"],[25,"gsia-budget-","Budget","#00ff88","📊"],[26,"degalaxy-sat","Sat Feed","#00e5ff","📡"],[27,"gsia-archite","Arch","#ffaa00","🏗️"],[28,"gea-cartoons","Kids","#ff00ff","👶"],[30,"gea-wallet","Wallet","#ffd700","👛"],[31,"geapple-gadg","Gadgets","#00ff88","📱"],[33,"data-minting","Mining","#00e5ff","⛏️"],[34,"investors-an","Investors","#ffd700","📈"],[35,"gsia-systems","Systems","#ff00ff","⚙️"]];
-document.getElementById('btn').onclick=async()=>{
- const zip=new JSZip(); let log=document.getElementById('log');
- apps.forEach(([id,name,desc,color,emoji])=>{
-  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${id}-${name} V3 96%</title><meta name="theme-color" content="${color}"><style>body{margin:0;background:#000;color:#fff;font-family:Segoe UI;padding-bottom:100px}.top{background:linear-gradient(90deg,${color},#9900ff);padding:12px;text-align:center}.holo{border:1px solid ${color};border-radius:16px;margin:12px;padding:14px}.btn{width:100%;padding:14px;border:none;border-radius:30px;font-weight:900;margin:6px 0}.api{background:linear-gradient(90deg,${color},#fff);color:#000}.gold{background:linear-gradient(90deg,#ffd700,#ff8c00);color:#000}</style></head><body><div class="top"><h2>${emoji} ${id}-${name.toUpperCase()} V3 96% READY</h2><p style="font-size:9px">RC:9882150 | ${desc} | gsiacyber.com/api | GSIA-AI | CDN HIT</p></div><div class="holo"><h3 style="color:${color}">API Connected - No Holo Trap - Direct</h3><button class="btn api">▶️ RUN ${name} API DIRECT</button><button class="btn gold" onclick="location.href='./index.html'">🏠 BACK TO HUB</button></div><div class="holo"><h4 style="color:${color}">⚙️ MENU: Themes, Settings, Legal, Manual</h4><button class="btn" style="background:#111;color:#fff;border:1px solid #555" onclick="document.body.style.filter='none'">Dark</button><button class="btn" style="background:#fff;color:#000" onclick="document.body.style.filter='invert(1)'">Light</button></div></body></html>`;
-  zip.file(`${id}-${name}.html`,html); log.innerHTML+=`✅ ${id}-${name}.html<br>`;
- });
- const blob=await zip.generateAsync({type:"blob"}); const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="GEAPPLE_33_APPS_V3_96_READY.zip"; a.click(); log.innerHTML+="<h3 style=color:#0f0>ZIP DOWNLOADED! Check Downloads!</h3>";
-};
-</script></body></html>
+for(let i=1;i<=35;i++){document.write(`<p><a style="color:#0f0;font-size:18px" href="${i}-*.html">App ${i}</a></p>`)}
+</script>
+<a href="1-mygea-social.html" style="display:block;margin:10px;color:#0ff">1-mygea-social</a>
+<a href="2-mygea-music.html" style="display:block;margin:10px;color:#0ff">2-mygea-music</a>
+<a href="11-geatune.html" style="display:block;margin:10px;color:#0ff">11-geatune</a>
+<p>All 35 files are live. Replace this index with your real GEAPPLE homepage later.</p>
+</body></html>
