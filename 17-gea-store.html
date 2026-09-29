@@ -42,7 +42,14 @@ function listProduct(){
 const apps=[
 "1-MYGEA-SOCIAL","2-REELGEA","3-GEAMAIL.CON","4-GEA-CON","5-GEACONNECT","6-MYGEA-HOLO","7-GLOBAL-VOTES","8-DEGALAXY-SAT","9-MILITARY-BORD","10-VISUAL-ART-G","11-GEATUNE","12-GEA-4K-STUDI","13-GEA-GAME","14-OKIDOKI-SOCI","15-GALAREA-CHAT","16-YELLOW-MYGEA","17-GEA-STORE","18-DEGALAXY-ORB","19-GSIA-CYBER-C","20-GSIA-AI","21-REALORACLE-M","22-GSIA-FRAUD-D","23-GSIA-VISUAL","24-REALORACLE-W","25-GSIA-BUDGET","26-DEGALAXY-SAT","27-GSIA-ARCHITE","28-GEA-CARTOONS","29-GEA-PAY","30-GEA-WALLET","31-GEAPPLE-GADG","32-CEO-DASHBOAR","33-DATA-MINTING","34-INVESTORS-AN","35-GSIA-SYSTEMS"
 ];
-document.getElementById('appGrid').innerHTML=apps.map((n,i)=>`
+fetch('./manifest-ceo-dashboard.json').then(r=>r.json()).then(manifest=>{
+  const map=manifest["35_apps_map"];
+  document.getElementById('appGrid').innerHTML=Object.keys(map).map(id=>`
+    <a class="app" href="${map[id]}" style="text-decoration:none;color:#fff">
+      <img src="./logo.png" onerror="this.src='./geapple-super-pro-max/logo.png'"><div style="font-size:10px;color:#00ff88">${id}</div>
+      <div style="font-size:9px">${map[id].replace('./','').replace('.html','').toUpperCase().slice(0,12)}</div>
+    </a>`).join('');
+});
 <a class="app" href="./${(i+1)}-${n.toLowerCase().replace('®™','').replace('.','-')}.html" style="text-decoration:none;color:#fff">
 <img src="./logo.png" onerror="fixLogo(this)"><div style="font-size:10px;margin-top:4px;color:#00ff88">${i+1}</div><div style="font-size:9px">${n.slice(0,12)}</div>
 </a>`).join('');
