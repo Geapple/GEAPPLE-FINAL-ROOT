@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEA-PAY®™ SUPER PRO MAX</title>
+<style>
+*{box-sizing:border-box}body{background:#000;color:#fff;font-family:system-ui;padding:12px;margin:0}
+.logo{width:70px;height:70px;border-radius:50%;border:2px solid #ffcc00;box-shadow:0 0 20px #ffcc00;object-fit:cover;display:block;margin:10px auto}
+.card{background:#111;border:1px solid #333;border-radius:18px;padding:14px;margin:12px 0}
+.gold{background:linear-gradient(90deg,#ffb700,#ff8c00);color:#000;padding:14px;border-radius:99px;font-weight:900;width:100%;border:none}
+.green{background:linear-gradient(90deg,#00ff88,#00cc66);color:#000;padding:12px;border-radius:99px;font-weight:900;width:100%;border:none}
+.gate{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gateBtn{background:#1a1a1a;border:1px solid #333;border-radius:16px;padding:14px;text-align:center;cursor:pointer}
+.gateBtn.active{border-color:#ffb700;box-shadow:0 0 15px #ffb700}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#000;border-top:1px solid #333;display:flex;justify-content:space-around;padding:10px 0}
+.success{border:2px solid #00ff88;border-radius:16px;padding:14px;background:#002a14}
+</style>
+<script>
+const API_BASE="https://gsiacyber.com/api";
+const LOGO_FIX=["./logo.png","./geapple-super-pro-max/logo.png"];
+function fixLogo(img){img.dataset.i=(parseInt(img.dataset.i||0)+1);if(img.dataset.i<LOGO_FIX.length)img.src=LOGO_FIX[img.dataset.i];}
+
+let activeGate="Monnify";
+function selectGate(name,el){
+ activeGate=name;
+ document.querySelectorAll('.gateBtn').forEach(b=>b.classList.remove('active'));
+ el.classList.add('active');
+ document.getElementById('activeText').innerText=`Active Gateway: ${name} - Account Transfer, Instant - Fee ₦25 capped`;
+}
+
+function payNow(){
+ const urlParams=new URLSearchParams(location.search);
+ const product=urlParams.get('product')||document.getElementById('pName').value||"GEA-STORE Listing";
+ const amount=urlParams.get('amount')||document.getElementById('pAmount').value||"500";
+ const ref="GEA-GPAY-"+Math.random().toString(36).substr(2,6).toUpperCase()+"-"+Math.floor(1000+Math.random()*9000);
+ 
+ // Save to localStorage for CEO Dashboard
+ const tx=`${ref} · PAID_WAITING_CEO ${product} - GEAPPLE USER ₦${amount} via ${activeGate} - ${new Date().toLocaleString()}`;
+ let txs=JSON.parse(localStorage.getItem('gea_transactions')||'[]');
+ txs.unshift(tx);localStorage.setItem('gea_transactions',JSON.stringify(txs));
+
+ // API call
+ fetch(`${API_BASE}/pay/intent`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product,amount,fee:25,gateway:activeGate,ref,rc:"9882150"})}).catch(()=>{});
+
+ document.getElementById('successBox').style.display='block';
+ document.getElementById('refText').innerText=ref;
+ document.getElementById('amtText').innerText=`Amount: ₦${amount} via ${activeGate}`;
+ document.getElementById('logBox').innerHTML=`<div style="background:#000;padding:8px;border-radius:8px;font-size:12px">${tx}</div>`;
+ window.scrollTo(0,document.body.scrollHeight);
+}
+
+function sendToCEO(){
+ const ref=document.getElementById('refText').innerText;
+ alert("📤 "+ref+" Sent to CEO Dashboard - RC:9882150 - Awaiting Approval");
+ location.href=`./32-ceo-dashboar.html?ref=${ref}`;
+}
+</script>
+</head>
+<body>
+<center>
+<img class="logo" src="./logo.png" onerror="fixLogo(this)">
+<h2 style="color:#ffcc00">GEA-PAY®™ SUPER PRO MAX</h2>
+<p style="font-size:10px;color:#aaa">RC:9882150 | CEO: Apostle Dr Oladele Mighty Hassan PhD/DD | PCI-DSS GLOBAL</p>
+<div class="card" style="text-align:center">
+<div style="color:#aaa;font-size:12px">GEAPPLE WALLET BALANCE</div>
+<div style="font-size:32px;font-weight:900">₦ <span style="color:#00ff88">0.00</span></div>
+<div style="display:flex;gap:8px;margin-top:10px">
+<button class="gold" style="flex:1;padding:10px;border-radius:99px;font-weight:900;border:none">+ FUND WALLET</button>
+<button class="green" style="flex:1;padding:10px;border-radius:99px;font-weight:900;border:none">⬇️ WITHDRAW</button>
+</div>
+</div>
+</center>
+
+<div class="card">
+<h3 style="color:#ffcc00">💳 GLOBAL PAYMENT GATEWAYS — SELECT ONE</h3>
+<div class="gate">
+<div class="gateBtn" onclick="selectGate('Paystack',this)"><div>💳</div><b>Paystack</b><div style="font-size:11px">NG Cards, USSD</div></div>
+<div class="gateBtn" onclick="selectGate('Flutterwave',this)"><div>🌍</div><b>Flutterwave</b><div style="font-size:11px">Global Cards</div></div>
+<div class="gateBtn active" onclick="selectGate('Monnify',this)"><div style="font-size:24px">💙</div><b>Monnify</b><div style="font-size:11px">Bank Transfer</div></div>
+<div class="gateBtn" onclick="selectGate('GPay',this)"><div>🅖</div><b>GPay</b><div style="font-size:11px">Google Pay</div></div>
+</div>
+</div>
+
+<div class="card">
+<h3>📝 PAYMENT INTENT — AUTO-LINKED FROM GEA-STORE</h3>
+<select id="pName" style="width:100%;padding:12px;border-radius:12px;background:#000;border:1px solid #333;color:#fff;margin:6px 0">
+<option>GEA-STORE Listing Fee — ₦500</option>
+<option>GEA-STORE Product — Custom</option>
+<option>Investor Verification — ₦1000</option>
+</select>
+<input id="pFullName" placeholder="Product / Investor Full Name" style="width:100%;padding:12px;border-radius:12px;background:#000;border:1px solid #333;color:#fff;margin:6px 0">
+<input id="pAmount" value="500" style="width:100%;padding:12px;border-radius:12px;background:#000;border:1px solid #333;color:#fff">
+<p id="activeText" style="font-size:11px;color:#00ccff;margin:8px 0">Active Gateway: Monnify - Account Transfer, Instant - Fee ₦25 capped</p>
+<button class="gold" onclick="payNow()">🔒 PAY SECURELY WITH <span id="gateName">MONNIFY</span></button>
+
+<div id="successBox" style="display:none;margin-top:12px" class="success">
+<div style="color:#00ff88;font-weight:900;font-size:18px">✅ PAYMENT SUCCESS</div>
+<div id="refText" style="color:#ffcc00;font-weight:900;margin:8px 0">GEA-GPAY-HCYYDB-8908</div>
+<div id="amtText" style="font-size:13px">Amount: ₦500 via GPAY<br>Ref: GEAPPLE USER</div>
+<div style="font-size:11px;color:#aaa;margin-top:6px">Transaction logged — Awaiting CEO Approval<br>RC:9882150</div>
+<button onclick="sendToCEO()" style="margin-top:12px;width:100%;padding:10px;border-radius:99px;border:1px dashed #00ff88;background:#000;color:#00ff88;font-weight:700">📤 SEND CONFIRMATION CODE TO CEO DASHBOARD — RC:9882150</button>
+</div>
+</div>
+
+<div class="card">
+<h3>📜 TRANSACTIONS — API LOG</h3>
+<div id="logBox" style="font-size:12px;color:#aaa">No transactions yet</div>
+<p style="font-size:9px;color:#555;margin-top:8px">NDPA: All transactions logged encrypted - PCI-DSS - RC:9882150 - legal@geapple.com</p>
+</div>
+
+<div style="height:70px"></div>
+<div class="nav">
+<a href="./29-gea-pay.html" style="color:#ffcc00;text-decoration:none;font-size:11px;text-align:center">💳<br>PAY</a>
+<a href="./17-gea-store.html" style="color:#aaa;text-decoration:none;font-size:11px;text-align:center">🛒<br>STORE</a>
+<a href="./32-ceo-dashboar.html" style="color:#aaa;text-decoration:none;font-size:11px;text-align:center">👑<br>CEO</a>
+<a href="./index.html" style="color:#aaa;text-decoration:none;font-size:11px;text-align:center">📱<br>APPS</a>
+</div>
+
+<script>
+// Auto-fill from GEA-STORE
+const qp=new URLSearchParams(location.search);
+if(qp.get('product')){document.getElementById('pName').innerHTML=`<option>${qp.get('product')} - ₦${qp.get('amount')}</option>`;document.getElementById('pAmount').value=qp.get('amount');}
+document.getElementById('gateName').innerText=activeGate;
+</script>
+</body>
+</html>
