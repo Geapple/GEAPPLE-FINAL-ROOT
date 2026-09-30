@@ -27,6 +27,28 @@ function listProduct(){
  // Auto-link to GEA-PAY
  location.href=`./29-gea-pay.html?product=${encodeURIComponent(name)}&amount=${price}&fee=500&type=store_listing`;
 }
+</script><link rel="manifest" href="./manifest-ceo-dashboard.json">
+<script>
+// SUPER PRO MAX LINK RESOLVER - AUTO FIX 404
+let APP_MANIFEST=null;
+fetch('./manifest-ceo-dashboard.json').then(r=>r.json()).then(m=>{
+  APP_MANIFEST=m;
+  console.log("MANIFEST LOADED - 35 APPS LINKED", m);
+}).catch(()=>{
+  console.log("MANIFEST FALLBACK - Using local paths");
+});
+
+function openApp(id){
+  if(APP_MANIFEST && APP_MANIFEST["35_apps_map"][id]){
+    location.href=APP_MANIFEST["35_apps_map"][id];
+  }else{
+    // Fallback - try both naming patterns
+    location.href=`./${id}-`+["mygea-social","reelgea","geamail-con","gea-con","geaconnect","mygea-holo","global-votes","degalaxy-sat-","military-bord","visual-art-g","geatune","gea-4k-studi","gea-game","okidoki-soci","galarea-chat","yellow-mygea","gea-store","degalaxy-orb","gsia-cyber-c","gsia-ai","realoracle-m","gsia-fraud-d","gsia-visual-","realoracle-w","gsia-budget-","degalaxy-sat","gsia-archite","gea-cartoons","gea-pay","gea-wallet","geapple-gadg","ceo-dashboar","data-minting","investors-an","gsia-systems"][id-1]+".html";
+  }
+}
+function openGeaPay(product,amount){ location.href=`./29-gea-pay.html?product=${encodeURIComponent(product)}&amount=${amount}`; }
+function openGeaStore(){ location.href="./17-gea-store.html"; }
+function openGeaMail(){ location.href="./3-geamail-con.html"; }
 </script>
 </head>
 <body>
