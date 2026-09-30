@@ -121,6 +121,12 @@ function loadLogo(img){
 <p style="font-size:13px"><b>GEAPPLE®™ ©2026 | RC:9882150</b><br>CEO: Apostle Dr Oladele Mighty Hassan PhD/DD<br>HQ: No.15A Mercy Avenue, Suite 10 Mercy House, Omuchi off Port Harcourt Airport Road Igwuruta Rivers State Nigeria.</p>
 <p style="font-size:11px;margin-top:10px;color:#00ffff">Privacy Policy | Terms of Service | NDPA Compliance | Data Deletion | legal@geapple.com | API: gsiacyber.com/api READY</p>
 <p style="color:#ffeb00;margin-top:12px;font-weight:800;font-size:12px">🌍 GEAPPLE®™.COM HOLO WORLD SUPER PRO MAX V2 — To The Glory Of God</p>
-</div>
+</div><script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('./service-worker.js')
+  .then(()=>console.log('GEAPPLE PWA READY - 35 APPS OFFLINE'))
+  .catch(e=>console.log('SW fail',e));
+}
+</script>
 </body>
 </html>
