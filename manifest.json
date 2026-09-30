@@ -1,9 +1,25 @@
 {
-  "name": "GEAPPLE®™ HOLO WORLD",
+  "name": "GEAPPLE®™ HOLO WORLD SUPER PRO MAX V2",
   "short_name": "GEAPPLE",
+  "description": "RC:9882150 - 35 APPS ECOSYSTEM - NDPA COMPLIANT",
   "start_url": "./index.html",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#00ffff",
-  "icons": [{ "src": "./logo.png", "sizes": "512x512", "type": "image/png" }]
+  "scope": "./",
+  "icons": [
+    {
+      "src": "./logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
