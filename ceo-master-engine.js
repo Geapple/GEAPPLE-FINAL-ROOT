@@ -108,7 +108,15 @@ const CEO_ENGINE = {
   sendBulk(emails, message){ this.apiCall('/bulk-mail',{emails, message, rc:this.RC}); alert(`📧 Bulk Mail to ${emails.length} queued — ENGINE V5 — API READY — NDPA Compliant`); },
   uploadAdvert(file, title, position){ const fd=new FormData(); fd.append('advert',file); fd.append('title',title); fd.append('position',position); try{fetch(`${this.API_BASE}/adverts/upload`,{method:'POST',body:fd});}catch(e){}; alert(`🚀 Advert ${title} uploaded — Pushing to 35 Apps — ENGINE V5 — API READY`); }
 };
-
+// Instead of CEO_ENGINE.addTransaction(), you do:
+async function createPost(image, caption){
+  const form = new FormData();
+  form.append('image', image);
+  form.append('caption', caption);
+  form.append('user_id', CEO_ENGINE.getCEO().email);
+  const res = await fetch('https://gsiacyber.com/api/okidoki/post', {method:'POST', body:form});
+  return res.json(); // Now feed shows for all users, not just you!
+}
 // AUTO-START ENGINE WHEN PAGE LOADS
 window.addEventListener('DOMContentLoaded', ()=> CEO_ENGINE.init());
 
