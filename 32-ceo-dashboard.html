@@ -4,6 +4,28 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>32-CEO-DASHBOARD®™ MANIFEST LINKED</title>
 <link rel="manifest" href="./manifest-ceo-dashboard.json">
+<script>
+// SUPER PRO MAX LINK RESOLVER - AUTO FIX 404
+let APP_MANIFEST=null;
+fetch('./manifest-ceo-dashboard.json').then(r=>r.json()).then(m=>{
+  APP_MANIFEST=m;
+  console.log("MANIFEST LOADED - 35 APPS LINKED", m);
+}).catch(()=>{
+  console.log("MANIFEST FALLBACK - Using local paths");
+});
+
+function openApp(id){
+  if(APP_MANIFEST && APP_MANIFEST["35_apps_map"][id]){
+    location.href=APP_MANIFEST["35_apps_map"][id];
+  }else{
+    // Fallback - try both naming patterns
+    location.href=`./${id}-`+["mygea-social","reelgea","geamail-con","gea-con","geaconnect","mygea-holo","global-votes","degalaxy-sat-","military-bord","visual-art-g","geatune","gea-4k-studi","gea-game","okidoki-soci","galarea-chat","yellow-mygea","gea-store","degalaxy-orb","gsia-cyber-c","gsia-ai","realoracle-m","gsia-fraud-d","gsia-visual-","realoracle-w","gsia-budget-","degalaxy-sat","gsia-archite","gea-cartoons","gea-pay","gea-wallet","geapple-gadg","ceo-dashboar","data-minting","investors-an","gsia-systems"][id-1]+".html";
+  }
+}
+function openGeaPay(product,amount){ location.href=`./29-gea-pay.html?product=${encodeURIComponent(product)}&amount=${amount}`; }
+function openGeaStore(){ location.href="./17-gea-store.html"; }
+function openGeaMail(){ location.href="./3-geamail-con.html"; }
+</script>
 <style>body{background:#000;color:#fff;font-family:system-ui;padding:12px}*{box-sizing:border-box}.top{display:flex;gap:10px;align-items:center;justify-content:center}.logo{width:60px;height:60px;border-radius:50%;border:2px solid #00ff88;box-shadow:0 0 20px #00ff88;object-fit:cover}.card{background:#111;border:2px solid #00ff88;border-radius:18px;padding:12px;margin:12px 0}.btn{padding:12px 16px;border-radius:99px;border:none;font-weight:900;margin:4px;cursor:pointer}.gold{background:linear-gradient(90deg,#ffb700,#ff8c00);color:#000}.cyan{background:#00ffff;color:#000}.pink{background:#ff2d9c;color:#fff}</style>
 </head>
 <body>
