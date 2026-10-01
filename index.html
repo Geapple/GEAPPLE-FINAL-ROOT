@@ -51,8 +51,7 @@ a{color:#00ffff;text-decoration:none}
 <div class="card" style="border:2px solid #00ffff;background:#000;padding:8px">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><b style="color:#00ffff;font-size:11px">🌍 HOLO + VOICE 10 LANGS - Speak EN Hear Local/Foreign</b><span style="font-size:8px;color:#00ff88">FRANÇAIS ARABIC العربية ESPAÑOL 中文 ACTIVE</span></div>
 <div id="voiceBarContainer"></div>
-<div style="display:flex;gap:6px;margin-top:6px"><input id="search35" placeholder="🔍 Search 35 Apps - MAPS CHAT MUSIC etc - Voice Ready" style="flex:1;background:#111;color:#fff;border:1px solid #00ffff;border-radius:99px;padding:10px;font-size:11px" oninput="filterApps()"><button class="tool" style="background:#00ff88;color:#000" onclick="startDictation()">🎤 VOICE</button><button class="tool" onclick="filterApps()">🔍 SEARCH</button></div>
-</div>
+<div style="display:flex;gap:6px;margin-top:6px"><input id="search35" placeholder="🔍 Search 35 Apps - MAPS CHAT MUSIC etc - Voice Ready" style="flex:1;background:#111;color:#fff;border:1px solid #00ffff;border-radius:99px;padding:10px;font-size:11px" oninput="filterApps()"><button class="tool" style="background:#00ff88;color:#000" <div style="display:flex;gap:6px;margin-top:6px"><input id="search35" placeholder="🔍 Search 35 Apps - MAPS CHAT MUSIC etc - Voice Ready" style="flex:1;background:#111;color:#fff;border:1px solid #00ffff;border-radius:99px;padding:10px;font-size:11px" oninput="filterApps()"><button class="tool" style="background:#00ff88;color:#000" onclick="startDictation(); if(window.VOICE_API_10) VOICE_API_10.listen((t)=>{document.getElementById('search35').value=t; filterApps();})">🎤 VOICE</button><button class="tool" onclick="filterApps()">🔍 SEARCH</button></div>
 
 <!-- GEA-PAY TOP BANNER -->
 <div class="gea-pay" onclick="location.href='./29-gea-pay.html'">💳 GEA-PAY®™ — TAP TO PAY / COLLECT — HOLO + VOICE READY — SECURE • INSTANT • ZERO FEES →</div>
@@ -60,8 +59,9 @@ a{color:#00ffff;text-decoration:none}
 <!-- HUB STORE PAY TABS -->
 <div class="card" style="border:1px solid #00ffff">
 <div style="display:flex;gap:6px;margin-bottom:10px">
+<button class="tool tabBtn active" onclick="showTab(1)" <div style="display:flex;gap:6px;margin-bottom:10px">
 <button class="tool tabBtn active" onclick="showTab(1)" style="flex:1;background:#00ffff;color:#000">🌐 HUB[35 BROWSER]</button>
-<button class="tool tabBtn" onclick="showTab(2)" style="flex:1">🛒 STORE[35 APPS]</button>
+<button class="tool tabBtn" onclick="showTab(2); location.href='./17-gea-store.html'" style="flex:1">🛒 STORE[35 APPS]</button>
 <button class="tool tabBtn" onclick="showTab(3)" style="flex:1">💳 PAY+MANUAL</button>
 </div>
 
