@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SETTINGS - GEAPPLE®™ 35 APPS - RC:9882150</title><link rel="manifest" href="./manifest.json"><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:system-ui;padding:12px;padding-bottom:90px}.card{background:#0a0a0a;border:1px solid #222;border-radius:16px;padding:14px;margin:10px 0}.row{display:flex;justify-content:space-between;align-items:center;padding:10px;background:#111;border-radius:10px;margin:6px 0;border:1px solid #222}.btn{padding:12px;border-radius:99px;border:none;font-weight:900;width:100%;margin:6px 0;cursor:pointer}.green{background:linear-gradient(90deg,#00ff88,#00ffff);color:#000}.tool{padding:8px 12px;border-radius:99px;background:#111;border:1px solid #00ffff;color:#00ffff;font-size:10px;font-weight:800}select,input{background:#111;color:#00ffff;border:1px solid #00ffff;border-radius:8px;padding:8px;width:60%}</style></head><body>
+<div style="display:flex;gap:6px;overflow-x:auto;padding:8px;background:#080808;border-radius:12px;position:sticky;top:0;z-index:20">
+<button class="tool" onclick="location.href='./menu.html'">☰ MENU</button><button class="tool" onclick="location.href='./index.html'">🏠 HOME</button><button class="tool" onclick="location.href='./0-USERS-MANUAL.html'">📖 MANUAL</button><button class="tool" onclick="CEO_ENGINE.showAdvert()">📢 ADVERTS</button>
+</div>
+<div id="voiceBar"></div>
+
+<div class="card" style="border:2px solid #ffeb00"><h2 style="color:#ffeb00">⚙️ SETTINGS - 35 APPS + 10 LANGS VOICE + HOLO 50-100 + THEME + SECURITY</h2>
+<div id="domainShow" style="font-size:11px;color:#00ffff;background:#111;padding:8px;border-radius:8px;margin:8px 0">Domain: Detecting...</div>
+</div>
+
+<div class="card"><h3 style="color:#00ffff">🌍 LANGUAGE - 10 LANGUAGES INTERPRETER - Speak EN Hear Local/Foreign</h3>
+<div id="langSettings"></div><div style="font-size:10px;color:#888;margin-top:6px">Active: EN YORUBA IGBO HAUSA FRANÇAIS ARABIC العربية ESPAÑOL 中文 SWAHILI PORTUGUÊS - HOLO Voice - Native APK PWA</div></div>
+
+<div class="card"><h3 style="color:#ff00ff">🎨 THEME - HORIZONTAL AT CHAT WINDOWS - WINDOWS & FILES</h3>
+<div class="row"><span>Theme Mode</span><select id="themeSel" onchange="setTheme(this.value)"><option value="dark">Dark (Default)</option><option value="light">Light</option><option value="neon">Neon Holo</option><option value="midnight">Midnight</option></select></div>
+<div class="row"><span>Font Size</span><select onchange="document.body.style.fontSize=this.value"><option>14px</option><option>16px</option><option>18px</option></select></div>
+<div class="row"><span>Notifications</span><input type="checkbox" checked onchange="toggleNotif(this.checked)"></div>
+</div>
+
+<div class="card"><h3 style="color:#00ff88">📡 HOLO 50-100 + 8 IN 1 NINO + MULTI STREAMING + CLOUD</h3>
+<div class="row"><span>HOLO Conference</span><select><option>50 Participants</option><option selected>100 Participants</option></select></div>
+<div class="row"><span>Multi Streaming</span><input type="checkbox" checked></div>
+<div class="row"><span>Cloud Video All Video</span><input type="checkbox" checked></div>
+<div class="row"><span>Tools Horizontal at Chat Windows</span><input type="checkbox" checked></div>
+<div class="row"><span>Adverts Top Right Popup</span><input type="checkbox" checked></div>
+</div>
+
+<div class="card"><h3 style="color:#ff6b6b">🛡️ SECURITY + GEA-PAY + REALORACLE + GSIA WORKERS</h3>
+<div class="row"><span>Front Gate Protection</span><input type="checkbox" checked></div>
+<div class="row"><span>RealOracle Virus Cleanup</span><input type="checkbox" checked></div>
+<div class="row"><span>GSIA Workers Local Languages</span><input type="checkbox" checked></div>
+<div class="row"><span>GEA-PAY®™ Auto Collect</span><input type="checkbox" checked></div>
+<div class="row"><span>Military Border SAT MAPS</span><input type="checkbox" checked></div>
+</div>
+
+<div class="card"><h3>🔗 FILES & WINDOWS - INTEGRATED - JS JSON SW</h3>
+<div style="font-size:10px;background:#000;padding:8px;border-radius:8px;border:1px solid #333">
+<b>JS:</b> ceo-master-engine.js → Menu Settings Theme Manual Creator Multi Cloud Adverts + HOLO 50-100<br>
+voice-translation-api-10-lang.js → 10 Langs EN YORUBA IGBO HAUSA FRANÇAIS ARABIC العربية ESPAÑOL 中文 SWAHILI PORTUGUÊS<br>
+native-api-bridge.js → Natives API Functions APK PWA Build Ready + Windows API<br>
+<b>JSON:</b> manifest.json → 35 Apps Icons Standalone + Shortcuts Menu Settings Manual Store Pay<br>
+<b>SW:</b> service-worker.js → Caches 35 Apps + Offline + Push + Background Sync<br>
+<b>HTML:</b> menu.html + setting.html + 0-USERS-MANUAL.html + 0-vercel-domain.html + index.html + 35 Apps files<br>
+<b>API:</b> https://gsiacyber.com/api → Supabase → All Apps Sync + Voice Translation Logs + GEA-PAY<br>
+<b>WINDOWS:</b> Home Store Pay Profile Bottom Nav (Your Screenshot Style) + Tools Horizontal Bar + GEA-PAY Top Banner + Voice Bar 10 Langs + Adverts Top Right Popup
+</div>
+<button class="btn green" onclick="saveSettings()">💾 SAVE SETTINGS - APPLY TO ALL 35 APPS</button>
+<button class="btn tool" style="width:100%;border:1px solid #ff0000;color:#ff0000" onclick="if(confirm('Clear Cache?')){localStorage.clear(); caches.keys().then(k=>k.forEach(c=>caches.delete(c))); location.reload();}">🗑️ CLEAR CACHE + RESET ALL</button>
+</div>
+
+<div style="position:fixed;bottom:0;left:0;right:0;display:flex;background:#000;border-top:2px solid #00ffff;padding:6px;gap:6px;z-index:50">
+<button class="tool" style="flex:1;background:#00ffff;color:#000" onclick="location.href='./index.html'">🏠 Home</button><button class="tool" style="flex:1" onclick="location.href='./17-gea-store.html'">🛒 Store</button><button class="tool" style="flex:1" onclick="CEO_ENGINE.openPay()">💳 Pay</button><button class="tool" style="flex:1" onclick="location.href='./menu.html'">☰ Menu</button>
+</div>
+
+<script src="./ceo-master-engine.js"></script><script src="./voice-translation-api-10-lang.js"></script><script src="./native-api-bridge.js"></script><script>
+let DOMAIN=window.location.origin; document.getElementById('domainShow').innerText='Domain: '+DOMAIN+' | RC:9882150 | NDPA Compliant | 35 Apps | 10 Langs | APK PWA Ready';
+function setTheme(v){localStorage.setItem('geapple_theme',v); document.body.setAttribute('data-theme',v); CEO_ENGINE.speak('Theme changed to '+v, VOICE_API_10.getLang());}
+function toggleNotif(on){if(on && 'Notification' in window) Notification.requestPermission();}
+function saveSettings(){localStorage.setItem('geapple_settings_saved','1'); CEO_ENGINE.speak('Settings saved for all 35 apps', VOICE_API_10.getLang()); alert('✅ SETTINGS SAVED - Applied to all 35 Apps - 10 Langs Voice Active - HOLO 50-100 Ready - Theme: '+localStorage.getItem('geapple_theme')+' - Lang: '+VOICE_API_10.getLang()); location.href='./index.html';}
+window.onload=()=>{
+  VOICE_API_10.renderVoiceBar('voiceBar');
+  document.getElementById('langSettings').innerHTML=Object.keys(VOICE_API_10.getLangs()).map(code=>`<div class="row"><span>${VOICE_API_10.getLangs()[code].flag} ${VOICE_API_10.getLangs()[code].name} - ${VOICE_API_10.getLangs()[code].label}</span><button class="tool" onclick="VOICE_API_10.setLang('${code}');location.reload()" style="background:${VOICE_API_10.getLang()===code?'#00ffff':'#111'};color:${VOICE_API_10.getLang()===code?'#000':'#00ffff'}">${VOICE_API_10.getLang()===code?'✅ ACTIVE':'SET'}</button></div>`).join('');
+  document.getElementById('themeSel').value=localStorage.getItem('geapple_theme')||'dark';
+};
+</script></body></html>
