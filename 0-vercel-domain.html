@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GEAPPLE VERCEL DOMAIN LINK - 35 APPS - RC:9882150</title><link rel="manifest" href="./manifest.json"><style>*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:system-ui;padding:12px;padding-bottom:80px}.card{background:#0a0a0a;border:1px solid #222;border-radius:16px;padding:14px;margin:10px 0}.btn{padding:14px;border-radius:99px;border:none;font-weight:900;width:100%;margin:6px 0;cursor:pointer}.green{background:linear-gradient(90deg,#00ff88,#00ffff);color:#000}.tools{display:flex;gap:6px;overflow-x:auto;padding:8px;background:#080808;border-radius:12px;position:sticky;top:0;z-index:20}.tool{padding:8px 12px;border-radius:99px;background:#111;border:1px solid #00ffff;color:#00ffff;font-size:10px;font-weight:800;white-space:nowrap}.link{padding:10px;background:#111;border:1px solid #333;border-radius:10px;margin:6px 0;display:flex;justify-content:space-between;align-items:center;font-size:11px;word-break:break-all}.qr{width:200px;height:200px;background:#fff;border-radius:12px;margin:10px auto;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900}</style></head><body>
+<div class="tools"><button class="tool" onclick="CEO_ENGINE.openMenu()">☰ MENU</button><button class="tool" onclick="CEO_ENGINE.openSettings()">⚙️ SETTINGS</button><button class="tool" onclick="copyAll()">📋 COPY ALL LINKS</button><button class="tool" onclick="shareDomain()">📤 SHARE DOMAIN</button><button class="tool" onclick="CEO_ENGINE.showAdvert()">📢 ADVERTS</button></div>
+
+<div class="card" style="border:2px solid #00ffff"><h2 style="color:#00ffff">🌐 GEAPPLE®™ VERCEL DOMAIN LINK — AUTO-DETECTED — 35 APPS NATIVE</h2>
+<div style="background:#111;padding:12px;border-radius:12px;margin:10px 0;border:2px dashed #00ffff"><div style="font-size:10px;color:#888">YOUR LIVE VERCEL DOMAIN (AUTO-DETECTED):</div><div id="domain" style="font-size:18px;color:#00ffff;font-weight:900;word-break:break-all">Detecting...</div><div style="font-size:10px;color:#00ff88" id="status">✅ SW JS JSON V3 NATIVE READY — gsiacyber.com SUPABASE — APK PWA BUILD READY</div></div>
+<div class="qr" id="qr">QR CODE<br><span id="qrDomain" style="font-size:10px"></span><br><br>SCAN TO OPEN<br>HOLO WORLD V3</div>
+<div style="display:flex;gap:6px"><a id="openDomain" href="#" target="_blank" class="btn green" style="text-align:center;text-decoration:none">🌐 OPEN YOUR VERCEL DOMAIN →</a><button class="btn" style="background:#ffeb00;color:#000" onclick="copyDomain()">📋 COPY DOMAIN LINK</button></div>
+</div>
+
+<div class="card"><h3 style="color:#00ff88">📱 35 APPS LINKS — YOUR VERCEL DOMAIN + ALL APPS — READY FOR PWABuilder APK BUILD!</h3><div id="links"></div>
+<button class="btn green" onclick="buildAPK()">📱 BUILD APK ON PHONE — TAP TO OPEN PWABuilder WITH YOUR DOMAIN →</button>
+<div style="background:#111;padding:10px;border-radius:10px;margin-top:10px;font-size:10px" id="pwabuilderLink">PWABuilder Link: Auto-generates with your domain</div>
+</div>
+
+<div class="card"><h3 style="color:#ffeb00">🛠️ CODE FOR VERCEL DOMAIN LINK — COPY THIS CODE ANYWHERE:</h3>
+<pre id="codeBlock" style="background:#000;padding:10px;border-radius:8px;font-size:9px;overflow-x:auto;white-space:pre-wrap;color:#00ffff"></pre>
+<button class="btn" style="background:#222;color:#fff" onclick="copyCode()">📋 COPY CODE SNIPPET</button>
+</div>
+
+<script src="./ceo-master-engine.js"></script><script src="./native-api-bridge.js"></script><script>
+let DOMAIN = window.location.origin;
+let PATH = window.location.pathname.replace(/\/[^\/]*$/, '/');
+let FULL = DOMAIN; // Your Vercel domain e.g. https://geapple-super-pro-max.vercel.app
+
+function render(){
+  document.getElementById('domain').innerText = FULL;
+  document.getElementById('qrDomain').innerText = FULL;
+  document.getElementById('openDomain').href = FULL+'/index.html';
+  document.getElementById('domain').onclick = ()=>window.open(FULL,'_blank');
+  
+  let apps=[
+    'index.html','1-mygea-social.html','2-reelgea.html','3-geamail-con.html','4-gea-con.html','5-geaconnect.html','6-mygea-holo.html','7-global-votes.html','8-degalaxy-sat-.html','9-military-bord.html','10-visual-art-g.html','11-geatune.html','12-gea-4k-studi.html','13-gea-game.html','14-okidoki-soci.html','15-galarea-chat.html','16-yellow-mygea.html','17-gea-store.html','18-degalaxy-orb.html','19-gsia-cyber-c.html','20-gsia-ai.html','21-realoracle-m.html','22-gsia-fraud-d.html','23-gsia-visual-.html','24-realoracle-w.html','25-gsia-budget-.html','26-degalaxy-sat.html','27-gsia-archite.html','28-gea-cartoons.html','29-gea-pay.html','30-gea-wallet.html','31-geapple-gadg.html','32-ceo-dashboar.html','33-data-minting.html','34-investors-an.html','35-gsia-systems.html','manifest.json','service-worker.js','ceo-master-engine.js'
+  ];
+  
+  let html = apps.map(f=>{
+    let url = FULL+'/'+f;
+    return `<div class="link"><div><b>${f}</b><br><small style="color:#00ffff">${url}</small></div><button class="tool" onclick="navigator.clipboard.writeText('${url}');alert('Copied ${f}')">COPY</button></div>`;
+  }).join('');
+  
+  document.getElementById('links').innerHTML = html;
+  
+  let pbLink = `https://www.pwabuilder.com/report?site=${FULL}`;
+  document.getElementById('pwabuilderLink').innerHTML = `📱 BUILD APK LINK (TAP): <a href="${pbLink}" target="_blank" style="color:#00ffff">${pbLink}</a><br><small>Open this on phone → START → ANDROID → DOWNLOAD APK + AAB → Play Store Ready!</small>`;
+  
+  let code = `// GEAPPLE VERCEL DOMAIN LINK - CODE SNIPPET - PASTE IN ANY FILE
+const VERCEL_DOMAIN = "${FULL}"; // Auto-detected Vercel domain
+const API_BASE = "https://gsiacyber.com/api";
+const APPS = ${JSON.stringify(apps,null,2)};
+
+// Use anywhere:
+console.log("Domain:", VERCEL_DOMAIN);
+fetch(VERCEL_DOMAIN + "/manifest.json");
+CEO_ENGINE.go("6-mygea-holo"); // Goes to \${FULL}/6-mygea-holo.html
+
+// For APK PWA Build:
+const PWABuilder_Link = "https://www.pwabuilder.com/report?site=" + VERCEL_DOMAIN;
+// Open this link on phone to build APK directly!
+
+// Native Check:
+if(window.matchMedia('(display-mode: standalone)').matches){
+  console.log("NATIVE APK PWA MODE - 35 APPS READY");
+} else {
+  console.log("BROWSER MODE - Add to Home Screen");
+}
+
+// Copy domain:
+navigator.clipboard.writeText(VERCEL_DOMAIN);`;
+  
+  document.getElementById('codeBlock').innerText = code;
+}
+
+function copyDomain(){ navigator.clipboard.writeText(FULL); alert('✅ COPIED YOUR VERCEL DOMAIN:\\n'+FULL+'\\n\\nPaste in PWABuilder to build APK!'); CEO_ENGINE.speak('Vercel domain copied');}
+function copyAll(){ let all = document.getElementById('links').innerText; navigator.clipboard.writeText(FULL+'\\n'+all); alert('✅ ALL 35 LINKS COPIED!');}
+function copyCode(){ navigator.clipboard.writeText(document.getElementById('codeBlock').innerText); alert('✅ CODE COPIED!');}
+function shareDomain(){ if(navigator.share) navigator.share({title:'GEAPPLE HOLO WORLD V3',text:'RC:9882150 - 35 APPS NATIVE - HOLO 50-100 + 8 IN 1 NINO',url:FULL}); else copyDomain(); }
+function buildAPK(){ let pb = `https://www.pwabuilder.com/report?site=${FULL}`; window.open(pb,'_blank'); }
+
+window.onload = ()=>{ render(); setTimeout(()=>CEO_ENGINE.showAdvert(),2000); CEO_ENGINE.addTransaction('VERCEL DOMAIN LINK CODED '+FULL);};
+</script></body></html>
