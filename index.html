@@ -1,132 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GEAPPLE®™.COM - HOLO WORLD SUPER PRO MAX V2</title><link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#00ffff">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" href="./logo.png">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:system-ui,sans-serif;text-align:center}
-.logo-main{width:150px;height:150px;margin:20px auto 10px;border-radius:28px;box-shadow:0 0 25px #ff00aa,0 0 45px #a020f0;border:3px solid #ff00aa;display:block;object-fit:cover}
-h1{color:#00ffff;font-size:22px;line-height:1.2}
-.sub{color:#ffeb3b;font-size:13px;margin:8px 0 12px;font-weight:700}
-.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:10px}
-.badge{border:1px solid #444;border-radius:99px;padding:4px 12px;font-size:11px;color:#aaa;background:#111}
-.shell{max-width:520px;margin:18px auto;border:2px solid #00ffff;border-radius:22px;padding:16px;background:#080808;box-shadow:0 0 20px rgba(0,255,255,.3)}
-.btn{display:block;width:100%;padding:14px;border-radius:99px;margin:10px 0;font-weight:900;font-size:14px;text-decoration:none;color:#000}
-.cyan{background:#00ffff}.yellow{background:#ffeb00}.pink{background:#ff2d9c;color:#fff}
-.ecosystem{max-width:560px;margin:20px auto;border:2px solid #00ffff;border-radius:22px;padding:14px;background:#080808}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.app{background:#111;border-radius:16px;padding:6px;border:1px solid #222;text-decoration:none;color:#fff;display:block}
-.app img{width:100%;border-radius:14px;display:block;aspect-ratio:1;object-fit:cover}
-.app span{display:block;font-size:10px;font-weight:800;margin-top:6px}
-.foot{padding:25px 12px;background:#0a0015;margin-top:20px;border-top:2px solid #ff00aa}
-.foot img{width:90px;border-radius:18px;box-shadow:0 0 20px #ff00aa}
-</style>
-<script>
-function loadLogo(img){
-  if(img.dataset.tried) return;
-  img.dataset.tried=1;
-  if(img.src.includes('geapple-super-pro-max')) img.src='./logo.png';
-  else img.src='./geapple-super-pro-max/logo.png';
-}
-</script>
-<style>
-.geapple-globe-rotate {
-  display:inline-block;
-  animation: spinClockwise 3s linear infinite;
-}
-@keyframes spinClockwise {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.holo-glow-pulse {
-  animation: glowPulse 2s ease-in-out infinite alternate;
-}
-@keyframes glowPulse {
-  from { text-shadow: 0 0 10px #00ffff; }
-  to { text-shadow: 0 0 30px #00ffff, 0 0 50px #00ff88; }
-}
-</style>
-</head>
-<body>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>GEAPPLE®™ HOLO WORLD V3 - 35 NATIVES APPS HUB - RC:9882150 - NDPA COMPLIANT</title><link rel="manifest" href="./manifest.json"><meta name="theme-color" content="#00ffff"><meta name="description" content="RC:9882150 - 35 Apps Native HUB>STORE>PAY - HOLO 50-100 + 8 IN 1 NINO Voice 10 Langs - Logo Clockwise Rotating Globe"><style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#000;color:#fff;font-family:system-ui;padding:10px;padding-bottom:110px;line-height:1.4}
+a{color:#00ffff;text-decoration:none}
+.card{background:#0a0a0a;border:1px solid #222;border-radius:16px;padding:12px;margin:10px 0}
+.btn{padding:12px 16px;border-radius:99px;border:none;font-weight:900;margin:6px 0;cursor:pointer;display:inline-block;text-align:center;width:100%}
+.green{background:linear-gradient(90deg,#00ff88,#00ffff);color:#000}.yellow{background:#ffeb00;color:#000}
+.tool{padding:8px 12px;border-radius:99px;background:#111;border:1px solid #00ffff;color:#00ffff;font-size:10px;font-weight:800;white-space:nowrap}
+.grid35{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.app{background:#111;border:1px solid #00ffff;border-radius:12px;padding:8px;text-align:center;cursor:pointer}
+.app b{font-size:9px;display:block;color:#fff;line-height:1.2}.app small{font-size:7px;color:#00ffff;display:block;margin-top:2px}
+.gea-pay{background:linear-gradient(90deg,#00ff88,#00ffff);color:#000;padding:14px;border-radius:16px;text-align:center;font-weight:900;cursor:pointer;margin:8px 0;border:2px solid #00ff88;font-size:13px}
+.tab{display:none}.tab.active{display:block}.tabBtn.active{background:#00ffff;color:#000}
 
-<!-- LOGO FETCHES FROM BOTH PATHS - FORMAL GEAPPLE®™ -->
-<img class="logo-main" src="./logo.png" onerror="loadLogo(this)" alt="GEAPPLE®™ Logo" srcset="">
+/* LOGO.PNG + 🌍 GLOBE BOTH ROTATING CLOCKWISELY - FINAL FIX */
+.logo-header{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#000,#111,#000);border:2px solid #00ffff;border-radius:16px;padding:10px 12px;margin:8px 0;position:relative;overflow:hidden}
+.logo-wrap{position:relative;width:52px;height:52px;flex-shrink:0}
+.logo-img{width:52px;height:52px;border-radius:50%;border:2px solid #00ffff;background:#000;object-fit:contain;box-shadow:0 0 15px #00ffff;animation:rotateClockwise 4s linear infinite;display:block}
+.globe-wrap{position:relative;width:52px;height:52px;flex-shrink:0}
+.globe-rotate{width:52px;height:52px;border-radius:50%;border:2px solid #00ff88;display:flex;align-items:center;justify-content:center;font-size:30px;background:radial-gradient(circle at 30% 30%,#001100,#000);box-shadow:0 0 15px #00ff88, inset 0 0 10px #00ff88;animation:rotateClockwise 3s linear infinite, glowPulse 2s ease-in-out infinite}
+.logo-orbit{position:absolute;top:-4px;left:-4px;right:-4px;bottom:-4px;border:1px dashed #00ff88;border-radius:50%;animation:rotateCounter 3s linear infinite;opacity:0.6}
+.globe-orbit{position:absolute;top:-4px;left:-4px;right:-4px;bottom:-4px;border:1px dashed #00ffff;border-radius:50%;animation:rotateCounter 4s linear infinite;opacity:0.6}
+@keyframes rotateClockwise{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes rotateCounter{0%{transform:rotate(360deg)}100%{transform:rotate(0deg)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 15px #00ff88, inset 0 0 10px #00ff88}50%{box-shadow:0 0 25px #00ffff, inset 0 0 15px #00ffff}}
+.logo-text{flex:1;min-width:0}.logo-title{font-size:12px;font-weight:900;color:#00ffff}.logo-sub{font-size:8px;color:#00ff88}.logo-badge{font-size:7px;background:#ffeb00;color:#000;padding:3px 6px;border-radius:99px;font-weight:900}
+</style></head><body>
 
-<h1><span class="geapple-globe-rotate">🌍</span> GEAPPLE®™.COM<br><span style="color:#00ffff" class="holo-glow-pulse"> HOLO WORLD SUPER PRO MAX V2</span></h1>
- 
-<div class="sub">To The Glory of God - 35 APPS HOLO READY</div>
-<div class="badges">
-<div class="badge">RC:9882150</div><div class="badge">NDPA COMPLIANT</div><div class="badge">NIN SECURED</div><div class="badge">GEAPPLE®™ GLOBALCOMTECH</div>
+<!-- LOGO.PNG + 🌍 GLOBE BOTH ROTATING CLOCKWISELY HEADER - INTEGRATED -->
+<div class="logo-header">
+<div class="globe-wrap"><div class="globe-orbit"></div><div class="globe-rotate">🌍</div></div>
+<div class="logo-wrap"><div class="logo-orbit"></div><img src="./logo.png" class="logo-img" alt="GEAPPLE LOGO" onerror="this.src='https://via.placeholder.com/52/000000/00ffff?text=G'"></div>
+<div class="logo-text"><div class="logo-title">GEAPPLE®™ HOLO WORLD V3</div><div class="logo-sub">RC:9882150 • 35 APPS • 10 LANGS VOICE • HOLO 50-100 • NDPA ✅</div><div id="domainBadge" style="font-size:7px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Detecting Domain...</div></div>
+<div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><span class="logo-badge">LIVE • CLOCKWISE</span><span style="font-size:7px;background:#111;color:#00ffff;border:1px solid #00ffff;padding:2px 6px;border-radius:99px">APK PWA READY</span></div>
 </div>
 
-<div class="shell">
-<h2>GEA-CON OS SHELL ACTIVE</h2>
-<p style="font-size:12px;color:#aaa">Houses: web.gea | domains.gea | drive.gea | apk-builder.gea</p>
-<a class="btn cyan" href="./3-geamail-con.html">📧 GEAMAIL®™ HOLO 50-100 — GATE ACTIVE</a>
-<a class="btn cyan" href="./5-geaconnect.html">🌐 GEACONNECT®™ HUB 19 Apps — SAT READY</a>
-<a class="btn cyan" href="./1-mygea-social.html">🚀 MASTER ENGINE — 35 APPS</a>
-<a class="btn pink" href="./32-ceo-dashboar.html">🔐 CEO DASHBOARD — BUILD C — API READY</a>
-<a class="btn yellow" href="./35-gsia-systems.html">📱 APK BUILDER — BUILD A+B READY</a>
+<!-- TOOLS HORIZONTAL AT CHAT WINDOWS - WINDOWS & FUNCTIONS -->
+<div style="display:flex;gap:6px;overflow-x:auto;padding:8px;background:#080808;border-radius:12px;position:sticky;top:0;z-index:40;border:1px solid #222">
+<button class="tool" onclick="location.href='./menu.html'">☰ MENU</button><button class="tool" onclick="location.href='./setting.html'">⚙️ SETTINGS</button><button class="tool" onclick="CEO_ENGINE.openThemes()">🎨 THEME</button><button class="tool" onclick="location.href='./0-USERS-MANUAL.html'">📖 MANUAL</button><button class="tool" onclick="CEO_ENGINE.openCreator()">🛠️ CREATOR</button><button class="tool" onclick="CEO_ENGINE.openMultiStream()">📡 MULTI</button><button class="tool" onclick="CEO_ENGINE.openCloud()">☁️ CLOUD</button><button class="tool" onclick="CEO_ENGINE.showAdvert()">📢 ADVERTS</button><button class="tool" style="background:#ffeb00;color:#000" onclick="location.href='./legal.html'">⚖️ LEGAL NDPA</button>
 </div>
 
-<div class="ecosystem">
-<h2 style="color:#00ffff;font-size:13px;margin-bottom:12px">📱 35 APPS ECOSYSTEM — Wrapped with Geapple®™ 🍑 Logo</h2>
-<div class="grid">
-<a class="app" href="./1-mygea-social.html"><img src="./logo.png" onerror="loadLogo(this)"><span>1-MYGEA-SOCIAL</span></a>
-<a class="app" href="./2-reelgea.html"><img src="./logo.png" onerror="loadLogo(this)"><span>2-REELGEA</span></a>
-<a class="app" href="./3-geamail-con.html"><img src="./logo.png" onerror="loadLogo(this)"><span>3-GEAMAIL®™.CON</span></a>
-<a class="app" href="./4-gea-con.html"><img src="./logo.png" onerror="loadLogo(this)"><span>4-GEA-CON</span></a>
-<a class="app" href="./5-geaconnect.html"><img src="./logo.png" onerror="loadLogo(this)"><span>5-GEACONNECT</span></a>
-<a class="app" href="./6-mygea-holo.html"><img src="./logo.png" onerror="loadLogo(this)"><span>6-MYGEA-HOLO</span></a>
-<a class="app" href="./7-global-votes.html"><img src="./logo.png" onerror="loadLogo(this)"><span>7-GLOBAL-VOTES</span></a>
-<a class="app" href="./8-degalaxy-sat-.html"><img src="./logo.png" onerror="loadLogo(this)"><span>8-DEGALAXY-SAT-</span></a>
-<a class="app" href="./9-military-bord.html"><img src="./logo.png" onerror="loadLogo(this)"><span>9-MILITARY-BORD</span></a>
-<a class="app" href="./10-visual-art-g.html"><img src="./logo.png" onerror="loadLogo(this)"><span>10-VISUAL-ART-G</span></a>
-<a class="app" href="./11-geatune.html"><img src="./logo.png" onerror="loadLogo(this)"><span>11-GEATUNE</span></a>
-<a class="app" href="./12-gea-4k-studi.html"><img src="./logo.png" onerror="loadLogo(this)"><span>12-GEA-4K-STUDI</span></a>
-<a class="app" href="./13-gea-game.html"><img src="./logo.png" onerror="loadLogo(this)"><span>13-GEA-GAME</span></a>
-<a class="app" href="./14-okidoki-soci.html"><img src="./logo.png" onerror="loadLogo(this)"><span>14-OKIDOKI-SOCI</span></a>
-<a class="app" href="./15-galarea-chat.html"><img src="./logo.png" onerror="loadLogo(this)"><span>15-GALAREA-CHAT</span></a>
-<a class="app" href="./16-yellow-mygea.html"><img src="./logo.png" onerror="loadLogo(this)"><span>16-YELLOW-MYGEA</span></a>
-<a class="app" href="./17-gea-store.html"><img src="./logo.png" onerror="loadLogo(this)"><span>17-GEA-STORE</span></a>
-<a class="app" href="./18-degalaxy-orb.html"><img src="./logo.png" onerror="loadLogo(this)"><span>18-DEGALAXY-ORB</span></a>
-<a class="app" href="./19-gsia-cyber-c.html"><img src="./logo.png" onerror="loadLogo(this)"><span>19-GSIA-CYBER-C</span></a>
-<a class="app" href="./20-gsia-ai.html"><img src="./logo.png" onerror="loadLogo(this)"><span>20-GSIA-AI</span></a>
-<a class="app" href="./21-realoracle-m.html"><img src="./logo.png" onerror="loadLogo(this)"><span>21-REALORACLE-M</span></a>
-<a class="app" href="./22-gsia-fraud-d.html"><img src="./logo.png" onerror="loadLogo(this)"><span>22-GSIA-FRAUD-D</span></a>
-<a class="app" href="./23-gsia-visual-.html"><img src="./logo.png" onerror="loadLogo(this)"><span>23-GSIA-VISUAL-</span></a>
-<a class="app" href="./24-realoracle-w.html"><img src="./logo.png" onerror="loadLogo(this)"><span>24-REALORACLE-W</span></a>
-<a class="app" href="./25-gsia-budget-.html"><img src="./logo.png" onerror="loadLogo(this)"><span>25-GSIA-BUDGET-</span></a>
-<a class="app" href="./26-degalaxy-sat.html"><img src="./logo.png" onerror="loadLogo(this)"><span>26-DEGALAXY-SAT</span></a>
-<a class="app" href="./27-gsia-archite.html"><img src="./logo.png" onerror="loadLogo(this)"><span>27-GSIA-ARCHITE</span></a>
-<a class="app" href="./28-gea-cartoons.html"><img src="./logo.png" onerror="loadLogo(this)"><span>28-GEA-CARTOONS</span></a>
-<a class="app" href="./29-gea-pay.html"><img src="./logo.png" onerror="loadLogo(this)"><span>29-GEA-PAY</span></a>
-<a class="app" href="./30-gea-wallet.html"><img src="./logo.png" onerror="loadLogo(this)"><span>30-GEA-WALLET</span></a>
-<a class="app" href="./31-geapple-gadg.html"><img src="./logo.png" onerror="loadLogo(this)"><span>31-GEAPPLE®™-GADG</span></a>
-<a class="app" href="./32-ceo-dashboar.html"><img src="./logo.png" onerror="loadLogo(this)"><span>32-CEO-DASHBOAR</span></a>
-<a class="app" href="./33-data-minting.html"><img src="./logo.png" onerror="loadLogo(this)"><span>33-DATA-MINTING</span></a>
-<a class="app" href="./34-investors-an.html"><img src="./logo.png" onerror="loadLogo(this)"><span>34-INVESTORS-AN</span></a>
-<a class="app" href="./35-gsia-systems.html"><img src="./logo.png" onerror="loadLogo(this)"><span>35-GSIA-SYSTEMS</span></a>
+<!-- VOICE 10 LANGS BAR -->
+<div class="card" style="border:2px solid #00ffff;background:#000;padding:8px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><b style="color:#00ffff;font-size:11px">🌍 HOLO + VOICE 10 LANGS - Speak EN Hear Local/Foreign</b><span style="font-size:8px;color:#00ff88">FRANÇAIS ARABIC العربية ESPAÑOL 中文 ACTIVE</span></div>
+<div id="voiceBarContainer"></div>
+<div style="display:flex;gap:6px;margin-top:6px"><input id="search35" placeholder="🔍 Search 35 Apps - MAPS CHAT MUSIC etc - Voice Ready" style="flex:1;background:#111;color:#fff;border:1px solid #00ffff;border-radius:99px;padding:10px;font-size:11px" oninput="filterApps()"><button class="tool" style="background:#00ff88;color:#000" onclick="startDictation()">🎤 VOICE</button><button class="tool" onclick="filterApps()">🔍 SEARCH</button></div>
+</div>
+
+<!-- GEA-PAY TOP BANNER -->
+<div class="gea-pay" onclick="location.href='./29-gea-pay.html'">💳 GEA-PAY®™ — TAP TO PAY / COLLECT — HOLO + VOICE READY — SECURE • INSTANT • ZERO FEES →</div>
+
+<!-- HUB STORE PAY TABS -->
+<div class="card" style="border:1px solid #00ffff">
+<div style="display:flex;gap:6px;margin-bottom:10px">
+<button class="tool tabBtn active" onclick="showTab(1)" style="flex:1;background:#00ffff;color:#000">🌐 HUB[35 BROWSER]</button>
+<button class="tool tabBtn" onclick="showTab(2)" style="flex:1">🛒 STORE[35 APPS]</button>
+<button class="tool tabBtn" onclick="showTab(3)" style="flex:1">💳 PAY+MANUAL</button>
+</div>
+
+<div id="tab1" class="tab active">
+<div style="display:flex;justify-content:space-between;margin-bottom:8px"><b style="color:#00ffff;font-size:11px">📱 HUB - 35 NATIVES APPS - MAPS CHAT MUSIC CAMERA FILES etc</b><span id="appCount" style="font-size:8px;background:#111;padding:4px 8px;border-radius:99px;color:#ffeb00">35 APPS</span></div>
+<div class="grid35" id="grid35Hub"></div>
+<div style="display:flex;gap:6px;margin-top:8px"><button class="btn green" style="flex:1" onclick="location.href='./17-gea-store.html'">🛒 STORE 35 APPS →</button><button class="btn yellow" style="flex:1" onclick="location.href='./menu.html'">☰ MENU WINDOWS →</button></div>
+</div>
+
+<div id="tab2" class="tab">
+<div style="background:#111;padding:8px;border-radius:10px;border:1px dashed #00ffff;margin-bottom:8px;font-size:10px;color:#ccc">🛒 GEA-STORE HOLO + VOICE 10 LANGS + 8 IN 1 NINO + TOOLS HORIZONTAL + ADVERTS TOP RIGHT + GEA-PAY TOP</div>
+<div class="grid35" id="grid35Store"></div>
+<button class="btn green" onclick="location.href='./17-gea-store.html'" style="margin-top:8px">🛒 OPEN FULL STORE →</button>
+</div>
+
+<div id="tab3" class="tab">
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px">
+<div class="card" style="margin:0;background:#111;border:1px solid #00ff88"><b style="color:#00ff88">💳 GEA-PAY</b><br><small style="font-size:9px">TAP TO PAY / COLLECT HOLO + VOICE - Secure Instant Zero Fees</small><br><button class="btn green" style="padding:8px;margin-top:6px" onclick="location.href='./29-gea-pay.html'">OPEN PAY →</button></div>
+<div class="card" style="margin:0;background:#111;border:1px solid #00ffff"><b style="color:#00ffff">📖 MANUAL</b><br><small style="font-size:9px">USERS MANUAL ALL PLATFORMS - Clickable Links Windows Files</small><br><button class="btn" style="padding:8px;margin-top:6px;background:#00ffff;color:#000" onclick="location.href='./0-USERS-MANUAL.html'">OPEN MANUAL →</button></div>
+<div class="card" style="margin:0;background:#111;border:1px solid #ffeb00"><b style="color:#ffeb00">⚖️ LEGAL NDPA</b><br><small style="font-size:9px">Privacy Terms NDPA Compliance RC:9882150 - NDPA Compliant</small><br><button class="btn yellow" style="padding:8px;margin-top:6px" onclick="location.href='./legal.html'">LEGAL HUB →</button></div>
+<div class="card" style="margin:0;background:#111;border:1px solid #ff00ff"><b style="color:#ff00ff">⚙️ SETTINGS MENU</b><br><small style="font-size:9px">Theme Language HOLO Security - 10 Langs Voice AR ES 中文</small><br><button class="btn" style="padding:8px;margin-top:6px;background:#ff00ff;color:#fff" onclick="location.href='./setting.html'">SETTINGS →</button></div>
+</div>
+<div class="card" style="border:1px dashed #888;margin-top:10px"><b style="color:#00ffff;font-size:10px">🔗 INTEGRATED SYSTEM - ALL FILES WINDOWS FUNCTIONS:</b><div style="font-size:9px;color:#ccc;margin-top:6px">
+<b>JS:</b> ceo-master-engine.js (Menu Settings Theme Manual Creator Multi Cloud Adverts + HOLO 50-100 + logo.png clockwise rotate) | voice-translation-api-10-lang.js (10 Langs EN YORUBA IGBO HAUSA FRANÇAIS ARABIC العربية ESPAÑOL 中文 SWAHILI PORTUGUÊS) | native-api-bridge.js (Natives API APK PWA) | logo-header.js (Logo + Globe Clockwise)<br>
+<b>CSS:</b> logo-rotate.css (rotateClockwise 4s linear infinite + rotateCounter orbit + glowPulse)<br>
+<b>JSON:</b> manifest.json (35 Apps Icons Standalone Shortcuts Menu Setting Store Manual HOLO Pay Legal)<br>
+<b>SW:</b> service-worker.js (Caches 35 Apps + logo.png + logo-rotate.css + menu setting legal privacy terms ndpa manual)<br>
+<b>HTML:</b> index.html (This Hub) | menu.html (MAPS CHAT MUSIC Grid) | setting.html (10 Langs) | legal.html privacy.html terms.html ndpa-compliance.html (NDPA RC:9882150) | 0-USERS-MANUAL.html | 35 Apps 1-mygea-social.html to 35-gsia-systems.html<br>
+<b>WINDOWS:</b> Logo + Globe Both Clockwise + Tools Horizontal Bar + GEA-PAY Top + Voice Bar 10 Langs + Adverts Top Right Popup + Bottom Nav Home Store Pay Profile (Your Screenshot Style) + Legal Footer
+</div></div>
 </div>
 </div>
 
-<div class="foot">
-<img src="./logo.png" onerror="loadLogo(this)" alt="GEAPPLE®™">
-<h3 style="color:#ff2d9c">GEAPPLE®™ GLOBALCOMTECH SERVICES</h3>
-<p style="font-size:13px"><b>GEAPPLE®™ ©2026 | RC:9882150</b><br>CEO: Apostle Dr Oladele Mighty Hassan PhD/DD<br>HQ: No.15A Mercy Avenue, Suite 10 Mercy House, Omuchi off Port Harcourt Airport Road Igwuruta Rivers State Nigeria.</p>
-<p style="font-size:11px;margin-top:10px;color:#00ffff">Privacy Policy | Terms of Service | NDPA Compliance | Data Deletion | legal@geapple.com | API: gsiacyber.com/api READY</p>
-<p style="color:#ffeb00;margin-top:12px;font-weight:800;font-size:12px">🌍 GEAPPLE®™.COM HOLO WORLD SUPER PRO MAX V2 — To The Glory Of God</p>
-</div><script>
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('./service-worker.js')
-  .then(()=>console.log('GEAPPLE PWA READY - 35 APPS OFFLINE'))
-  .catch(e=>console.log('SW fail',e));
-}
-</script>
-</body>
-</html>
+<!-- BOTTOM NAV - YOUR SCREENSHOT STYLE -->
+<div style="position:fixed;bottom:0;left:0;right:0;display:flex;background:#000;border-top:2px solid #00ffff;padding:8px;gap:6px;z-index:50">
+<button onclick="location.href='./index.html'" style="flex:1;background:#00ffff;color:#000;border:none;border-radius:12px;padding:10px;font-weight:900;font-size:10px">🏠 Home<br><small>HUB 35</small></button>
+<button onclick="location.href='./17-gea-store.html'" style="flex:1;background:#111;color:#00ffff;border:1px solid #00ffff;border-radius:12px;padding:10px;font-weight:900;font-size:10px">🛒 Store<br><small>35 APPS</small></button>
+<button onclick="location.href='./29-gea-pay.html'" style="flex:1;background:#111;color:#00ff88;border:1px solid #00ff88;border-radius:12px;padding:10px;font-weight:900;font-size:10px">💳 Pay<br><small>GEA-PAY</small></button>
+<button onclick="location.href='./menu.html'" style="flex:1;background:#111;color:#fff;border:1px solid #fff;border-radius:12px;padding:10px;font-weight:900;font-size:10px">👤 Profile<br><small>Menu</small></button>
+</div>
+
+<div style="text-align:center;padding:8px;font-size:8px;color:#555">© 2026 GEAPPLE®™ RC:9882150 - HUB[35]>STORE[35]>PAY - 35 Natives Apps - Logo Clockwise + Globe Clockwise Rotating - NDPA Compliant - <a href="./legal.html">LEGAL</a> | <a href="./privacy.html">PRIVACY</a> | <a href="./terms.html">TERMS</a> | <a href="./ndpa-compliance.html">NDPA</a> | <a href="./0-USERS-MANUAL.html">MANUAL</a> | <span id="footDom"></span> | To The Glory Of God</div>
+
+<script src="./ceo-master-engine.js"></script><script src="./voice-translation-api-10-lang.js"></script><script src="./native-api-bridge.js"></script><script src="./logo-header.js"></script><script>
+const APPS_35=[
+{n:"1-MYGEA-SOCIAL",f:"1-mygea-social.html",i:"🌐",t:"HOLO 50-100 TIMELINE",c:"MAPS CHAT"},
+{n:"2-REELGEA",f:"2-reelgea.html",i:"🎬",t:"VERTICAL SWIPE",c:"MUSIC VIDEO"},
+{n:"3-GEAMAIL.CON",f:"3-geamail-con.html",i:"📧",t:"HOLO CONF",c:"MAIL CHAT"},
+{n:"4-GEA.CON",f:"4-gea-con.html",i:"🌐",t:"DOMAIN BUILDER",c:"BROWSER CODE"},
+{n:"5-GEACONNECT",f:"5-geaconnect.html",i:"🔗",t:"HUB 19 APPS",c:"FILES BROWSER"},
+{n:"6-MYGEA-HOLO",f:"6-mygea-holo.html",i:"📡",t:"HOLO MAIN 50-100",c:"VOICE TRANSLATE"},
+{n:"7-GLOBAL-VOTES",f:"7-global-votes.html",i:"🗳️",t:"VOTES SECURE",c:"CALENDAR"},
+{n:"8-SAT MAPS",f:"8-degalaxy-sat-.html",i:"🛰️",t:"SAT MAPS",c:"MAPS"},
+{n:"9-MILITARY-BORD",f:"9-military-bord.html",i:"🛡️",t:"BORDER CCTV",c:"SECURITY MAPS"},
+{n:"10-VIRTUAL ART",f:"10-visual-art-g.html",i:"🎨",t:"BIBLE 4K",c:"GALLERY PHOTOS"},
+{n:"11-GEATUNE",f:"11-geatune.html",i:"🎵",t:"VIDEO LIST",c:"MUSIC"},
+{n:"12-4K STUDIO",f:"12-gea-4k-studi.html",i:"🎬",t:"4K STUDIO",c:"CAMERA VIDEO"},
+{n:"13-GAME",f:"13-gea-game.html",i:"🎮",t:"GAME",c:"PODCAST"},
+{n:"14-OKIDOKI",f:"14-okidoki-soci.html",i:"📸",t:"GRID",c:"MESSENGER"},
+{n:"15-GALAREA",f:"15-galarea-chat.html",i:"💬",t:"CHAT LIST",c:"CHAT"},
+{n:"16-YELLOW",f:"16-yellow-mygea.html",i:"💛",t:"FEED",c:"BOOKS"},
+{n:"17-STORE",f:"17-gea-store.html",i:"🛒",t:"STORE BROWSER",c:"BROWSER STORE"},
+{n:"18-ORBITAL",f:"18-degalaxy-orb.html",i:"🌍",t:"ORBITAL HOLO",c:"MAPS COMPASS"},
+{n:"19-GSIA EDIT",f:"19-gsia-cyber-c.html",i:"💻",t:"GSIA EDIT",c:"CODE"},
+{n:"20-AI",f:"20-gsia-ai.html",i:"🤖",t:"LENCE AI",c:"NOTES"},
+{n:"21-VIRUS",f:"21-realoracle-m.html",i:"🦠",t:"VIRUS PROT",c:"SECURITY HEALTH"},
+{n:"22-FRAUD",f:"22-gsia-fraud-d.html",i:"🛡️",t:"FRAUD",c:"SECURITY WALLET"},
+{n:"23-VISUAL",f:"23-gsia-visual-.html",i:"👁️",t:"VISUAL",c:"CAMERA SECURITY"},
+{n:"24-WEB SEC",f:"24-realoracle-w.html",i:"🌐",t:"WEB SEC",c:"SECURITY BROWSER"},
+{n:"25-BUDGET",f:"25-gsia-budget-.html",i:"📍",t:"GPS BEARING",c:"MAPS CALCULATOR"},
+{n:"26-SAT2",f:"26-degalaxy-sat.html",i:"🛰️",t:"SAT TRACK",c:"WEATHER MAPS"},
+{n:"27-ARCHITECT",f:"27-gsia-archite.html",i:"🏗️",t:"ARCH 3D",c:"CODE PHOTOS"},
+{n:"28-CARTOONS",f:"28-gea-cartoons.html",i:"🎨",t:"CARTOONS",c:"GALLERY"},
+{n:"29-GEA-PAY",f:"29-gea-pay.html",i:"💳",t:"GEA-PAY TOP",c:"WALLET PAY"},
+{n:"30-WALLET",f:"30-gea-wallet.html",i:"👛",t:"WALLET",c:"WALLET"},
+{n:"31-GADGETS",f:"31-geapple-gadg.html",i:"📱",t:"GADGETS",c:"FILES"},
+{n:"32-CEO",f:"32-ceo-dashboar.html",i:"👑",t:"CEO DASH",c:"SETTINGS CLOCK"},
+{n:"33-MINT",f:"33-data-minting.html",i:"💰",t:"MINTING",c:"CALCULATOR"},
+{n:"34-INVEST",f:"34-investors-an.html",i:"📊",t:"INVESTORS",c:"TASKS NOTES"},
+{n:"35-SYSTEMS",f:"35-gsia-systems.html",i:"⚙️",t:"WORKERS LANG",c:"VOICE SETTINGS"}
+];
+let DOMAIN=window.location.origin;
+document.getElementById('domainBadge').innerText=DOMAIN.replace('https://','').slice(0,35)+'... | RC:9882150 | CLOCKWISE';
+document.getElementById('footDom').innerText=DOMAIN;
+function renderGrid(list,id){let g=document.getElementById(id);if(!g)return;g.innerHTML=list.map(a=>`<div class="app" onclick="location.href='./${a.f}'"><div style="font-size:20px">${a.i}</div><b>${a.n}</b><small>${a.t}</small><small style="color:#ffeb00;font-size:6px">${a.c} | HOLO VOICE</small><div style="background:#00ffff;color:#000;border-radius:99px;padding:2px;font-size:6px;font-weight:900;margin-top:3px">OPEN →</div></div>`).join('');}
+function filterApps(){let q=document.getElementById('search35').value.toLowerCase();let f=APPS_35.filter(a=>a.n.toLowerCase().includes(q)||a.t.toLowerCase().includes(q)||a.c.toLowerCase().includes(q));renderGrid(f,'grid35Hub');renderGrid(f,'grid35Store');document.getElementById('appCount').innerText=`${f.length}/35 APPS`;}
+function showTab(n){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tabBtn').forEach(t=>t.classList.remove('active'));document.getElementById('tab'+n).classList.add('active');document.querySelectorAll('.tabBtn')[n-1].classList.add('active');}
+function startDictation(){if(window.VOICE_API_10) VOICE_API_10.listen((t)=>{document.getElementById('search35').value=t;filterApps();});}
+window.onload=()=>{renderGrid(APPS_35,'grid35Hub');renderGrid(APPS_35,'grid35Store');if(window.VOICE_API_10) VOICE_API_10.renderVoiceBar('voiceBarContainer');if(window.CEO_ENGINE) setTimeout(()=>CEO_ENGINE.showAdvert(),1200);};
+</script></body></html>
