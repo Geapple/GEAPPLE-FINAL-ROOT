@@ -175,7 +175,17 @@ window.onload=()=>{renderGrid(APPS_35,'grid35Hub');renderGrid(APPS_35,'grid35Sto
 <div style="margin:6px 0"><b style="font-size:8px;color:#ffeb00">💰 ADVERTS BACKUP</b><div id="advertsBackupStatus"></div></div>
 <button class="btn yellow" onclick="CLOUD_BACKUP.backupAll(); CREATOR_BACKUP.backup(); ADVERTS_BACKUP.backup(); STREAMING_BACKUP.startAll(); alert('✅ ALL 5 BACKUPS DONE - THEMES CLOUD STREAMING CREATOR ADVERTS SAVED!')">💾 BACKUP ALL 5 NOW - ONE CLICK</button>
 </div>
-
+<script src="./ceo-master-engine.js"></script>
+<script src="./voice-translation-api-10-lang.js"></script>
+<script src="./native-api-bridge.js"></script>
+<script src="./logo-header.js"></script>
+<script src="./themes-backup.js"></script>
+<script src="./cloud-backup.js"></script>
+<script src="./multi-streaming-backup.js"></script>
+<script src="./creator-backup.js"></script>
+<script src="./adverts-backup.js"></script>
+<script src="./master-connector-fix.js"></script>
+</body></html>
 <script>
 function showBackupPanel(){
  let p=document.getElementById('backupPanel'); p.style.display='block';
