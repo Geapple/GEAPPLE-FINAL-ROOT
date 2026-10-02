@@ -154,4 +154,37 @@ function filterApps(){let q=document.getElementById('search35').value.toLowerCas
 function showTab(n){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tabBtn').forEach(t=>t.classList.remove('active'));document.getElementById('tab'+n).classList.add('active');document.querySelectorAll('.tabBtn')[n-1].classList.add('active');}
 function startDictation(){if(window.VOICE_API_10) VOICE_API_10.listen((t)=>{document.getElementById('search35').value=t;filterApps();});}
 window.onload=()=>{renderGrid(APPS_35,'grid35Hub');renderGrid(APPS_35,'grid35Store');if(window.VOICE_API_10) VOICE_API_10.renderVoiceBar('voiceBarContainer');if(window.CEO_ENGINE) setTimeout(()=>CEO_ENGINE.showAdvert(),1200);};
+<script src="./ceo-master-engine.js"></script>
+<script src="./voice-translation-api-10-lang.js"></script>
+<script src="./native-api-bridge.js"></script>
+<script src="./logo-header.js"></script>
+<script src="./themes-backup.js"></script>
+<script src="./cloud-backup.js"></script>
+<script src="./multi-streaming-backup.js"></script>
+<script src="./creator-backup.js"></script>
+<script src="./adverts-backup.js"></script>
+
+<!-- BACKUP CONTROL PANEL - HIDDEN BY DEFAULT - SHOW VIA SETTINGS -->
+<div id="backupPanel" style="display:none" class="card">
+<div style="display:flex;justify-content:space-between"><b style="color:#ffeb00;font-size:11px">💾 BACKUP CENTER - THEMES CLOUD STREAMING CREATOR ADVERTS</b><button class="tool" onclick="document.getElementById('backupPanel').style.display='none'">✕ CLOSE</button></div>
+<div style="font-size:7px;color:#aaa;margin:4px 0">All 5 backup engines - Restore anytime if main files crash - Auto saves to LocalStorage + Cloud</div>
+<div style="margin:6px 0"><b style="font-size:8px;color:#00ffff">🎨 THEMES BACKUP</b><div id="themesBackupBar"></div><div id="themesBackupStatus"></div></div>
+<div style="margin:6px 0"><b style="font-size:8px;color:#00ff88">☁️ CLOUD BACKUP</b><div id="cloudBackupStatus"></div></div>
+<div style="margin:6px 0"><b style="font-size:8px;color:#ff00ff">📡 MULTI STREAMING BACKUP</b><div id="streamingBackupStatus"></div></div>
+<div style="margin:6px 0"><b style="font-size:8px;color:#00ffff">💻 CREATOR BACKUP</b><div id="creatorBackupStatus"></div></div>
+<div style="margin:6px 0"><b style="font-size:8px;color:#ffeb00">💰 ADVERTS BACKUP</b><div id="advertsBackupStatus"></div></div>
+<button class="btn yellow" onclick="CLOUD_BACKUP.backupAll(); CREATOR_BACKUP.backup(); ADVERTS_BACKUP.backup(); STREAMING_BACKUP.startAll(); alert('✅ ALL 5 BACKUPS DONE - THEMES CLOUD STREAMING CREATOR ADVERTS SAVED!')">💾 BACKUP ALL 5 NOW - ONE CLICK</button>
+</div>
+
+<script>
+function showBackupPanel(){
+ let p=document.getElementById('backupPanel'); p.style.display='block';
+ if(window.THEMES_BACKUP){ THEMES_BACKUP.renderBar('themesBackupBar'); }
+ if(window.CLOUD_BACKUP) CLOUD_BACKUP.render('cloudBackupStatus');
+ if(window.STREAMING_BACKUP) STREAMING_BACKUP.render('streamingBackupStatus');
+ if(window.CREATOR_BACKUP) CREATOR_BACKUP.render('creatorBackupStatus');
+ if(window.ADVERTS_BACKUP) ADVERTS_BACKUP.render('advertsBackupStatus');
+ p.scrollIntoView({behavior:'smooth'});
+}
+</script>
 </script></body></html>
