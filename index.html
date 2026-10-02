@@ -24,23 +24,29 @@ a{color:#00ffff;text-decoration:none}
 @keyframes glowPulse{0%,100%{box-shadow:0 0 15px #00ff88, inset 0 0 10px #00ff88}50%{box-shadow:0 0 25px #00ffff, inset 0 0 15px #00ffff}}
 .logo-text{flex:1;min-width:0}.logo-title{font-size:12px;font-weight:900;color:#00ffff}.logo-sub{font-size:8px;color:#00ff88}.logo-badge{font-size:7px;background:#ffeb00;color:#000;padding:3px 6px;border-radius:99px;font-weight:900}
 </style></head><body>
-
-<!-- LOGO.PNG + 🌍 GLOBE BOTH ROTATING CLOCKWISELY HEADER - INTEGRATED -->
 <div class="logo-header">
 <div class="globe-wrap"><div class="globe-orbit"></div><div class="globe-rotate">🌍</div></div>
 <div class="logo-wrap"><div class="logo-orbit"></div><img src="./logo.png" class="logo-img" alt="GEAPPLE LOGO" onerror="this.src='https://via.placeholder.com/52/000000/00ffff?text=G'"></div>
-<div class="logo-text"><div class="logo-title">GEAPPLE®™ HOLO WORLD V3</div><div class="logo-sub">RC:9882150 • 35 APPS • 10 LANGS VOICE • HOLO 50-100 • NDPA ✅</div><div id="domainBadge" style="font-size:7px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Detecting Domain...</div></div>
+<div class="logo-text"><div class="logo-title">GEAPPLE®™ 
+HOLO WORLD V3</div><div class="logo-sub">RC:9882150 • 35 APPS • 10 LANGS VOICE • HOLO 50-100 • NDPA ✅</div><div id="domainBadge" style="font-size:7px;color:#888;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Detecting Domain...</div></div>
 <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-end"><span class="logo-badge">LIVE • CLOCKWISE</span><span style="font-size:7px;background:#111;color:#00ffff;border:1px solid #00ffff;padding:2px 6px;border-radius:99px">APK PWA READY</span></div>
 </div>
 
 <!-- TOOLS HORIZONTAL AT CHAT WINDOWS - WINDOWS & FUNCTIONS -->
-<div style="display:flex;gap:6px;overflow-x:auto;padding:8px;background:#080808;border-radius:12px;position:sticky;top:0;z-index:40;border:1px solid #222">
-<div style="display:flex;gap:6px;overflow-x:auto;padding:8px;background:#080808;border-radius:12px;position:sticky;top:0;z-index:40;border:1px solid #222">
-<button class="tool" onclick="location.href='./menu.html'">☰ MENU</button>
-<button class="tool" onclick="location.href='./setting.html'">⚙️ SETTINGS</button>
-<button class="tool" onclick="CEO_ENGINE.openThemes();">🎨 THEME</button>
-<button class="tool" onclick="location.href='./0-USERS-MANUAL.html'">📖 MANUAL</button>
-<button class="tool" onclick="CEO_ENGINE.openCreator(); location.href='./19-gsia-cyber-c.html'" style="background:#111;border:1px solid #00ff88;color:#00ff88">🛠️ CREATOR</button>
+<div style="display:flex;gap:6px;overflow-x:auto;padding:8px;background:#080808;border-radius:12px;position:sticky;top:0;z-index:40;border:1px solid 
+<div style="display:flex;gap:6px;overflow-x:auto;padding:8px;background:#080808;border-radius:12px;position:sticky;top:0;z-index:20;border:1px solid #222">
+<button class="tool" onclick="CREATOR_API.backup(); location.href='./19-gsia-cyber-c.html'" style="background:#111;border:1px solid #00ffff;color:#00ffff">💻 Creator</button>
+<button class="tool" onclick="CLOUD_API.backupAll(); location.href='./4-gea-con.html'" style="background:#111;border:1px solid #00ff88;color:#00ff88">☁️ Multi Cloud</button>
+<button class="tool" onclick="ADVERTS_API.backup(); location.href='./32-ceo-dashboar.html'" style="background:#111;border:1px solid #ffeb00;color:#ffeb00">💰 Advert</button>
+<button class="tool" onclick="document.getElementById('searchApps')?.focus()" style="background:#111;border:1px solid #fff;color:#fff">🔍 Search</button>
+<button class="tool" onclick="VOICE_API_10.listen((t)=>{SEARCH_API.filter(t); document.getElementById('searchApps').value=t;})" style="background:#00ffff;color:#000">🎤 Voice</button>
+<button class="tool" onclick="location.href='./29-gea-pay.html'" style="background:#00ff88;color:#000">💳 Pay</button>
+<button class="tool" onclick="location.href='./0-USERS-MANUAL.html'" style="background:#111;border:1px solid #888;color:#888">📖 Manual</button>
+<button class="tool" onclick="showBackupPanel()" style="background:#ffeb00;color:#000">💾 BACKUP</button>
+</div>
+<div style="display:flex;gap:6px;margin:6px 0"><input id="searchApps" placeholder="🔍 Search 35 Apps - Themes Cloud Creator Adverts etc" style="flex:1;background:#111;color:#fff;border:1px solid #00ffff;border-radius:99px;padding:10px;font-size:11px" oninput="SEARCH_API.filter(this.value)"><button class="tool" style="background:#00ff88;color:#000"
+<div id="voiceBarMain"></div>
+<div id="themesBackupBar"></div> onclick="CEO_ENGINE.openCreator(); location.href='./19-gsia-cyber-c.html'" style="background:#111;border:1px solid #00ff88;color:#00ff88">🛠️ CREATOR</button>
 <button class="tool" onclick="CEO_ENGINE.openMultiStream(); location.href='./6-mygea-holo.html'" style="background:#111;border:1px solid #00ffff;color:#00ffff">📡 MULTI</button>
 <button class="tool" onclick="CEO_ENGINE.openCloud(); location.href='./4-gea-con.html'" style="background:#111;border:1px solid #00ffff;color:#00ffff">☁️ CLOUD</button>
 <button class="tool" onclick="CEO_ENGINE.showAdvert()" style="background:#ffeb00;color:#000">📢 ADVERT</button>
