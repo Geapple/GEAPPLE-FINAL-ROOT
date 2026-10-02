@@ -101,3 +101,7 @@ window.CEO_ENGINE = {
 };
 
 window.CEO_ENGINE.init();
+openLegal(){ location.href='./legal.html'; },
+openPrivacy(){ location.href='./privacy.html'; },
+openTerms(){ location.href='./terms.html'; },
+openNDPA(){ location.href='./ndpa-compliance.html'; },
