@@ -1,48 +1,43 @@
 {
-  "name": "GEAPPLE®™ HOLO WORLD SUPER PRO MAX V3 - RC:9882150 - 35 APPS NATIVES",
-  "short_name": "GEAPPLE V3",
-  "description": "RC:9882150 NDPA - 35 APPS HOLO 50-100 + 8 IN 1 NINO VOICE + MULTI STREAMING + CLOUD VIDEO + SAT MAPS + MILITARY BORDER + SURVEYOR GPS + GEA.CON DOMAIN BUILDER + VIRTUAL ART BIBLE 4K + GSIA EDIT + LENCE AI + ARCHITECT 3D + WORKERS LOCAL LANG + SECURITY FRONT GATE + REALORACLE VIRUS - gsiacyber.com SUPABASE - APK PWA NATIVE API",
+  "name": "GEAPPLE HOLO WORLD - 35 Natives Apps - RC:9882150 - HOLO 100 Projector + 5G Camera + Sky Beam",
+  "short_name": "GEAPPLE",
+  "description": "SUPER NATIVE FUNCTIONS APP - 35 Natives - HOLO 100 Projector Shadow Conference + 5G Camera Selfie Sensor + Country Avatar + Voice 10 Langs + Cloud Video Projector Sky Beam Movies + Multistreaming + GEA-PAY + NDPA RC9882150 To The Glory Of God",
   "start_url": "./index.html",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#000000",
   "theme_color": "#00ffff",
   "scope": "./",
-  "launch_handler": { "client_mode": "navigate-existing" },
-  "handle_links": "preferred",
-  "categories": ["social","entertainment","business","productivity","navigation","utilities"],
+  "id": "./index.html",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["social", "entertainment", "business", "productivity", "photo", "video"],
   "icons": [
-    {"src": "./logo.png","sizes": "72x72","type": "image/png","purpose": "any maskable"},
-    {"src": "./logo.png","sizes": "96x96","type": "image/png","purpose": "any maskable"},
-    {"src": "./logo.png","sizes": "128x128","type": "image/png","purpose": "any maskable"},
-    {"src": "./logo.png","sizes": "192x192","type": "image/png","purpose": "any maskable"},
-    {"src": "./logo.png","sizes": "512x512","type": "image/png","purpose": "any maskable"}
+    {"src": "./logo.png", "sizes": "72x72", "type": "image/png", "purpose": "any"},
+    {"src": "./logo.png", "sizes": "96x96", "type": "image/png", "purpose": "any"},
+    {"src": "./logo.png", "sizes": "128x128", "type": "image/png", "purpose": "any"},
+    {"src": "./logo.png", "sizes": "144x144", "type": "image/png", "purpose": "any"},
+    {"src": "./logo.png", "sizes": "152x152", "type": "image/png", "purpose": "any"},
+    {"src": "./logo.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "./logo.png", "sizes": "384x384", "type": "image/png", "purpose": "any"},
+    {"src": "./logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
   ],
   "shortcuts": [
-    {"name": "GEA-PAY TOP","short_name": "PAY TOP","description": "GEA-PAY TOP Collect","url": "./29-gea-pay.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "MYGEA HOLO 50-100 CONF","short_name": "HOLO 50-100","description": "HOLO Conference 50-100 + Voice","url": "./6-mygea-holo.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "MYGEA SOCIAL 50-100","short_name": "SOCIAL","url": "./1-mygea-social.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "GEAMAIL 50-100 CONF","short_name": "GEAMAIL","url": "./3-geamail-con.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "GEA.CON Designer Domain Builder","short_name": "GEA.CON","url": "./4-gea-con.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "VIRTUAL ART BIBLE 4K","short_name": "BIBLE 4K","url": "./10-visual-art-g.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "GSIA EDIT Code Builder","short_name": "GSIA EDIT","url": "./19-gsia-cyber-c.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "GSIA LENCE AI","short_name": "LENCE AI","url": "./20-gsia-ai.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "MILITARY BORDER SAT MAPS","short_name": "MILITARY","url": "./9-military-bord.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "DEGALAXY ORBITAL HOLO","short_name": "ORBITAL","url": "./18-degalaxy-orb.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "SURVEYOR GPS BEARING","short_name": "SURVEYOR","url": "./25-gsia-budget-.html","icons": [{"src":"./logo.png","sizes":"96x96"}]},
-    {"name": "CEO DASHBOARD BUILD C","short_name": "CEO","url": "./32-ceo-dashboar.html","icons": [{"src":"./logo.png","sizes":"96x96"}]}
+    {"name": "HUB 35 - 35 Natives Apps", "short_name": "HUB 35", "description": "35 Natives Apps Grid", "url": "./index.html", "icons": [{"src": "./logo.png", "sizes": "96x96"}]},
+    {"name": "HOLO 100 Projector Shadow Conference", "short_name": "HOLO 100", "description": "HOLO 100 + 5G Camera + Country Avatar + Sky Beam Movies", "url": "./6-mygea-holo.html", "icons": [{"src": "./logo.png", "sizes": "96x96"}]},
+    {"name": "Sky Beam Projector - Watch Movies in Sky", "short_name": "SKY BEAM", "description": "Cloud Video Projector - Watch Movies in Sky Beam 4K", "url": "./13-gea-cloud-vid.html", "icons": [{"src": "./logo.png", "sizes": "96x96"}]},
+    {"name": "GEA-PAY Tap to Pay", "short_name": "GEA-PAY", "description": "GEA-PAY Holo Voice Ready $58K/mo", "url": "./29-gea-pay.html", "icons": [{"src": "./logo.png", "sizes": "96x96"}]},
+    {"name": "STORE 35", "short_name": "STORE 35", "description": "GEA Store 35 Apps", "url": "./17-gea-store.html", "icons": [{"src": "./logo.png", "sizes": "96x96"}]},
+    {"name": "PROFILE MENU", "short_name": "MENU", "description": "Profile Menu 35 Natives Clickable Windows Clockwise", "url": "./menu.html", "icons": [{"src": "./logo.png", "sizes": "96x96"}]},
+    {"name": "BACKUP CENTER", "short_name": "BACKUP", "description": "Backup Themes Cloud Streaming Creator Adverts 5 Engines", "url": "./index.html", "icons": [{"src": "./logo.png", "sizes": "96x96"}]}
   ],
   "screenshots": [
-    {"src": "./logo.png","sizes": "540x720","type": "image/png","form_factor": "narrow"},
-    {"src": "./logo.png","sizes": "720x540","type": "image/png","form_factor": "wide"}
+    {"src": "./logo.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "GEAPPLE HUB 35 - 35 Natives Apps"},
+    {"src": "./logo.png", "sizes": "720x1280", "type": "image/png", "form_factor": "narrow", "label": "HOLO 100 Projector Shadow - 100 Participants + 5G Camera + Sky Beam"}
   ],
-  "protocol_handlers": [{"protocol": "web+geapple","url": "./index.html?app=%s"}],
-  "edge_side_panel": {"preferred_width": 400},
-  "file_handlers": [{"action": "./10-visual-art-g.html","accept": {"image/*": [".jpg",".png"]}}],
-  "share_target": {"action": "./1-mygea-social.html","method": "POST","enctype": "multipart/form-data","params": {"title": "title","text": "text","url": "url","files": [{"name": "media","accept": ["image/*","video/*"]}]}},
-  "related_applications": [{"platform": "play","id": "com.geapple.holoworld.v3","url": "https://play.google.com/store/apps/details?id=com.geapple.holoworld.v3"}],
-  "prefer_related_applications": false
+  "launch_handler": {"client_mode": "navigate-existing"},
+  "handle_links": "preferred",
+  "protocol_handlers": [{"protocol": "web+geapple", "url": "./index.html?s=%s"}],
+  "share_target": {"action": "./3-gea-message.html", "method": "POST", "enctype": "multipart/form-data", "params": {"title": "title", "text": "text", "url": "url", "files": [{"name": "files", "accept": ["image/*", "video/*", "audio/*"]}]}},
+  "file_handlers": [{"action": "./26-gsia-files.html", "accept": {"image/*": [".jpg", ".jpeg", ".png"], "video/*": [".mp4", ".mov"], "audio/*": [".mp3", ".wav"]}}]
 }
-{"name": "LEGAL - NDPA","url": "./legal.html","description": "Legal Hub - Privacy Terms NDPA Compliant RC:9882150"},
-{"name": "Privacy Policy","url": "./privacy.html","description": "Privacy Policy - NDPA Compliant - 10 Langs Voice"},
-{"name": "NDPA Compliance","url": "./ndpa-compliance.html","description": "NDPA 2023 Compliance Notes - Your Rights"}
