@@ -51,7 +51,7 @@ native-api-bridge.js → Natives API Functions APK PWA Build Ready + Windows API
 <div style="position:fixed;bottom:0;left:0;right:0;display:flex;background:#000;border-top:2px solid #00ffff;padding:6px;gap:6px;z-index:50">
 <button class="tool" style="flex:1;background:#00ffff;color:#000" onclick="location.href='./index.html'">🏠 Home</button><button class="tool" style="flex:1" onclick="location.href='./17-gea-store.html'">🛒 Store</button><button class="tool" style="flex:1" onclick="CEO_ENGINE.openPay()">💳 Pay</button><button class="tool" style="flex:1" onclick="location.href='./menu.html'">☰ Menu</button>
 </div>
-
+<script src="./master-connector-fix.js"></script>
 <script src="./ceo-master-engine.js"></script><script src="./voice-translation-api-10-lang.js"></script><script src="./native-api-bridge.js"></script><script>
 let DOMAIN=window.location.origin; document.getElementById('domainShow').innerText='Domain: '+DOMAIN+' | RC:9882150 | NDPA Compliant | 35 Apps | 10 Langs | APK PWA Ready';
 function setTheme(v){localStorage.setItem('geapple_theme',v); document.body.setAttribute('data-theme',v); CEO_ENGINE.speak('Theme changed to '+v, VOICE_API_10.getLang());}
