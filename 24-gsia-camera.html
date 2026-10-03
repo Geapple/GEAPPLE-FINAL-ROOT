@@ -93,7 +93,12 @@
 <button onclick="location.href='./13-gea-cloud-vid.html'" style="flex:1;background:#111;color:#ff00ff;border:1px solid #ff00ff;border-radius:12px;padding:10px;font-weight:900;font-size:10px">📽️ Sky Beam<br><small>MOVIES</small></button>
 <button onclick="location.href='./menu.html'" style="flex:1;background:#00ff88;color:#000;border:none;border-radius:12px;padding:10px;font-weight:900;font-size:10px">👤 Menu<br><small>35 APPS</small></button>
 </div>
-
+<script type="module">
+import { saveCameraCapture, saveHoloConference } from './supabase-client.js';
+window.saveCameraCapture = saveCameraCapture;
+window.saveHoloConference = saveHoloConference;
+// Now when you do selfie100Chip(), also call saveCameraCapture(data, note, chipInfo)
+</script>
 <script src="./master-connector-fix.js"></script>
 <script>
 let stream=null;let facing='user';let recording=false;let mediaRecorder=null;let chunks=[];
