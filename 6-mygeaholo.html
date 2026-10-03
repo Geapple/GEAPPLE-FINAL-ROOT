@@ -24,6 +24,12 @@
 <button onclick="location.href='./29-gea-pay.html'" style="flex:1;background:#111;color:#00ff88;border:1px solid #00ff88;border-radius:12px;padding:10px;font-weight:900;font-size:10px">💳 Pay<br><small>GEA-PAY</small></button>
 <button onclick="location.href='./menu.html'" style="flex:1;background:#00ffff;color:#000;border:none;border-radius:12px;padding:10px;font-weight:900;font-size:10px">👤 Profile<br><small>MENU</small></button>
 </div>
+<script type="module">
+import { saveCameraCapture, saveHoloConference } from './supabase-client.js';
+window.saveCameraCapture = saveCameraCapture;
+window.saveHoloConference = saveHoloConference;
+// Now when you do selfie100Chip(), also call saveCameraCapture(data, note, chipInfo)
+</script>
 <script src="./master-connector-fix.js"></script>
 <script>
 let beamOn=false;
