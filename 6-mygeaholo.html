@@ -35,6 +35,14 @@ window.saveHoloConference = saveHoloConference;
 let beamOn=false;
 function playSkyMovie(){let v=document.getElementById('cloudVideo');let ph=document.getElementById('skyPlaceholder');if(v.style.display==='none'||!v.src){v.src='https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';}v.style.display='block';ph.style.display='none';v.play().then(()=>{document.getElementById('projStatus').innerText='PLAYING SKY BEAM 4K';document.getElementById('projStatus').style.background='#00ff88';document.getElementById('projStatus').style.color='#000';}).catch(()=>{alert('🎬 Allow video autoplay - Tap video to play');});beamOn=true;}
 function toggleBeam(){beamOn=!beamOn;let b=document.querySelector('.beam');b.style.display=beamOn?'block':'none';alert(beamOn?'📽️ SKY BEAM ON - Watch Movies in Sky - Shadow Mode Active':'📽️ SKY BEAM OFF');}
+function selfie100Chip(){
+ // ... existing canvas code ...
+ let data = canvas.toDataURL('image/png');
+ let note = document.getElementById('captureNote').value||'HOLO 100';
+ let chipInfo = {chip:'Snapdragon 8 Gen 3 5G',sensor:'108MP+ToF+LiDAR',res:`${v.videoWidth}x${v.videoHeight}`};
+ if(window.saveCameraCapture) saveCameraCapture(data, note, chipInfo);
+ // ... rest
+}
 function loadVideo(){let url=document.getElementById('videoUrl').value;if(!url){alert('Paste MP4 URL');return;}let v=document.getElementById('cloudVideo');v.src=url;v.style.display='block';document.getElementById('skyPlaceholder').style.display='none';v.play();}
 function setSample(name){let urls={bunny:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',elephant:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',forrest:'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'};document.getElementById('videoUrl').value=urls[name]||urls.bunny;loadVideo();}
 function startHoloShadow(){document.body.style.filter='contrast(1.2) brightness(0.8)';alert('🌑 HOLO SHADOW MODE + SKY BEAM - Projector Shadow Conference - Opening HOLO 100...');setTimeout(()=>{location.href='./6-mygea-holo.html';},800);}
