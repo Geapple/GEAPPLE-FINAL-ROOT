@@ -147,6 +147,14 @@ function recordVideo(){
  if(!stream){start5GLive();return;}
  if(recording){mediaRecorder.stop();recording=false;document.getElementById('recBadge').innerText='● REC 5G LIVE 4K';return;}
  chunks=[];mediaRecorder=new MediaRecorder(stream,{mimeType:'video/webm;codecs=vp9'});mediaRecorder.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data);};mediaRecorder.onstop=()=>{let blob=new Blob(chunks,{type:'video/webm'});let url=URL.createObjectURL(blob);let a=document.createElement('a');a.href=url;a.download=`GEAPPLE_5G_${Date.now()}.webm`;a.click();alert('🎥 4K VIDEO SAVED - Chip Snapdragon 5G + Sensor 108MP + ToF + OIS+EIS - Saved to Downloads + Cloud');};mediaRecorder.start();recording=true;document.getElementById('recBadge').innerText='● REC ● RECORDING 4K... TAP TO STOP';alert('🎥 RECORDING 4K 60fps STARTED - Chip Snapdragon 5G + ToF + LiDAR + OIS+EIS - Tap again to stop and save');}
+function selfie100Chip(){
+ // ... existing canvas code ...
+ let data = canvas.toDataURL('image/png');
+ let note = document.getElementById('captureNote').value||'HOLO 100';
+ let chipInfo = {chip:'Snapdragon 8 Gen 3 5G',sensor:'108MP+ToF+LiDAR',res:`${v.videoWidth}x${v.videoHeight}`};
+ if(window.saveCameraCapture) saveCameraCapture(data, note, chipInfo);
+ // ... rest
+}
 function saveCapture(){let note=document.getElementById('captureNote').value||'HOLO 100';if(!stream){alert('📷 Start 5G Live first');return;}selfie100Chip();}
 function addToGallery(data,note){let g=document.getElementById('gallery');let div=document.createElement('div');div.style.cssText='min-width:80px;height:80px;border:1px solid #00ff88;border-radius:8px;overflow:hidden;position:relative';div.innerHTML=`<img src="${data}" style="width:100%;height:100%;object-fit:cover"><div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.7);font-size:5px;padding:2px;text-align:center;color:#00ff88">${note.slice(0,15)}</div>`;g.prepend(div);}
 window.onload=()=>{updateDom();setInterval(updateDom,1000);};
