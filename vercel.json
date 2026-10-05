@@ -1,9 +1,3 @@
 {
-  "cleanUrls": false,
-  "rewrites": [
-    { "source": "/32-ceo-dashboard.html", "destination": "/32-ceo-dashboar.html" },
-    { "source": "/manifest-ceo-dashboard.json", "destination": "/manifest-ceo-dashboard.json" },
-    { "source": "/ceo-master-engine.js", "destination": "/ceo-master-engine.js" },
-    { "source": "/:path*", "destination": "/:path*" }
-  ]
+  "framework": "nextjs"
 }
