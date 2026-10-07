@@ -1,0 +1,20 @@
+{
+  "version": "V6.1 Professional Menu Settings",
+  "company": "Geapple Inc RC:9882150",
+  "ceo": "Apostle Dr Oladele Mighty Hassan",
+  "menuTools": [
+    {"id": "legal", "name": "Legal Information", "icon": "⚖️", "page": "/legal", "js": "legalConfig.js", "json": "legal.json", "jsx": "legal/page.jsx", "action": "active", "backup": "linked"},
+    {"id": "terms", "name": "Terms & Conditions", "icon": "📜", "page": "/terms", "js": "termsConfig.js", "json": "terms.json", "jsx": "terms/page.jsx", "action": "active", "backup": "linked"},
+    {"id": "privacy", "name": "Privacy Policy", "icon": "🔒", "page": "/privacy", "js": "privacyConfig.js", "json": "privacy.json", "jsx": "privacy/page.jsx", "action": "active", "backup": "linked"},
+    {"id": "ndpa", "name": "NDPA Compliance", "icon": "🛡️", "page": "/ndpa", "js": "ndpaConfig.js", "json": "ndpa.json", "jsx": "ndpa/page.jsx", "action": "active", "backup": "linked"},
+    {"id": "profile", "name": "User Profiles", "icon": "👤", "page": "/profile", "js": "profileConfig.js", "json": "profiles.json", "jsx": "profile/page.jsx", "action": "active", "backup": "linked"},
+    {"id": "settings", "name": "Platform Settings", "icon": "⚙️", "page": "/settings", "js": "settingsConfig.js", "json": "settings.json", "jsx": "settings/page.jsx", "action": "active", "backup": "linked"}
+  ],
+  "legal": {
+    "terms": "Users agree to Geapple Ecosystem terms",
+    "privacy": "Data protected by GSIA Secured",
+    "ndpa": "Nigeria Data Protection Act Compliant",
+    "google": "https://www.google.com/search?q=Geapple+Ecosystem",
+    "contact": "www.geapple.com"
+  }
+}
