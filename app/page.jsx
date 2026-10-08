@@ -34,7 +34,7 @@ export default function MyGeaNativeV62Real(){
  const videoInputRef=useRef(null);
 
  const [posts,setPosts]=useState([
-  {id:1,u:"Apostle Dr Mighty",t:"MYGEA V6.2 REAL CHAT 🔴 Friend Text Receives LIVE!",l:152,liked:false,comments:[],shares:12},
+  {id:1,u:"Apostle Dr Mighty",t:"MYGEA SOCIAL V6.2 REAL CHAT 🔴 Friend Text Receives LIVE!",l:152,liked:false,comments:[],shares:12},
   {id:2,u:"GEAPPLE CEO",t:"Firebase Real-Time Chat + SAT Calls + Phone Fit 📱 LIVE!",l:98,liked:false,comments:[],shares:5},
  ]);
 
