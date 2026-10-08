@@ -1,8 +1,7 @@
 "use client";
 import { useState,useEffect,useRef } from "react";
-import { db, isFirebaseReady } from "../../../lib/firebaseConfig.js";
-import { sendRealMessage, listenRealChats } from "../../../lib/chatApi.js";
-
+import { db, isFirebaseReady } from "../lib/firebaseConfig.js";
+import { sendRealMessage, listenRealChats } from "../lib/chatApi.js";
 export default function MyGeaNativeV62Real(){
  const [id,setId]=useState("1");
  const [lang,setLang]=useState("en");
