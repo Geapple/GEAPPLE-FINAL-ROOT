@@ -1,49 +1,11 @@
 "use client";
-import { doc, updateDoc, addDoc, collection } from "firebase/firestore";
-export function useStorePayCEO(db, products, setProducts, cart, setCart, setBalance, payMethod, payments, setPayments){
- const uploadProduct = async (e) => {
-  e.preventDefault();
-  const fd = new FormData(e.target);
-  const name = fd.get('name');
-  const price = Number(fd.get('price'));
-  const type = fd.get('type');
-  if(!name) return;
-  const newItem = {id: Date.now(), n: name.toUpperCase(), p: price, type, status: "Pending"};
-  setProducts([newItem,...products]);
-  if(db){ try{ await addDoc(collection(db,"gea_store"), newItem); }catch(err){} }
-  alert(newItem.n + " Uploaded!");
-  e.target.reset();
- };
- const editProduct = (pid) => {
-  const item = products.find(p=>p.id===pid);
-  const newName = prompt("Edit Name:", item.n);
-  const newPrice = prompt("Edit Price:", item.p);
-  if(newName){ setProducts(prev=>prev.map(p=>p.id===pid?{...p, n:newName.toUpperCase(), p:Number(newPrice)||p.p}:p)); }
- };
- const approveProduct = async (pid) => {
-  setProducts(prev=>prev.map(p=>p.id===pid?{...p, status:"Approved"}:p));
-  if(db){ try{ await addDoc(collection(db,"ceo_actions"), {action:"Approved", productId:pid, createdAt:new Date()}); }catch(err){} }
- };
- const payActive = async () => {
-  const total = cart.reduce((s,i)=>s+i.p,0)||5000;
-  const ref = "GEA_" + Date.now();
-  if(db){ try{ await addDoc(collection(db,"payments"), {amount:total, method:payMethod, ref, status:"Pending", cart, createdAt:new Date()}); }catch(err){} }
-  alert(payMethod + " Pay NGN " + total + " Ref:" + ref + " CEO Notified!");
-  setBalance(b=>b-total);
-  setCart([]);
- };
- const confirmPayment = async (pid) => {
-  if(db){ try{ await updateDoc(doc(db,"payments",pid), {status:"Confirmed"}); }catch(err){} }
-  setPayments(prev=>prev.map(p=>p.id===pid?{...p, status:"Confirmed"}:p));
- };
- const mintData = () => {
-  const data = JSON.stringify({products, payments, time:new Date().toISOString()}, null, 2);
-  const blob = new Blob([data], {type:"application/json"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = "GEA_DATA_" + Date.now() + ".json";
-  a.click();
- };
- return {uploadProduct, editProduct, approveProduct, payActive, confirmPayment, mintData};
+import{addDoc,collection,doc,updateDoc}from"firebase/firestore";
+export function usePay(db,products,setProducts,cart,setCart,setBal,method,payments,setPayments){
+ const pay=async()=>{const t=cart.reduce((s,i)=>s+i.p,0)||5000;const l={Paystack:"https://paystack.com/pay/GEA_"+Date.now(),Flutterwave:"https://checkout.flutterwave.com/v3/hosted/pay",Monnify:"https://app.monnify.com/pay",GPay:"https://pay.google.com/gp/p/ui/pay"}[method];window.open(l+"?amount="+t,"_blank");if(db)try{await addDoc(collection(db,"payments"),{amount:t,method,status:"Pending",cart,createdAt:new Date()});}catch{}alert(method+" NGN "+t+" Real API CEO Notified!");setBal(b=>b-t);setCart([]);};
+ const upload=async(e)=>{e.preventDefault();const f=new FormData(e.target);const n=f.get('name');const p=Number(f.get('price'));const ty=f.get('type');if(!n)return;const it={id:Date.now(),n:n.toUpperCase(),p, type:ty,status:"Pending"};setProducts([it,...products]);if(db)try{await addDoc(collection(db,"gea_store"),it);}catch{}e.target.reset();alert(it.n+" Uploaded!");};
+ const approve=async(pid)=>{setProducts(x=>x.map(p=>p.id===pid?{...p,status:"Approved"}:p));if(db)try{await addDoc(collection(db,"ceo_actions"),{action:"Approved",productId:pid,createdAt:new Date()});}catch{}};
+ const edit=(pid)=>{const it=products.find(p=>p.id===pid);const nn=prompt("Edit Name:",it.n);const np=prompt("Edit Price:",it.p);if(nn)setProducts(x=>x.map(p=>p.id===pid?{...p,n:nn.toUpperCase(),p:Number(np)||p.p}:p));};
+ const confirm=async(pid)=>{if(db)try{await updateDoc(doc(db,"payments",pid),{status:"Confirmed"});}catch{}setPayments(x=>x.map(p=>p.id===pid?{...p,status:"Confirmed"}:p));};
+ const mint=()=>{const d=JSON.stringify({products,payments,time:new Date().toISOString()},null,2);const b=new Blob([d],{type:"application/json"});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download="GEA_DATA_"+Date.now()+".json";a.click();};
+ return{pay,upload,approve,edit,confirm,mint};
 }
