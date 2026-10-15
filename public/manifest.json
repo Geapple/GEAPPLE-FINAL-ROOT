@@ -1,0 +1,40 @@
+{
+  "name": "MYGEA Social Native - GEAPPLE HUB 35 $1B",
+  "short_name": "MYGEA",
+  "description": "Global Super Intelligence Applications - Ask Me Anything - Holo 25 + Reelgea + GSIA AI + Gea Tune + Pay + Store",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff00",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["social", "entertainment", "music", "shopping", "finance"],
+  "shortcuts": [
+    {
+      "name": "GSIA - Global AI",
+      "short_name": "GSIA AI",
+      "description": "Welcome To Geapple I am Global Super Intelligence Applications ask me anything",
+      "url": "/?tool=gsia",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "HOLO 25 Conference",
+      "short_name": "HOLO",
+      "url": "/?tool=holo",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
