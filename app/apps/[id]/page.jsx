@@ -1,34 +1,129 @@
 "use client";
-import { useState,useEffect,useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { db } from "../../../lib/firebase.js";
-import { collection,addDoc,onSnapshot,query,orderBy } from "firebase/firestore";
-export default function MyGeaNative(){
-const [live,setLive]=useState(false);const [tool,setTool]=useState("feed");const [home,setHome]=useState(false);const [menu,setMenu]=useState(false);const [chat,setChat]=useState(null);const [msgs,setMsgs]=useState({});const [posts,setPosts]=useState([]);const [likes,setLikes]=useState({});const [aiMsg,setAiMsg]=useState("Welcome To Geapple I am Global Super Intelligence Applications - Ask me anything $1B");const v=useRef(null);
-useEffect(()=>{if(!db){setPosts([{id:'1',u:"Apostle Dr Mighty",t:"MYGEA $1B - HOLO+REELGEA+GSIA+GEA TUNE+PAY+STORE ACTIVE!",l:0}]);return;}const q=query(collection(db,"mygea_posts"),orderBy("createdAt","desc"));const unsub=onSnapshot(q,s=>{if(s.empty)setPosts([{id:'1',u:"Apostle Dr Mighty",t:"V12 Firebase Live!",l:0}]);else setPosts(s.docs.map(d=>({id:d.id,...d.data()})));});return()=>unsub();},[]);
-const cam=async()=>{try{const s=await navigator.mediaDevices.getUserMedia({video:true,audio:true});v.current&&(v.current.srcObject=s,await v.current.play(),setLive(true));}catch{}};
-const send=async pid=>{const e=document.getElementById("c-"+pid);if(!e?.value)return;const t=e.value;if(db)try{await addDoc(collection(db,"chats",String(pid),"messages"),{text:t,user:"CEO",createdAt:new Date()});}catch{}setMsgs(x=>({...x,[pid]:[...(x[pid]||[]),{text:t,user:"You"}]}));e.value="";};
-const share=(pl,pid)=>{const u=location.href+"?post="+pid;if(pl==='wa')open("https://wa.me/?text="+u);if(pl==='copy'){navigator.clipboard.writeText(u);alert("🔗 REELGEA LINK VISIBLE: "+u);}};
-const askGSIA=async()=>{const q=prompt("GSIA - Ask Me Anything:");if(!q)return;setAiMsg("GSIA Thinking...");setTimeout(()=>{const ans=`GSIA $1B Answer: ${q} -> Global Super Intelligence: GEAPPLE HUB 35 with HOLO 25, Reelgea, Creator Tools, Gea Tune, Pay, Store Marketplace!`;setAiMsg(ans);if('speechSynthesis' in window)speechSynthesis.speak(new SpeechSynthesisUtterance(ans));},1000);};
-return(<div style={{background:'#000',minHeight:'100vh',color:'#fff',display:'flex',flexDirection:'column'}}>
-<div style={{display:'flex',gap:6,padding:10,background:'#0a0a0a',borderBottom:'1px solid #0f03',position:'sticky',top:0,zIndex:20,alignItems:'center'}}><button onClick={()=>setMenu(!menu)} style={{background:'#111',color:'#0f0',border:'1px solid #0f0',width:40,height:40,borderRadius:10,fontWeight:'bold'}}>☰</button><div style={{fontWeight:'bold',color:'#0f0',fontSize:11,flex:1}}>MYGEA SOCIAL NATIVES APP $1B - ALL TOOLS</div><button onClick={()=>setHome(!home)} style={{background:home?'#0f0':'#111',color:home?'#000':'#fff',border:'1px solid #0f0',width:40,height:40,borderRadius:10}}>🏡</button><button onClick={()=>setTool('settings')} style={{background:'#111',border:'1px solid #333',width:40,height:40,borderRadius:10}}>⚙️</button></div>
-{menu&&<div style={{position:'fixed',left:0,top:0,bottom:0,width:260,background:'#0f0f0f',borderRight:'2px solid #0f0',zIndex:50,padding:12,overflowY:'auto'}}><div style={{display:'flex',justifyContent:'space-between'}}><div style={{color:'#0f0',fontWeight:'bold',fontSize:12}}>MENU - Touch To Open</div><button onClick={()=>setMenu(false)} style={{background:'#222',color:'#fff',border:0,width:28,height:28,borderRadius:8}}>✕</button></div><div style={{marginTop:12,display:'grid',gap:8}}><div style={{fontSize:10,color:'#666',fontWeight:'bold'}}>MYGEA CORE</div>
-<button onClick={()=>{setTool('gsia');setMenu(false);}} style={{background:tool==='gsia'?'#0f0':'#111',color:tool==='gsia'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🤖 GSIA AI - Global Super Intelligence</button>
-<button onClick={()=>{setTool('holo');setMenu(false);}} style={{background:tool==='holo'?'#f0f':'#111',color:tool==='holo'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>👁️ MyGea Holo - 25 Conference</button>
-<button onClick={()=>{setTool('reelgea');setMenu(false);}} style={{background:tool==='reelgea'?'#0f0':'#111',color:tool==='reelgea'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🎬 Reelgea - Creator Tools</button>
-<button onClick={()=>{setTool('tune');setMenu(false);}} style={{background:tool==='tune'?'#fd0':'#111',color:tool==='tune'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🎵 Gea Tune Music</button>
-<button onClick={()=>{setTool('pay');setMenu(false);}} style={{background:tool==='pay'?'#0ef':'#111',color:tool==='pay'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>💳 Gea Pay - Paystack Flutterwave</button>
-<button onClick={()=>{setTool('store');setMenu(false);}} style={{background:tool==='store'?'#fd0':'#111',color:tool==='store'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🏪 Gea Store Marketplace</button>
-<div style={{fontSize:10,color:'#666',fontWeight:'bold',marginTop:8}}>HIDDEN APPS - Touch To Open</div>{["Chatgea","Livegea","Mapgea","Travelgea","Foodgea","Gamegea"].map(a=><button key={a} onClick={()=>{setTool('feed');setMenu(false);}} style={{background:'#111',color:'#888',border:'1px solid #222',padding:10,borderRadius:10,textAlign:'left',fontSize:12}}>📱 {a} - Hidden Native Icon</button>)}
-<div style={{fontSize:10,color:'#666',fontWeight:'bold',marginTop:8}}>LEGAL & SETTINGS</div><button onClick={()=>setTool('legal')} style={{background:'#111',color:'#fff',border:'1px solid #222',padding:10,borderRadius:10,textAlign:'left'}}>📄 Terms & Conditions - Privacy - NDPA - Profiles</button><button onClick={()=>setTool('settings')} style={{background:'#111',color:'#fff',border:'1px solid #222',padding:10,borderRadius:10,textAlign:'left'}}>⚙️ Phone Screen Effects - Full Screen - Modern Tools</button></div></div>}
-{home&&<div style={{position:'fixed',right:0,top:60,bottom:0,width:200,background:'#0a0a0a',borderLeft:'2px solid #0f0',borderTop:'1px solid #0f03',zIndex:40,padding:12}}><div style={{color:'#0f0',fontWeight:'bold',fontSize:11}}>🏡 MAJOR 🔗 ICONS - Hidden - Touch To Open</div><div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:8,marginTop:12}}>{["🌍","💬","🎬","🎵","💳","🏪","👁️","🤖","⚙️"].map((ic,i)=><div key={i} onClick={()=>{setHome(false);setTool(['feed','chat','reelgea','tune','pay','store','holo','gsia','settings'][i]);}} style={{background:'#111',border:'1px solid #0f0',borderRadius:12,height:50,display:'flex',alignItems:'center',justifyContent:'center',fontSize:20,cursor:'pointer'}}>{ic}</div>)}</div><div style={{marginTop:12,background:'#001a00',border:'1px solid #0f0',padding:8,borderRadius:8}}><div style={{fontSize:8,color:'#0f0'}}>🔗 REELGEA LINK VISIBLE API</div><button onClick={()=>share('copy',0)} style={{background:'#0f0',color:'#000',border:0,padding:'6px 10px',borderRadius:6,fontSize:10,fontWeight:'bold',width:'100%',marginTop:6}}>COPY LINK 🔗</button></div></div>}
-<div style={{flex:1,padding:10,paddingBottom:80}}><div onClick={()=>cam()} style={{background:'#111',borderRadius:16,overflow:'hidden',border:'1px solid #222',position:'relative'}}><video ref={v} autoPlay muted playsInline style={{width:'100%',height:live?280:0,background:'#000',objectFit:'cover',display:live?'block':'none'}}/>{!live&&<div style={{height:180,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',gap:8}}><div style={{fontSize:30}}>📱</div><div style={{fontSize:10,color:'#666'}}>Touch Screen Full - Phone Screen Modern Native</div><button onClick={cam} style={{background:'#0f0',color:'#000',border:0,padding:'10px 16px',borderRadius:8,fontWeight:'bold'}}>START 5G CAM - MYGEA HOLO</button></div>}</div>
-{tool==='gsia'&&<div style={{marginTop:10,background:'#0a0a0a',border:'2px solid #0f0',borderRadius:12,padding:12}}><div style={{color:'#0f0',fontWeight:'bold'}}>🤖 GSIA - Welcome To Geapple I am Global Super Intelligence Applications - Ask Me Anything</div><div style={{background:'#111',borderRadius:8,padding:12,marginTop:10,border:'1px solid #0f0',minHeight:60}}>{aiMsg}</div><button onClick={askGSIA} style={{width:'100%',marginTop:8,background:'#0f0',color:'#000',border:0,padding:14,borderRadius:10,fontWeight:'bold'}}>💬 Ask GSIA Anything $1B</button></div>}
-{tool==='tune'&&<div style={{marginTop:10,background:'#0a0a0a',border:'2px solid #fd0',borderRadius:12,padding:12}}><div style={{color:'#fd0',fontWeight:'bold'}}>🎵 Gea Tune Music - Native Player</div><div style={{background:'#111',borderRadius:10,padding:12,marginTop:8,display:'flex',gap:8,alignItems:'center'}}><div style={{width:50,height:50,background:'#fd0',borderRadius:10,display:'flex',alignItems:'center',justifyContent:'center'}}>🎵</div><div><div style={{fontWeight:'bold',fontSize:13}}>MYGEA Super Beat $1B</div><div style={{fontSize:10,color:'#888'}}>Apostle Dr Mighty - Global</div></div><button style={{marginLeft:'auto',background:'#0f0',color:'#000',border:0,padding:'8px 14px',borderRadius:20,fontWeight:'bold'}}>▶️ Play</button></div></div>}
-{tool==='holo'&&<div style={{marginTop:10,background:'#0a0a0a',border:'2px solid #f0f',borderRadius:12,padding:12}}><div style={{color:'#f0f',fontWeight:'bold'}}>👁️ MyGea Holo - 25 Conference - 3D Hologram Participants</div><div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:6,marginTop:10}}>{Array.from({length:25}).map((_,i)=><div key={i} style={{background:'#111',border:'1px solid #f0f',borderRadius:8,padding:6,textAlign:'center'}}><div>👤</div><div style={{fontSize:6}}>P{i+1}</div></div>)}</div><button onClick={cam} style={{width:'100%',marginTop:10,background:'#f0f',color:'#000',border:0,padding:12,borderRadius:10,fontWeight:'bold'}}>🎥 Start HOLO Real Camera API</button></div>}
-{tool==='pay'&&<div style={{marginTop:10,background:'#0a0a0a',border:'2px solid #0ef',borderRadius:12,padding:12}}><div style={{color:'#0ef',fontWeight:'bold'}}>💳 Gea Pay - Paystack Flutterwave Monnify GPay - Real API Active</div><div style={{display:'flex',gap:6,marginTop:8,flexWrap:'wrap'}}>{["Paystack","Flutterwave","Monnify","GPay"].map(m=><button key={m} onClick={()=>{open("https://paystack.com/pay/GEA_"+Date.now(),"_blank");alert(m+" Real API Active - CEO Dashboard");}} style={{background:'#0ef',color:'#000',border:0,padding:'10px 14px',borderRadius:20,fontWeight:'bold',fontSize:11}}>{m}</button>)}</div></div>}
-{tool==='store'&&<div style={{marginTop:10,background:'#0a0a0a',border:'2px solid #fd0',borderRadius:12,padding:12}}><div style={{color:'#fd0',fontWeight:'bold'}}>🏪 Gea Store Marketplace 🖇️ - Upload Program</div><form onSubmit={e=>{e.preventDefault();const fd=new FormData(e.target);const name=fd.get('name');if(!name)return;setPosts(p=>[{id:Date.now(),u:"Store Upload",t:`🏪 NEW PRODUCT: ${name} - ₦${fd.get('price')} - Marketplace`,l:0},...p]);if(db)addDoc(collection(db,"gea_store"),{n:name,p:fd.get('price'),status:"Pending CEO",createdAt:new Date()});alert("📤 Uploaded to CEO - Marketplace");e.target.reset();}} style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:6,marginTop:10}}><input name="name" placeholder="Product/App Name" required style={{background:'#000',border:'1px solid #333',padding:10,borderRadius:8,color:'#fff'}}/><input name="price" placeholder="Price ₦" required style={{background:'#000',border:'1px solid #333',padding:10,borderRadius:8,color:'#fff'}}/><button type="submit" style={{gridColumn:'span 2',background:'#fd0',color:'#000',border:0,padding:12,borderRadius:8,fontWeight:'bold'}}>📤 Upload to MyGea Store - Marketplace</button></form></div>}
-{tool==='reelgea'&&<div style={{marginTop:10,background:'#0a0a0a',border:'2px solid #0f0',borderRadius:12,padding:12}}><div style={{color:'#0f0',fontWeight:'bold'}}>🎬 Reelgea - Creator Tools - Video Adverts Google Traffic Linked</div><div style={{display:'flex',gap:6,marginTop:8}}><button onClick={()=>share('copy',0)} style={{background:'#0f0',color:'#000',border:0,padding:'10px 14px',borderRadius:10,fontWeight:'bold'}}>🔗 Copy Reel Link API Visible</button><button onClick={()=>share('wa',0)} style={{background:'#25D366',color:'#fff',border:0,padding:'10px 14px',borderRadius:10}}>WA Share</button></div><div style={{marginTop:10,background:'#111',borderRadius:10,padding:10,border:'1px solid #f00'}}><div style={{background:'#f00',color:'#fff',padding:'4px 8px',borderRadius:6,fontSize:9,fontWeight:'bold'}}>📺 Google Traffic Advert - Top Right Video Window - Linked to Google</div><div style={{height:60,background:'#000',marginTop:6,borderRadius:8,display:'flex',alignItems:'center',justifyContent:'center',cursor:'pointer'}} onClick={()=>open('https://www.google.com/search?q=Geapple')}>▶️ Video Advert Play - Google Traffic</div></div></div>}
-{(tool==='legal'||tool==='settings')&&<div style={{marginTop:10,background:'#0a0a0a',border:'2px solid #666',borderRadius:12,padding:12}}><div style={{color:'#fff',fontWeight:'bold'}}>{tool==='legal'?'📄 Legal Terms Conditions Privacy Profiles Menu Files':'⚙️ MyGea Social MENU Settings Tools - Applied to All Built Apps'}</div><div style={{marginTop:10,display:'grid',gap:6}}><div style={{background:'#111',padding:10,borderRadius:8,fontSize:11}}>✅ Terms and Conditions - Geapple Ecosystem $1B Super Pro Max Global Standard</div><div style={{background:'#111',padding:10,borderRadius:8,fontSize:11}}>🔒 Privacy Policy - NDPA Compliant - Data Minting Blockchain Verified</div><div style={{background:'#111',padding:10,borderRadius:8,fontSize:11}}>👤 Profiles Menu - CEO Dashboard - Apostle Dr Mighty</div><div style={{background:'#111',padding:10,borderRadius:8,fontSize:11}}>📱 Touch Screen Full - Phone Screen - All Modern Native Apps Tools Icons Hidden in MENU Touch To Open</div><div style={{background:'#111',padding:10,borderRadius:8,fontSize:11}}>🏡 Major 🔗 Icons Hidden in Home Touch To Open - Applied All MENU Tools Settings to All Built Apps Platforms</div></div></div>}
-{tool==='feed'&&<div style={{marginTop:10}}>{posts.map(p=><div key={p.id} style={{background:'#0a0a0a',border:'1px solid #222',borderRadius:12,padding:12,marginBottom:10}}><div style={{fontSize:13,fontWeight:'bold'}}>{p.u}</div><div style={{marginTop:8}}>{p.t}</div><div style={{display:'flex',gap:8,marginTop:12}}><button onClick={()=>{setLikes(x=>({...x,[p.id]:!x[p.id]}));setPosts(q=>q.map(z=>z.id===p.id?{...z,l:likes[p.id]?z.l-1:z.l+1}:z));}} style={{background:likes[p.id]?'#f00':'#111',color:'#fff',borderRadius:20,padding:'8px 14px'}}>{likes[p.id]?'❤️':'🤍'} {p.l||0} Love</button><button onClick={()=>setChat(chat===p.id?null:p.id)} style={{background:chat===p.id?'#0f0':'#111',borderRadius:20,padding:'8px 14px'}}>💬 Chat Platform Window Active</button><button onClick={()=>share('copy',p.id)} style={{background:'#0f0',color:'#000',borderRadius:20,padding:'8px 14px',fontWeight:'bold'}}>🖇️ Share 🔗 Visible</button></div>{chat===p.id&&<div style={{marginTop:10,background:'#111',borderRadius:12,padding:10,border:'2px solid #0f0'}}><div style={{maxHeight:100,overflowY:'auto',background:'#000',borderRadius:8,padding:6}}>{(msgs[p.id]||[]).map((x,i)=><div key={i} style={{fontSize:12,padding:4}}><b>{x.user}:</b> {x.text}</div>)}</div><div style={{display:'flex',gap:6,marginTop:8}}><input id={"c-"+p.id} placeholder="Chat Active Firebase Real..." style={{flex:1,background:'#000',border:'1px solid #0f0',borderRadius:20,padding:8,color:'#fff'}}/><button onClick={()=>send(p.id)} style={{background:'#0f0',color:'#000',border:0,borderRadius:20,padding:'8px 14px',fontWeight:'bold'}}>Send Firebase Active</button></div></div>}</div>)}</div>}</div>
-<div style={{display:'flex',gap:4,padding:8,background:'#0a0a0a',borderTop:'1px solid #0f03',position:'fixed',bottom:0,left:0,right:0,overflowX:'auto'}}>{[{k:'feed',i:'🌍'},{k:'gsia',i:'🤖'},{k:'holo',i:'👁️'},{k:'reelgea',i:'🎬'},{k:'tune',i:'🎵'},{k:'pay',i:'💳'},{k:'store',i:'🏪'}].map(b=><button key={b.k} onClick={()=>setTool(b.k)} style={{background:tool===b.k?'#0f0':'#111',color:tool===b.k?'#000':'#fff',border:'1px solid #222',minWidth:50,height:44,borderRadius:10,fontSize:18}}>{b.i}</button>)}<button onClick={()=>setMenu(true)} style={{background:'#111',border:'1px solid #0f0',minWidth:50,height:44,borderRadius:10}}>☰ MENU</button></div></div>);
-  }
+import { collection, addDoc, onSnapshot, query, orderBy } from "firebase/firestore";
+
+export default function V12(){
+const [home,setHome]=useState(false);
+const [menu,setMenu]=useState(false);
+const [tool,setTool]=useState('feed');
+const [posts,setPosts]=useState([]);
+const [aiMsg,setAiMsg]=useState("Welcome To Geapple I am Global Super Intelligence Applications - Ask me anything $1B");
+const v=useRef(null);
+
+useEffect(()=>{
+if(!db){
+setPosts([{id:'1',u:"Apostle Dr Mighty",t:"MYGEA $1B - HOLO+REELGEA+GSIA+GEA TUNE+PAY+STORE ACTIVE!",l:0}]);
+return;
+}
+const q=query(collection(db,"mygea_posts"),orderBy("createdAt","desc"));
+const unsub=onSnapshot(q,s=>{
+if(s.empty){
+setPosts([{id:'1',u:"Apostle Dr Mighty",t:"MYGEA $1B - HOLO+REELGEA+GSIA ACTIVE!",l:0}]);
+}else{
+setPosts(s.docs.map(d=>({id:d.id,...d.data()})));
+}
+});
+return()=>unsub();
+},[]);const send=async pid=>{
+const e=document.getElementById("c-"+pid);
+if(!e?.value)return;
+const t=e.value;
+if(db)try{
+await addDoc(collection(db,"chats",String(pid),"messages"),{text:t,user:"CEO",createdAt:new Date()});
+}catch{}
+e.value="";
+};
+
+const share=(pl,pid)=>{
+const u=location.href+"?post="+pid;
+if(pl==='wa')open("https://wa.me/?text="+u);
+if(pl==='copy'){
+navigator.clipboard.writeText(u);
+alert("🔗 REELGEA LINK VISIBLE: "+u);
+}
+};
+
+const askGSIA=async()=>{
+const q=prompt("GSIA - Ask Me Anything:");
+if(!q)return;
+setAiMsg("GSIA Thinking...");
+setTimeout(()=>{
+setAiMsg("GSIA $1B Answer: "+q+" - Welcome To Geapple Hub 35 - All Tools Active!");
+},1000);
+};
+
+return(
+<div style={{display:'flex',flexDirection:'column',minHeight:'100vh',background:'#000',color:'#fff'}}>
+
+{/* HEADER - PHONE SCREEN FULL MODERN NATIVE */}
+<div style={{display:'flex',gap:6,padding:10,background:'#0a0a0a',borderBottom:'1px solid #0f03',position:'sticky',top:0,zIndex:20,alignItems:'center'}}>
+<button onClick={()=>setMenu(!menu)} style={{background:'#111',color:'#0f0',border:'1px solid #0f0',width:40,height:40,borderRadius:10,fontWeight:'bold'}}>☰</button>
+<div style={{fontWeight:'bold',color:'#0f0',fontSize:11,flex:1}}>MYGEA SOCIAL NATIVES APP $1B - ALL TOOLS</div>
+<button onClick={()=>setHome(!home)} style={{background:home?'#0f0':'#111',color:home?'#000':'#fff',border:'1px solid #0f0',width:40,height:40,borderRadius:10}}>🏡</button>
+<button onClick={()=>setTool('settings')} style={{background:'#111',color:'#0f0',border:'1px solid #0f0',width:40,height:40,borderRadius:10}}>⚙️</button>
+</div>
+
+{/* MENU - TOUCH TO OPEN */}
+{menu&&<div style={{background:'#111',padding:10,borderBottom:'1px solid #222',display:'flex',flexDirection:'column',gap:6}}>
+<button onClick={()=>{setTool('gsia');setMenu(false);}} style={{background:tool==='gsia'?'#0f0':'#222',color:tool==='gsia'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🤖 GSIA AI - Ask Me Anything $1B</button>
+<button onClick={()=>{setTool('holo');setMenu(false);}} style={{background:tool==='holo'?'#0f0':'#222',color:tool==='holo'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>👁️ MyGea Holo 25 Conference - Real Camera API</button>
+<button onClick={()=>{setTool('reelgea');setMenu(false);}} style={{background:tool==='reelgea'?'#0f0':'#222',color:tool==='reelgea'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🎬 Reelgea Creator Tools + Video Advert Google Traffic Linked Top Right</button>
+<button onClick={()=>{setTool('tune');setMenu(false);}} style={{background:tool==='tune'?'#0f0':'#222',color:tool==='tune'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🎵 Gea Tune Music</button>
+<button onClick={()=>{setTool('pay');setMenu(false);}} style={{background:tool==='pay'?'#fd0':'#222',color:tool==='pay'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>💳 Gea Pay - Paystack Flutterwave Monnify GPay Real API Active</button>
+<button onClick={()=>{setTool('store');setMenu(false);}} style={{background:tool==='store'?'#fd0':'#111',color:tool==='store'?'#000':'#fff',border:0,padding:12,borderRadius:10,textAlign:'left',fontWeight:'bold'}}>🏪 Gea Store Marketplace - Upload Program To CEO</button>
+<div style={{fontSize:10,color:'#666',fontWeight:'bold',marginTop:8}}>HIDDEN APPS - Touch To Open</div>
+{["Chatgea","Livegea","Mapgea","Travelgea","Foodgea","Gamegea"].map(a=><button key={a} onClick={()=>{setTool('feed');setMenu(false);}} style={{background:'#111',color:'#888',border:'1px solid #222',padding:10,borderRadius:10,textAlign:'left',fontSize:12}}>{a} - Hidden Native Icon</button>)}
+</div>}
+
+{/* HOME - MAJOR ICONS HIDDEN */}
+{home&&<div style={{background:'#0a0a0a',padding:10,borderBottom:'1px solid #0f03',display:'flex',flexDirection:'column',gap:6}}>
+<div style={{fontSize:10,color:'#0f0',fontWeight:'bold'}}>HOME - Major Icons Hidden - Touch To Open</div>
+{["🏠 MyGea Home","🔗 Major Links","📊 Dashboard CEO","💬 Chat Platform Window Active","🎥 Live Conference","🛒 Store Marketplace"].map(h=><button key={h} onClick={()=>setHome(false)} style={{background:'#111',color:'#0f0',border:'1px solid #0f0',padding:10,borderRadius:10,textAlign:'left'}}>{h} - Tap To Open</button>)}
+</div>}<div style={{flex:1,padding:10}}>
+
+{tool==='gsia'&&<div style={{background:'#111',padding:12,borderRadius:10,border:'1px solid #0f0'}}>
+<div style={{color:'#0f0',fontWeight:'bold'}}>GSIA - Global Super Intelligence Applications</div>
+<div style={{marginTop:8,background:'#000',padding:10,borderRadius:8}}>{aiMsg}</div>
+<button onClick={askGSIA} style={{marginTop:10,background:'#0f0',color:'#000',border:0,padding:10,borderRadius:8,fontWeight:'bold',width:'100%'}}>Ask GSIA - $1B</button>
+</div>}
+
+{tool==='feed'&&<div>
+{posts.map(p=><div key={p.id} style={{background:'#111',padding:10,borderRadius:10,marginBottom:10,border:'1px solid #222'}}>
+<div style={{fontWeight:'bold',color:'#0f0'}}>{p.u}</div>
+<div style={{marginTop:6}}>{p.t}</div>
+<div style={{display:'flex',gap:6,marginTop:8}}>
+<button onClick={()=>share('wa',p.id)} style={{background:'#25D366',color:'#fff',border:0,padding:6,borderRadius:6,fontSize:12}}>WA Share</button>
+<button onClick={()=>share('copy',p.id)} style={{background:'#222',color:'#fff',border:0,padding:6,borderRadius:6,fontSize:12}}>🔗 Copy Link - Reelgea Visible</button>
+<button onClick={()=>send(p.id)} style={{background:'#0f0',color:'#000',border:0,padding:6,borderRadius:6,fontSize:12}}>💬 Chat</button>
+</div>
+<input id={"c-"+p.id} placeholder="Chat Platform Window Active Firebase Real..." style={{width:'100%',marginTop:6,background:'#000',color:'#fff',border:'1px solid #222',padding:8,borderRadius:6}}/>
+</div>)}
+</div>}
+
+{tool==='pay'&&<div style={{background:'#111',padding:12,borderRadius:10,border:'1px solid #fd0'}}>
+<div style={{fontWeight:'bold',color:'#fd0'}}>Gea Pay - Real API Active - Paystack Flutterwave Monnify GPay</div>
+<div style={{marginTop:10,display:'flex',gap:6,flexWrap:'wrap'}}>
+{["Paystack","Flutterwave","Monnify","GPay"].map(m=><button key={m} style={{background:'#fd0',color:'#000',border:0,padding:10,borderRadius:8,fontWeight:'bold',flex:1}}>{m} Active</button>)}
+</div>
+</div>}
+
+{tool==='store'&&<div style={{background:'#111',padding:12,borderRadius:10,border:'1px solid #fd0'}}>
+<div style={{fontWeight:'bold',color:'#fd0'}}>Gea Store Marketplace - Upload Program To CEO</div>
+<button style={{marginTop:10,background:'#fd0',color:'#000',border:0,padding:10,borderRadius:8,fontWeight:'bold',width:'100%'}}>🖇️ Upload Program To CEO Dashboard</button>
+</div>}
+
+{tool==='holo'&&<div style={{background:'#111',padding:12,borderRadius:10,border:'1px solid #0f0'}}><div style={{fontWeight:'bold',color:'#0f0'}}>MyGea Holo 25 Conference - Real Camera API Active - 25 Users</div><div style={{marginTop:8,background:'#000',height:200,borderRadius:8,display:'flex',alignItems:'center',justifyContent:'center',color:'#0f0'}}>📹 Holo Conference Active</div></div>}
+
+{tool==='reelgea'&&<div style={{background:'#111',padding:12,borderRadius:10,border:'1px solid #0f0'}}><div style={{fontWeight:'bold',color:'#0f0'}}>Reelgea Creator Tools + Video Advert Top Right Google Traffic Linked</div><div style={{marginTop:8,background:'#000',height:150,borderRadius:8,display:'flex',alignItems:'center',justifyContent:'center',color:'#0f0'}}>🎬 Reelgea Tools + Advert Window</div></div>}
+
+{tool==='tune'&&<div style={{background:'#111',padding:12,borderRadius:10,border:'1px solid #0f0'}}><div style={{fontWeight:'bold',color:'#0f0'}}>Gea Tune Music - All Native Tools Active</div></div>}
+
+</div>
+
+<div style={{padding:10,borderTop:'1px solid #222',background:'#0a0a0a',fontSize:9,color:'#666',textAlign:'center'}}>
+Legal Terms Privacy Profiles Applied To ALL Built Apps - Phone Screen Full Modern Native - Touch To Open - MYGEA $1B - Geapple Hub 35 - CEO: Apostle Dr Mighty
+</div>
+
+</div>
+);}
