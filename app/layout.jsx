@@ -1,7 +1,2 @@
-export default function RootLayout({children}){
-return(
-<html lang="en">
-<body style={{margin:0,background:"#000",color:"#fff"}}>{children}</body>
-</html>
-);
-}
+export const metadata = { title: "GEAPPLE 36 - RC:9882150", description: "All 36 Apps Ready Green - Geamail Gea Pay CEO Dashboard Bible 4K VR" };
+export default function RootLayout({ children }) { return (<html lang="en"><body style={{margin:0,background:"#000"}}>{children}</body></html>); }
