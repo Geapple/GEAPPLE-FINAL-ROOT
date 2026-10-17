@@ -1,24 +1,2 @@
-# Geapple Hub 36 - Build All 36 Natives Apps - CEO Apostle Dr Mighty - $1B
-# Old 35 + NEW Virtual Holy Bible = 36
-
-APPS_36 = [
-    "gsia-ai", "mygea-holo-25", "reelgea-creator", "gea-pay", "gea-store", "gea-chat",
-    "gea-news", "gea-jobs", "gea-learn", "gea-music", "gea-video", "gea-health",
-    "gea-farm", "gea-ride", "gea-food", "gea-travel", "gea-estate", "gea-events",
-    "gea-live", "gea-games", "gea-wallet", "gea-card", "gea-crypto", "gea-meet",
-    "gea-dating", "gea-kids", "gea-pray", "gea-church", "gea-donate", "gea-bible-study",
-    "gea-maps", "gea-weather", "gea-translate", "gea-scan", "gea-appstore",
-    "virtual-holy-bible"  # <-- 36th NEW IMPORTANT APP
-]
-
-print(f"Geapple Hub 36 - Building {len(APPS_36)} Apps...")
-
-for i, app in enumerate(APPS_36, 1):
-    print(f"[{i}/36] Building {app}... ✅ Ready")
-    if app == "virtual-holy-bible":
-        print(f"  -> Features: Read, Audio, Verse of Day, Search, Pray, Church")
-        print(f"  -> Spiritual Tool - GOLD Border - Important!")
-
-print("\n🎉 ALL 36 APPS BUILT - READY FOR PRODUCTION!")
-print("Old: 35 Apps -> New: 36 Apps with Virtual Holy Bible")
-print("CEO Apostle Dr Mighty - $1B Social Natives - Geapple Hub 36 LIVE!")
+APPS_36=["1-MYGEA-SOCIAL","2-REELGEA","3-GEAMAIL.CON","4-GEA-CON","5-GEACONNECT","6-MYGEA-HOLO","7-GLOBAL-VOTES","8-DEGALAXY-SAT-","9-MILITARY-BORD","10-VISUAL-ART-G","11-GEATUNE","12-GEA-4K-STUDI","13-GEA-GAME","14-OKIDOKI-SOCI","15-GALAREA-CHAT","16-YELLOW-MYGEA","17-GEA-STORE","18-DEGALAXY-ORB","19-GSIA-CYBER-C","20-GSIA-AI","21-REALORACLE-M","22-GSIA-FRAUD-D","23-GSIA-VISUAL-","24-REALORACLE-W","25-GSIA-BUDGET-","26-DEGALAXY-SAT","27-GSIA-ARCHITE","28-GEA-CARTOONS","29-GEA-PAY","30-GEA-WALLET","31-GEAPPLE-GADG","32-CEO-DASHBOAR","33-DATA-MINTING","34-INVESTORS-AN","35-GSIA-SYSTEMS","36-VIRTUAL-HOLY-BIBLE"]
+print(f"36 Apps - GEAMAIL.CON = name@geamail.con - {len(APPS_36)} Built")
