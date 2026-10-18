@@ -1,8 +1,0 @@
-"use client";
-export function Batch2API(){
-return (
-<div style={{marginTop:10}}>
-<div style={{background:"#111",border:"1px solid #0f0",padding:10,borderRadius:10}}><b>1-MYGEA-SOCIAL + 6-HOLO + 7-VOTES + 8-SAT + 9-MILITARY + 10-VISUAL API</b><p style={{fontSize:11,marginTop:6}}>Holo 100 Conference Avatar Country Voice English to Local - Voting Blockchain - Satellite Tracking NORAD - Arms Drugs Sensors Erazer 5G - Story to 4K Reality Jesus African</p></div>
-</div>
-);
-}
